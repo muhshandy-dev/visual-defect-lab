@@ -311,17 +311,25 @@ export function Inspect({ summary, cls, sampleId, navigate }: Props) {
                       <dt>Skor langsung</dt>
                       <dd className="mono" data-live-score={liveHere.score}>{format(liveHere.score, 4)}</dd>
                     </div>
+                    {sample.scores[`${liveMethod}_int8`] !== undefined && (
+                      <div>
+                        <dt>Model int8 yang sama di Python</dt>
+                        <dd className="mono">{format(sample.scores[`${liveMethod}_int8`], 4)}</dd>
+                      </div>
+                    )}
+                    {sample.scores[`${liveMethod}_int8`] !== undefined && (
+                      <div>
+                        <dt>Selisih browser dan Python</dt>
+                        <dd className="mono">{format(Math.abs(liveHere.score - sample.scores[`${liveMethod}_int8`]), 4)}</dd>
+                      </div>
+                    )}
                     <div>
-                      <dt>Skor tersimpan (Python)</dt>
-                      <dd className="mono" data-stored-score={sample.scores[liveMethod]}>{format(sample.scores[liveMethod], 4)}</dd>
-                    </div>
-                    <div>
-                      <dt>Selisih</dt>
-                      <dd className="mono">{format(Math.abs(liveHere.score - sample.scores[liveMethod]), 4)}</dd>
+                      <dt>Model evaluasi (float32, Python)</dt>
+                      <dd className="mono">{format(sample.scores[liveMethod], 4)}</dd>
                     </div>
                     <div>
                       <dt>Waktu</dt>
-                      <dd className="mono">
+                      <dd className="mono" data-testid="live-time">
                         {format(liveHere.msBackbone + liveHere.msHead, 0)} ms
                         {liveHere.msLoad > 50 ? ` (+${format(liveHere.msLoad, 0)} ms memuat model)` : ""}
                       </dd>
@@ -329,8 +337,10 @@ export function Inspect({ summary, cls, sampleId, navigate }: Props) {
                   </dl>
                 )}
                 <label className="file">
-                  <span>Coba foto sendiri</span>
+                  <span className="file-title">Coba foto sendiri</span>
+                  <span className="file-button">Pilih foto</span>
                   <input
+                    className="visually-hidden"
                     type="file"
                     accept="image/png,image/jpeg,image/webp"
                     onChange={(e) => {

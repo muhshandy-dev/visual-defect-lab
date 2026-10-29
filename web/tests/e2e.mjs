@@ -11,7 +11,8 @@ import { startServer } from "./serve.mjs";
 
 const SHOT_DIR = process.env.SHOT_DIR;
 if (SHOT_DIR) mkdirSync(SHOT_DIR, { recursive: true });
-const summary = JSON.parse(readFileSync(new URL("../dist/data/summary.json", import.meta.url)));
+const DIST = process.env.DIST_DIR || new URL("../dist/", import.meta.url).pathname;
+const summary = JSON.parse(readFileSync(`${DIST}/data/summary.json`));
 const server = await startServer(0);
 const base = `http://127.0.0.1:${server.address().port}/`;
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
@@ -87,7 +88,7 @@ if (summary.live_method) {
   let maxRel = 0;
   const times = [];
   for (const cls of summary.classes.slice(0, Number(process.env.LIVE_CLASSES || summary.classes.length))) {
-    const data = JSON.parse(readFileSync(new URL(`../dist/data/samples/${cls}.json`, import.meta.url)));
+    const data = JSON.parse(readFileSync(`${DIST}/data/samples/${cls}.json`));
     const thr = data.thresholds[summary.live_method];
     for (const s of data.items.slice(0, 2)) {
       await page.goto(`${base}#/inspeksi?produk=${cls}&foto=${s.id}`);
@@ -101,10 +102,19 @@ if (summary.live_method) {
       compared++;
       check(rel < 1e-3, `${cls}/${s.id}: skor browser ${live} vs Python ${ref}`);
       check((live > thr) === (ref > thr), `${cls}/${s.id}: keputusan browser berbeda`);
-      const t = await page.locator("[data-testid=live-result] dd").nth(3).textContent();
+      const t = await page.locator("[data-testid=live-time]").textContent();
       times.push(t);
     }
   }
+  // Unggah foto sendiri: jalur createImageBitmap dari berkas lokal.
+  const first = JSON.parse(readFileSync(`${DIST}/data/samples/${summary.classes[0]}.json`)).items[0];
+  await page.goto(`${base}#/inspeksi?produk=${summary.classes[0]}`);
+  await page.locator("input[type=file]").setInputFiles(`${DIST}/${first.img}`);
+  await page.getByText("Foto unggahan, dihitung di browser").waitFor();
+  await page.waitForFunction(() => !document.querySelector(".verdict strong")?.textContent?.includes("Menghitung"), null, { timeout: 120000 });
+  const up = await page.locator(".verdict strong").textContent();
+  check(/Tolak|Lolos/.test(up ?? ""), `unggahan: hasil tidak tampil (${up})`);
+  await page.getByRole("button", { name: "Kembali ke foto uji" }).click();
   check(errors.length === 0, `inferensi: ${errors.join(" | ")}`);
   console.log(`paritas browser: ${compared} foto, selisih maks ${maxRel.toExponential(2)} x ambang; waktu ${times.join(", ")}`);
   await page.close();

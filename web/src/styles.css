@@ -708,6 +708,7 @@ table.mini {
 }
 
 .file {
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
@@ -715,9 +716,28 @@ table.mini {
   font-size: 14px;
 }
 
-.file input {
-  font-size: 13px;
-  max-width: 100%;
+.file-button {
+  display: inline-block;
+  align-self: flex-start;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 12px;
+  background: var(--surface-2);
+  cursor: pointer;
+}
+
+.file:focus-within .file-button {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* Halaman biasa */

@@ -1,0 +1,88 @@
+name: Reproduksi penuh
+
+# Menjalankan seluruh eksperimen dari nol di runner GitHub (CPU): unduh VisA dan bobot ImageNet
+# resmi torchvision, fit dan evaluasi tiga metode, bootstrap, ekspor ONNX int8 dan data web,
+# pemeriksaan independen, lalu tes e2e termasuk paritas inferensi browser.
+# Hasil di-commit ke branch baru `hasil/reproduksi-<nomor run>` untuk ditinjau lewat PR.
+# Dijalankan manual dari tab Actions (kira-kira 1,5 sampai 2,5 jam).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Pasang PyTorch CPU dan paket
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[model,dev]"
+      - name: Cache arsip VisA (1,9 GB)
+        uses: actions/cache@v4
+        with:
+          path: data/raw/VisA_20220922.tar
+          key: visa-2eb8690c803ab37de0324772964100169ec8ba1fa3f7e94291c9ca673f40f362
+      - name: Unduh bobot ImageNet torchvision
+        run: |
+          mkdir -p data/weights
+          curl -fsSL -o data/weights/resnet18-f37072fd.pth https://download.pytorch.org/models/resnet18-f37072fd.pth
+          curl -fsSL -o data/weights/wide_resnet50_2-95faca4d.pth https://download.pytorch.org/models/wide_resnet50_2-95faca4d.pth
+          sha256sum data/weights/*.pth
+      - name: Data (unduh, cek SHA-256, cache 256 px, split)
+        run: defect-lab data
+      - name: Evaluasi baseline klasik
+        run: defect-lab evaluate --method classical
+      - name: Evaluasi PatchCore ResNet18
+        run: defect-lab evaluate --method resnet18
+      - name: Evaluasi PatchCore WideResNet50
+        run: defect-lab evaluate --method wrn50
+      - name: Laporan (bootstrap 1000 kali)
+        run: defect-lab report
+      - name: Ekspor ONNX int8 dan uji paritas pada seluruh foto uji
+        run: defect-lab export-onnx
+      - name: Ekspor data website
+        run: defect-lab export-web
+      - name: Pemeriksaan independen
+        run: python tools/verify_published.py
+      - name: Catat lingkungan
+        run: |
+          {
+            echo "run: ${{ github.run_id }}"
+            echo "commit: ${{ github.sha }}"
+            python -c "import torch, timm, onnxruntime, cv2, numpy, platform; print('python', platform.python_version()); print('torch', torch.__version__); print('timm', timm.__version__); print('onnxruntime', onnxruntime.__version__); print('opencv', cv2.__version__); print('numpy', numpy.__version__)"
+            nproc
+            sha256sum data/weights/*.pth
+          } > evaluation/environment.txt
+          cat evaluation/environment.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build dan e2e (termasuk paritas inferensi browser)
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+          npx playwright install --with-deps chromium
+          npm run e2e | tee ../evaluation/e2e.txt
+      - name: Commit hasil ke branch baru
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          branch="hasil/reproduksi-${{ github.run_id }}"
+          git checkout -b "$branch"
+          git add evaluation web/public
+          git commit -m "Hasil reproduksi penuh (run ${{ github.run_id }})"
+          git push origin "$branch"
+          echo "Branch: $branch" >> "$GITHUB_STEP_SUMMARY"

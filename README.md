@@ -32,11 +32,11 @@ Selang dari 1.000 bootstrap bertingkat per produk. Produk terlemah: makaroni 2 (
 ```
 src/defect_lab/   data, fitur klasik, PatchCore, metrik, laporan, ekspor ONNX dan web, CLI
 tests/            tes unit Python (metrik dihitung tangan, kNN brute force, paritas ONNX)
-tools/            verify_published.py: pemeriksaan independen angka yang dipublikasikan
+tools/            verify_published.py (pemeriksaan independen), run_transfer.sh, make_live_fixture.py (uji mekanisme browser, bobot acak)
 evaluation/       split.csv, raw/ (skor dan histogram per produk), results.json
 notebooks/        notebook reproduksi Kaggle (belum dijalankan di Kaggle)
 web/              React + Vite + TypeScript, onnxruntime-web
-docs/             DATA_CARD, ARCHITECTURE, REPRODUCE, DEPLOY_CLOUDFLARE
+docs/             DATA_CARD, MODEL_CARD, EVALUATION_REPORT, KRITERIA_STATUS, ARCHITECTURE, REPRODUCE, DEPLOY_CLOUDFLARE
 ```
 
-Cara menjalankan ulang: [docs/REPRODUCE.md](docs/REPRODUCE.md). Atribusi data: [NOTICE.md](NOTICE.md). Kode: MIT.
+Cara menjalankan ulang: [docs/REPRODUCE.md](docs/REPRODUCE.md), atau workflow **Reproduksi penuh** di tab Actions (unduh data dan bobot, jalankan semua, commit hasil ke branch baru). Laporan: [docs/EVALUATION_REPORT.md](docs/EVALUATION_REPORT.md), [docs/MODEL_CARD.md](docs/MODEL_CARD.md), status kriteria: [docs/KRITERIA_STATUS.md](docs/KRITERIA_STATUS.md). Atribusi data: [NOTICE.md](NOTICE.md). Kode: MIT.
