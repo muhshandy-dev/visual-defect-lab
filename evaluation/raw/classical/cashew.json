@@ -1,0 +1,19 @@
+{
+  "method": "classical",
+  "class": "cashew",
+  "fit_images": 405,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 414720,
+  "bank_size": 8295,
+  "seconds_fit": 20.1,
+  "ms_per_test_image": 45.4,
+  "threshold": 3.303616762161255,
+  "image_auroc": 0.8622,
+  "pixel_auroc": 0.7539396418554896,
+  "pixel_auroc_hist": 0.7539379627557845,
+  "aupro": 0.6685682575111345,
+  "miou": 0.12265116826573812,
+  "test_false_reject": 0.02,
+  "test_miss": 0.48
+}

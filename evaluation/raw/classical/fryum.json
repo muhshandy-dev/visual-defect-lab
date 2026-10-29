@@ -1,0 +1,19 @@
+{
+  "method": "classical",
+  "class": "fryum",
+  "fit_images": 405,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 414720,
+  "bank_size": 8295,
+  "seconds_fit": 20.2,
+  "ms_per_test_image": 44.0,
+  "threshold": 3.799409866333008,
+  "image_auroc": 0.8556,
+  "pixel_auroc": 0.8819160693445035,
+  "pixel_auroc_hist": 0.8819152740432336,
+  "aupro": 0.7422287122571196,
+  "miou": 0.09384401937708335,
+  "test_false_reject": 0.1,
+  "test_miss": 0.3
+}

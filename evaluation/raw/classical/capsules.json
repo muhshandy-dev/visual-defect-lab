@@ -1,0 +1,19 @@
+{
+  "method": "classical",
+  "class": "capsules",
+  "fit_images": 488,
+  "val_images": 54,
+  "test_images": 160,
+  "fit_patches": 499712,
+  "bank_size": 9995,
+  "seconds_fit": 27.7,
+  "ms_per_test_image": 53.4,
+  "threshold": 2.717439889907837,
+  "image_auroc": 0.7108333333333333,
+  "pixel_auroc": 0.9664360144483513,
+  "pixel_auroc_hist": 0.9664320099608757,
+  "aupro": 0.7193569936178013,
+  "miou": 0.10577352320152059,
+  "test_false_reject": 0.11666666666666667,
+  "test_miss": 0.57
+}

@@ -1,0 +1,19 @@
+{
+  "method": "classical",
+  "class": "candle",
+  "fit_images": 810,
+  "val_images": 90,
+  "test_images": 200,
+  "fit_patches": 829440,
+  "bank_size": 16589,
+  "seconds_fit": 131.8,
+  "ms_per_test_image": 80.8,
+  "threshold": 2.2458982467651367,
+  "image_auroc": 0.8054,
+  "pixel_auroc": 0.8755712880540392,
+  "pixel_auroc_hist": 0.8755607585305504,
+  "aupro": 0.7502349018272213,
+  "miou": 0.1123516904158139,
+  "test_false_reject": 0.08,
+  "test_miss": 0.44
+}
