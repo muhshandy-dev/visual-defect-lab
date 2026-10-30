@@ -1,0 +1,4880 @@
+{
+  "config": {
+    "image_size": 256,
+    "threshold_quantile": 0.95,
+    "smooth_sigma": 4.0,
+    "bootstrap_reps": 1000,
+    "pixel_bins": 2048,
+    "aupro_fpr_limit": 0.3,
+    "seed": 2026,
+    "methods": {
+      "classical": {
+        "key": "classical",
+        "label": "Klasik OpenCV (LBP + gradien + warna, kNN)",
+        "kind": "classical",
+        "backbone": null,
+        "embed_dim": null,
+        "coreset_ratio": 0.02,
+        "coreset_max": 20000,
+        "projection_dim": 24
+      },
+      "resnet18": {
+        "key": "resnet18",
+        "label": "PatchCore ResNet18 (model browser)",
+        "kind": "patchcore",
+        "backbone": "resnet18",
+        "embed_dim": 384,
+        "coreset_ratio": 0.01,
+        "coreset_max": 4096,
+        "projection_dim": 128
+      },
+      "wrn50": {
+        "key": "wrn50",
+        "label": "PatchCore WideResNet50",
+        "kind": "patchcore",
+        "backbone": "wide_resnet50_2",
+        "embed_dim": 1024,
+        "coreset_ratio": 0.01,
+        "coreset_max": 20000,
+        "projection_dim": 128
+      }
+    }
+  },
+  "methods": {
+    "classical": {
+      "label": "Klasik OpenCV (LBP + gradien + warna, kNN)",
+      "macro": {
+        "image_auroc": 0.8113080583058306,
+        "pixel_auroc": 0.9150707284929345,
+        "aupro": 0.7161846460989065,
+        "miou": 0.12478561634571596
+      },
+      "macro_ci95": {
+        "image_auroc": [
+          0.7931537967546753,
+          0.8283769004400439
+        ],
+        "pixel_auroc": [
+          0.9069896506784033,
+          0.9238621445119054
+        ],
+        "aupro": [
+          0.6978627782289124,
+          0.7369613862780945
+        ],
+        "miou": [
+          0.11481051996826207,
+          0.13444795444915794
+        ],
+        "false_reject": [
+          0.05486991199119912,
+          0.08871369636963695
+        ],
+        "miss": [
+          0.43083333333333335,
+          0.48335416666666664
+        ]
+      },
+      "macro_false_reject": 0.07123212321232124,
+      "macro_miss": 0.4566666666666667,
+      "per_class": {
+        "candle": {
+          "image_auroc": 0.8054,
+          "pixel_auroc": 0.8755609620481485,
+          "aupro": 0.7502350151590391,
+          "miou": 0.11235169041581392,
+          "ci95": {
+            "image_auroc": [
+              0.7401749999999999,
+              0.8632224999999999
+            ],
+            "pixel_auroc": [
+              0.8325523248835344,
+              0.9174118373519567
+            ],
+            "aupro": [
+              0.7059392919501974,
+              0.7944689795016712
+            ],
+            "miou": [
+              0.07984941587986889,
+              0.1476249788319433
+            ],
+            "false_reject": [
+              0.03,
+              0.14
+            ],
+            "miss": [
+              0.35,
+              0.55
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 44,
+          "test_false_rejected": 8,
+          "threshold": 2.2458982467651367,
+          "test_false_reject": 0.08,
+          "test_miss": 0.44,
+          "pixel_auroc_exact": 0.8755713162555506,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 16589,
+          "fit_patches": 829440,
+          "seconds_fit": 171.8,
+          "ms_per_test_image": 96.8
+        },
+        "capsules": {
+          "image_auroc": 0.7108333333333333,
+          "pixel_auroc": 0.9664319814475213,
+          "aupro": 0.7193569062337904,
+          "miou": 0.10577352320152061,
+          "ci95": {
+            "image_auroc": [
+              0.629325,
+              0.7861833333333333
+            ],
+            "pixel_auroc": [
+              0.9545436019967356,
+              0.9745499165104151
+            ],
+            "aupro": [
+              0.6505704586348313,
+              0.778694759356607
+            ],
+            "miou": [
+              0.06917818137335786,
+              0.14127404507472488
+            ],
+            "false_reject": [
+              0.03333333333333333,
+              0.2
+            ],
+            "miss": [
+              0.48,
+              0.67
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 60,
+          "test_missed": 57,
+          "test_false_rejected": 7,
+          "threshold": 2.717440128326416,
+          "test_false_reject": 0.11666666666666667,
+          "test_miss": 0.57,
+          "pixel_auroc_exact": 0.9664360085590377,
+          "fit_images": 488,
+          "val_images": 54,
+          "test_images": 160,
+          "bank_size": 9995,
+          "fit_patches": 499712,
+          "seconds_fit": 51.9,
+          "ms_per_test_image": 60.7
+        },
+        "cashew": {
+          "image_auroc": 0.8622,
+          "pixel_auroc": 0.7539380247833154,
+          "aupro": 0.6685683930416341,
+          "miou": 0.12265116826573812,
+          "ci95": {
+            "image_auroc": [
+              0.8039700000000001,
+              0.91601
+            ],
+            "pixel_auroc": [
+              0.7044644770896415,
+              0.8120609073328984
+            ],
+            "aupro": [
+              0.5899659064414935,
+              0.746448293888668
+            ],
+            "miou": [
+              0.08708648002241212,
+              0.15993284155506984
+            ],
+            "false_reject": [
+              0.0,
+              0.06
+            ],
+            "miss": [
+              0.38,
+              0.58
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 48,
+          "test_false_rejected": 1,
+          "threshold": 3.3036158084869385,
+          "test_false_reject": 0.02,
+          "test_miss": 0.48,
+          "pixel_auroc_exact": 0.7539396113390575,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 8295,
+          "fit_patches": 414720,
+          "seconds_fit": 35.9,
+          "ms_per_test_image": 52.3
+        },
+        "chewinggum": {
+          "image_auroc": 0.8595,
+          "pixel_auroc": 0.9522543161161354,
+          "aupro": 0.5363254068319888,
+          "miou": 0.3000495518877953,
+          "ci95": {
+            "image_auroc": [
+              0.79817,
+              0.913205
+            ],
+            "pixel_auroc": [
+              0.9265494838682027,
+              0.9725279194889724
+            ],
+            "aupro": [
+              0.4583143197711413,
+              0.6171208936244879
+            ],
+            "miou": [
+              0.24151930401399913,
+              0.36087219900808326
+            ],
+            "false_reject": [
+              0.0,
+              0.14
+            ],
+            "miss": [
+              0.24,
+              0.42
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 33,
+          "test_false_rejected": 3,
+          "threshold": 2.860183000564575,
+          "test_false_reject": 0.06,
+          "test_miss": 0.33,
+          "pixel_auroc_exact": 0.9522581692655671,
+          "fit_images": 408,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 8356,
+          "fit_patches": 417792,
+          "seconds_fit": 37.5,
+          "ms_per_test_image": 51.9
+        },
+        "fryum": {
+          "image_auroc": 0.8556,
+          "pixel_auroc": 0.8819152718938302,
+          "aupro": 0.7422286270813168,
+          "miou": 0.09384401937708337,
+          "ci95": {
+            "image_auroc": [
+              0.794195,
+              0.9080050000000001
+            ],
+            "pixel_auroc": [
+              0.8699317269830439,
+              0.89507921126128
+            ],
+            "aupro": [
+              0.6839270302151145,
+              0.7940695278036685
+            ],
+            "miou": [
+              0.0638967007034044,
+              0.1247916682494127
+            ],
+            "false_reject": [
+              0.02,
+              0.18049999999999955
+            ],
+            "miss": [
+              0.22,
+              0.39
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 30,
+          "test_false_rejected": 5,
+          "threshold": 3.799410104751587,
+          "test_false_reject": 0.1,
+          "test_miss": 0.3,
+          "pixel_auroc_exact": 0.8819160725024447,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 8295,
+          "fit_patches": 414720,
+          "seconds_fit": 36.0,
+          "ms_per_test_image": 52.0
+        },
+        "macaroni1": {
+          "image_auroc": 0.7147,
+          "pixel_auroc": 0.9289949719604461,
+          "aupro": 0.6887633785990671,
+          "miou": 0.061148125433436354,
+          "ci95": {
+            "image_auroc": [
+              0.6424974999999999,
+              0.7829200000000001
+            ],
+            "pixel_auroc": [
+              0.8900084857039987,
+              0.9559058338713559
+            ],
+            "aupro": [
+              0.6134467152527909,
+              0.7649152780411014
+            ],
+            "miou": [
+              0.03648604619634724,
+              0.08867892351992142
+            ],
+            "false_reject": [
+              0.01,
+              0.1
+            ],
+            "miss": [
+              0.64,
+              0.82
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 73,
+          "test_false_rejected": 5,
+          "threshold": 2.7697296142578125,
+          "test_false_reject": 0.05,
+          "test_miss": 0.73,
+          "pixel_auroc_exact": 0.9290202815546084,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 16589,
+          "fit_patches": 829440,
+          "seconds_fit": 142.6,
+          "ms_per_test_image": 97.7
+        },
+        "macaroni2": {
+          "image_auroc": 0.5261,
+          "pixel_auroc": 0.8889541986631017,
+          "aupro": 0.5765755129829174,
+          "miou": 0.002319205803741886,
+          "ci95": {
+            "image_auroc": [
+              0.4433875,
+              0.6047399999999999
+            ],
+            "pixel_auroc": [
+              0.8541158189895285,
+              0.9164440890363063
+            ],
+            "aupro": [
+              0.513460791309425,
+              0.6440858858299008
+            ],
+            "miou": [
+              0.0,
+              0.005823596792668957
+            ],
+            "false_reject": [
+              0.06,
+              0.19
+            ],
+            "miss": [
+              0.83,
+              0.95
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 89,
+          "test_false_rejected": 12,
+          "threshold": 3.008172035217285,
+          "test_false_reject": 0.12,
+          "test_miss": 0.89,
+          "pixel_auroc_exact": 0.8889574919460752,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 16589,
+          "fit_patches": 829440,
+          "seconds_fit": 141.5,
+          "ms_per_test_image": 97.4
+        },
+        "pcb1": {
+          "image_auroc": 0.93,
+          "pixel_auroc": 0.9836821407108014,
+          "aupro": 0.8272637030144446,
+          "miou": 0.22406590646738228,
+          "ci95": {
+            "image_auroc": [
+              0.8868900000000001,
+              0.9625
+            ],
+            "pixel_auroc": [
+              0.9664174555058725,
+              0.993148588807541
+            ],
+            "aupro": [
+              0.774325590746717,
+              0.8800048712218409
+            ],
+            "miou": [
+              0.18542250868476223,
+              0.26362533242099173
+            ],
+            "false_reject": [
+              0.02,
+              0.12
+            ],
+            "miss": [
+              0.13,
+              0.29
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 21,
+          "test_false_rejected": 7,
+          "threshold": 2.9175944328308105,
+          "test_false_reject": 0.07,
+          "test_miss": 0.21,
+          "pixel_auroc_exact": 0.9836856490161029,
+          "fit_images": 814,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 16671,
+          "fit_patches": 833536,
+          "seconds_fit": 143.7,
+          "ms_per_test_image": 97.2
+        },
+        "pcb2": {
+          "image_auroc": 0.9221,
+          "pixel_auroc": 0.9465596259525862,
+          "aupro": 0.8338531554209859,
+          "miou": 0.14856407146488265,
+          "ci95": {
+            "image_auroc": [
+              0.8828825,
+              0.9567074999999999
+            ],
+            "pixel_auroc": [
+              0.9053203628108198,
+              0.9758759589430694
+            ],
+            "aupro": [
+              0.7864654428757284,
+              0.8763481832669218
+            ],
+            "miou": [
+              0.1183312129536928,
+              0.18268875495153186
+            ],
+            "false_reject": [
+              0.0,
+              0.03
+            ],
+            "miss": [
+              0.23,
+              0.4002499999999998
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 32,
+          "test_false_rejected": 1,
+          "threshold": 2.9409384727478027,
+          "test_false_reject": 0.01,
+          "test_miss": 0.32,
+          "pixel_auroc_exact": 0.9465651251102148,
+          "fit_images": 811,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 16610,
+          "fit_patches": 830464,
+          "seconds_fit": 142.8,
+          "ms_per_test_image": 96.4
+        },
+        "pcb3": {
+          "image_auroc": 0.8374257425742574,
+          "pixel_auroc": 0.9440534056246623,
+          "aupro": 0.7854989213714308,
+          "miou": 0.14298219856817845,
+          "ci95": {
+            "image_auroc": [
+              0.781279702970297,
+              0.8850569306930693
+            ],
+            "pixel_auroc": [
+              0.917370845910875,
+              0.9702592946698441
+            ],
+            "aupro": [
+              0.7239239620622675,
+              0.8419675500306463
+            ],
+            "miou": [
+              0.10868770252410744,
+              0.17754919113317227
+            ],
+            "false_reject": [
+              0.06930693069306931,
+              0.19801980198019803
+            ],
+            "miss": [
+              0.33,
+              0.51
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 101,
+          "test_missed": 41,
+          "test_false_rejected": 13,
+          "threshold": 2.827462673187256,
+          "test_false_reject": 0.12871287128712872,
+          "test_miss": 0.41,
+          "pixel_auroc_exact": 0.9440564897838811,
+          "fit_images": 815,
+          "val_images": 90,
+          "test_images": 201,
+          "bank_size": 16692,
+          "fit_patches": 834560,
+          "seconds_fit": 143.8,
+          "ms_per_test_image": 96.0
+        },
+        "pcb4": {
+          "image_auroc": 0.8662376237623762,
+          "pixel_auroc": 0.8944943543193841,
+          "aupro": 0.5878302656955811,
+          "miou": 0.05240429723203415,
+          "ci95": {
+            "image_auroc": [
+              0.8151386138613861,
+              0.910710396039604
+            ],
+            "pixel_auroc": [
+              0.8838501424025493,
+              0.9057372548353632
+            ],
+            "aupro": [
+              0.4962525491880777,
+              0.690200166273319
+            ],
+            "miou": [
+              0.03041889283630033,
+              0.07530521238637643
+            ],
+            "false_reject": [
+              0.019801980198019802,
+              0.10891089108910891
+            ],
+            "miss": [
+              0.36,
+              0.56
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 101,
+          "test_missed": 46,
+          "test_false_rejected": 6,
+          "threshold": 3.1883492469787598,
+          "test_false_reject": 0.0594059405940594,
+          "test_miss": 0.46,
+          "pixel_auroc_exact": 0.8944959220450871,
+          "fit_images": 814,
+          "val_images": 90,
+          "test_images": 201,
+          "bank_size": 16671,
+          "fit_patches": 833536,
+          "seconds_fit": 141.4,
+          "ms_per_test_image": 96.5
+        },
+        "pipe_fryum": {
+          "image_auroc": 0.8456,
+          "pixel_auroc": 0.9640094883952803,
+          "aupro": 0.8777164677546808,
+          "miou": 0.13127363803098444,
+          "ci95": {
+            "image_auroc": [
+              0.77819,
+              0.9038050000000001
+            ],
+            "pixel_auroc": [
+              0.9537463686439818,
+              0.9769068901174
+            ],
+            "aupro": [
+              0.850318557378561,
+              0.9105870127071395
+            ],
+            "miou": [
+              0.1030292432898113,
+              0.15922225764559714
+            ],
+            "false_reject": [
+              0.0,
+              0.1
+            ],
+            "miss": [
+              0.25,
+              0.44
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 34,
+          "test_false_rejected": 2,
+          "threshold": 4.379860877990723,
+          "test_false_reject": 0.04,
+          "test_miss": 0.34,
+          "pixel_auroc_exact": 0.9640105225119264,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 8295,
+          "fit_patches": 414720,
+          "seconds_fit": 36.4,
+          "ms_per_test_image": 51.8
+        }
+      },
+      "by_size": [
+        {
+          "group": "kecil (< 0,2%)",
+          "n": 619,
+          "detected": 0.3683360258481422,
+          "miou": 0.05447092957512671
+        },
+        {
+          "group": "sedang (0,2 sampai 1%)",
+          "n": 388,
+          "detected": 0.6778350515463918,
+          "miou": 0.1747855603458641
+        },
+        {
+          "group": "besar (> 1%)",
+          "n": 193,
+          "detected": 0.8341968911917098,
+          "miou": 0.24978464659927696
+        }
+      ],
+      "by_defect": {
+        "candle": [
+          {
+            "defect": "chunk of wax missing",
+            "n": 12,
+            "detected": 0.5833333333333334,
+            "miou": 0.15850677207725272
+          },
+          {
+            "defect": "chunk of wax missing,damaged corner of packaging,different colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "chunk of wax missing,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.486013986013986
+          },
+          {
+            "defect": "chunk of wax missing,foreign particals on candle",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "damaged corner of packaging",
+            "n": 18,
+            "detected": 0.5555555555555556,
+            "miou": 0.13292552249591927
+          },
+          {
+            "defect": "damaged corner of packaging,different colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "damaged corner of packaging,different colour spot,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.008733624454148471
+          },
+          {
+            "defect": "damaged corner of packaging,extra wax in candle",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "damaged corner of packaging,foreign particals on candle",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.10837438423645321
+          },
+          {
+            "defect": "damaged corner of packaging,weird candle wick",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "different colour spot",
+            "n": 15,
+            "detected": 0.5333333333333333,
+            "miou": 0.010127795614526832
+          },
+          {
+            "defect": "different colour spot,foreign particals on candle",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "different colour spot,wax melded out of the candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.4305239179954442
+          },
+          {
+            "defect": "extra wax in candle",
+            "n": 9,
+            "detected": 0.5555555555555556,
+            "miou": 0.149869114715654
+          },
+          {
+            "defect": "foreign particals on candle",
+            "n": 12,
+            "detected": 0.5,
+            "miou": 0.04975390349823417
+          },
+          {
+            "defect": "foreign particals on candle,wax melded out of the candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.12404580152671756
+          },
+          {
+            "defect": "wax melded out of the candle",
+            "n": 12,
+            "detected": 0.8333333333333334,
+            "miou": 0.2866801319169633
+          },
+          {
+            "defect": "weird candle wick",
+            "n": 9,
+            "detected": 0.4444444444444444,
+            "miou": 0.015157209069272204
+          },
+          {
+            "defect": "weird candle wick,different colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          }
+        ],
+        "capsules": [
+          {
+            "defect": "bubble",
+            "n": 30,
+            "detected": 0.16666666666666666,
+            "miou": 0.018225419664268588
+          },
+          {
+            "defect": "bubble,discolor",
+            "n": 15,
+            "detected": 0.26666666666666666,
+            "miou": 0.0
+          },
+          {
+            "defect": "bubble,discolor,scratch",
+            "n": 15,
+            "detected": 0.2,
+            "miou": 0.004301075268817204
+          },
+          {
+            "defect": "bubble,discolor,scratch,leak",
+            "n": 12,
+            "detected": 0.75,
+            "miou": 0.30025250003169984
+          },
+          {
+            "defect": "bubble,discolor,scratch,leak,misshape",
+            "n": 28,
+            "detected": 0.7857142857142857,
+            "miou": 0.22725155717183382
+          }
+        ],
+        "cashew": [
+          {
+            "defect": "burnt",
+            "n": 10,
+            "detected": 0.7,
+            "miou": 0.14696240003579894
+          },
+          {
+            "defect": "burnt,corner or edge breakage",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.25228277532158805
+          },
+          {
+            "defect": "burnt,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.44041450777202074
+          },
+          {
+            "defect": "burnt,same colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "corner or edge breakage",
+            "n": 14,
+            "detected": 0.7857142857142857,
+            "miou": 0.2780404125246349
+          },
+          {
+            "defect": "corner or edge breakage,small scratches",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "different colour spot",
+            "n": 9,
+            "detected": 0.5555555555555556,
+            "miou": 0.15391913168892968
+          },
+          {
+            "defect": "different colour spot,same colour spot",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "different colour spot,small holes",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "middle breakage",
+            "n": 6,
+            "detected": 0.8333333333333334,
+            "miou": 0.3445851361274042
+          },
+          {
+            "defect": "middle breakage,same colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.2409090909090909
+          },
+          {
+            "defect": "middle breakage,small holes",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1908831908831909
+          },
+          {
+            "defect": "same colour spot",
+            "n": 10,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small holes",
+            "n": 20,
+            "detected": 0.45,
+            "miou": 0.07582473300277154
+          },
+          {
+            "defect": "small scratches",
+            "n": 15,
+            "detected": 0.26666666666666666,
+            "miou": 0.0
+          },
+          {
+            "defect": "stuck together",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.09281284144053879
+          }
+        ],
+        "chewinggum": [
+          {
+            "defect": "chunk of gum missing",
+            "n": 16,
+            "detected": 0.9375,
+            "miou": 0.49157433922618976
+          },
+          {
+            "defect": "chunk of gum missing,corner missing",
+            "n": 7,
+            "detected": 0.8571428571428571,
+            "miou": 0.3471192032624831
+          },
+          {
+            "defect": "chunk of gum missing,corner missing,small cracks",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.6001651475025742
+          },
+          {
+            "defect": "chunk of gum missing,scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.636734693877551
+          },
+          {
+            "defect": "chunk of gum missing,scratches,small cracks",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.6339668615984406
+          },
+          {
+            "defect": "chunk of gum missing,small cracks",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.5727831443908322
+          },
+          {
+            "defect": "corner missing",
+            "n": 13,
+            "detected": 0.8461538461538461,
+            "miou": 0.22450859746890764
+          },
+          {
+            "defect": "corner missing,scratches",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.11872025847688283
+          },
+          {
+            "defect": "corner missing,similar colour spot",
+            "n": 3,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "corner missing,similar colour spot,small cracks",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "corner missing,small cracks",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.543386274285925
+          },
+          {
+            "defect": "scratches",
+            "n": 9,
+            "detected": 0.2222222222222222,
+            "miou": 0.028956228956228958
+          },
+          {
+            "defect": "scratches,similar colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "scratches,similar colour spot,small cracks",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 19,
+            "detected": 0.15789473684210525,
+            "miou": 0.001174812030075188
+          }
+        ],
+        "fryum": [
+          {
+            "defect": "burnt",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.25063403413614765
+          },
+          {
+            "defect": "corner or edge breakage",
+            "n": 8,
+            "detected": 0.75,
+            "miou": 0.1417084585303416
+          },
+          {
+            "defect": "corner or edge breakage,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "different colour spot",
+            "n": 14,
+            "detected": 0.5,
+            "miou": 0.018251097907517437
+          },
+          {
+            "defect": "different colour spot,similar colour spot",
+            "n": 4,
+            "detected": 0.25,
+            "miou": 0.0
+          },
+          {
+            "defect": "fryum stuck together",
+            "n": 20,
+            "detected": 1.0,
+            "miou": 0.02780098048084379
+          },
+          {
+            "defect": "middle breakage",
+            "n": 18,
+            "detected": 0.8333333333333334,
+            "miou": 0.23915970959286514
+          },
+          {
+            "defect": "middle breakage,similar colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.21323529411764705
+          },
+          {
+            "defect": "middle breakage,small scratches",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.20317538000921237
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 12,
+            "detected": 0.3333333333333333,
+            "miou": 0.02138520971302428
+          },
+          {
+            "defect": "similar colour spot,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "similar colour spot,small scratches",
+            "n": 4,
+            "detected": 0.5,
+            "miou": 0.0006024096385542169
+          },
+          {
+            "defect": "small scratches",
+            "n": 6,
+            "detected": 0.16666666666666666,
+            "miou": 0.0
+          }
+        ],
+        "macaroni1": [
+          {
+            "defect": "chip around edge and corner",
+            "n": 17,
+            "detected": 0.5882352941176471,
+            "miou": 0.15476614754213366
+          },
+          {
+            "defect": "chip around edge and corner,small cracks",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.1044776119402985
+          },
+          {
+            "defect": "chip around edge and corner,small scratches",
+            "n": 6,
+            "detected": 0.16666666666666666,
+            "miou": 0.07854406130268199
+          },
+          {
+            "defect": "different colour spot",
+            "n": 15,
+            "detected": 0.13333333333333333,
+            "miou": 0.008333333333333333
+          },
+          {
+            "defect": "different colour spot,similar colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "middle breakage,small scratches",
+            "n": 10,
+            "detected": 0.8,
+            "miou": 0.2418405841804659
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 21,
+            "detected": 0.09523809523809523,
+            "miou": 0.0
+          },
+          {
+            "defect": "small cracks",
+            "n": 11,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small cracks,small scratches",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small scratches",
+            "n": 16,
+            "detected": 0.1875,
+            "miou": 0.016260162601626018
+          }
+        ],
+        "macaroni2": [
+          {
+            "defect": "breakage down the middle",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1134020618556701
+          },
+          {
+            "defect": "breakage down the middle,small scratches",
+            "n": 9,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "color spot similar to the object",
+            "n": 23,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "different color spot",
+            "n": 12,
+            "detected": 0.25,
+            "miou": 0.0
+          },
+          {
+            "defect": "small chip around edge",
+            "n": 19,
+            "detected": 0.2631578947368421,
+            "miou": 0.006237816764132553
+          },
+          {
+            "defect": "small chip around edge,small scratches",
+            "n": 6,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small cracks",
+            "n": 7,
+            "detected": 0.14285714285714285,
+            "miou": 0.0
+          },
+          {
+            "defect": "small cracks,small scratches",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small scratches",
+            "n": 16,
+            "detected": 0.0,
+            "miou": 0.0
+          }
+        ],
+        "pcb1": [
+          {
+            "defect": "bent",
+            "n": 14,
+            "detected": 0.7857142857142857,
+            "miou": 0.14364579775838532
+          },
+          {
+            "defect": "bent,melt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1863799283154122
+          },
+          {
+            "defect": "melt",
+            "n": 46,
+            "detected": 0.7608695652173914,
+            "miou": 0.20552751631018787
+          },
+          {
+            "defect": "melt,missing",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 5,
+            "detected": 0.8,
+            "miou": 0.10020095967043514
+          },
+          {
+            "defect": "melt,scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.017687520471667214
+          },
+          {
+            "defect": "missing",
+            "n": 17,
+            "detected": 0.7647058823529411,
+            "miou": 0.38157067021940655
+          },
+          {
+            "defect": "scratch",
+            "n": 14,
+            "detected": 0.9285714285714286,
+            "miou": 0.22666068448438179
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.5762605042016806
+          }
+        ],
+        "pcb2": [
+          {
+            "defect": "bent",
+            "n": 12,
+            "detected": 0.6666666666666666,
+            "miou": 0.11947400303528315
+          },
+          {
+            "defect": "bent,melt",
+            "n": 3,
+            "detected": 0.6666666666666666,
+            "miou": 0.09641564113624912
+          },
+          {
+            "defect": "melt",
+            "n": 48,
+            "detected": 0.75,
+            "miou": 0.17195423159905418
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 4,
+            "detected": 0.5,
+            "miou": 0.06509384775808133
+          },
+          {
+            "defect": "missing",
+            "n": 17,
+            "detected": 0.4117647058823529,
+            "miou": 0.1272783575274669
+          },
+          {
+            "defect": "scratch",
+            "n": 14,
+            "detected": 0.7857142857142857,
+            "miou": 0.17353757842454834
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.01301775147928994
+          }
+        ],
+        "pcb3": [
+          {
+            "defect": "bent",
+            "n": 19,
+            "detected": 0.9473684210526315,
+            "miou": 0.2887759615350495
+          },
+          {
+            "defect": "bent,melt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.29916897506925205
+          },
+          {
+            "defect": "melt",
+            "n": 38,
+            "detected": 0.47368421052631576,
+            "miou": 0.09047218259613034
+          },
+          {
+            "defect": "melt,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.1903381431913626
+          },
+          {
+            "defect": "melt,scratch,missing",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "missing",
+            "n": 16,
+            "detected": 0.375,
+            "miou": 0.08898005797861944
+          },
+          {
+            "defect": "scratch",
+            "n": 20,
+            "detected": 0.6,
+            "miou": 0.1556770072086396
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.0782336578581363
+          }
+        ],
+        "pcb4": [
+          {
+            "defect": "burnt",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "burnt,dirt",
+            "n": 4,
+            "detected": 0.25,
+            "miou": 0.017524401064773737
+          },
+          {
+            "defect": "burnt,extra",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "burnt,scratch,dirt",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "damage",
+            "n": 7,
+            "detected": 0.5714285714285714,
+            "miou": 0.13706659407229724
+          },
+          {
+            "defect": "damage,dirt",
+            "n": 6,
+            "detected": 0.5,
+            "miou": 0.04117450901240852
+          },
+          {
+            "defect": "damage,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1235632183908046
+          },
+          {
+            "defect": "extra",
+            "n": 12,
+            "detected": 0.5,
+            "miou": 0.12086408107115292
+          },
+          {
+            "defect": "extra,dirt",
+            "n": 10,
+            "detected": 0.9,
+            "miou": 0.048122609909401565
+          },
+          {
+            "defect": "missing",
+            "n": 19,
+            "detected": 0.5263157894736842,
+            "miou": 0.014835219024580909
+          },
+          {
+            "defect": "missing,damage",
+            "n": 3,
+            "detected": 0.6666666666666666,
+            "miou": 0.032105760151085926
+          },
+          {
+            "defect": "missing,damage,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "missing,dirt",
+            "n": 5,
+            "detected": 0.4,
+            "miou": 0.0
+          },
+          {
+            "defect": "missing,wrong place",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.40286186020913595
+          },
+          {
+            "defect": "scratch",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.19975490196078433
+          },
+          {
+            "defect": "scratch,damage",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "scratch,damage,dirt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.17843866171003717
+          },
+          {
+            "defect": "scratch,damage,extra",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "scratch,dirt",
+            "n": 3,
+            "detected": 0.6666666666666666,
+            "miou": 0.03396772425602183
+          },
+          {
+            "defect": "scratch,extra",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.14613487821398205
+          },
+          {
+            "defect": "scratch,extra,dirt",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "scratch,extra,wrong place",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "scratch,missing,dirt",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "wrong place",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.03486238532110092
+          },
+          {
+            "defect": "wrong place,dirt",
+            "n": 9,
+            "detected": 0.5555555555555556,
+            "miou": 0.009529572047318366
+          }
+        ],
+        "pipe_fryum": [
+          {
+            "defect": "burnt",
+            "n": 15,
+            "detected": 0.5333333333333333,
+            "miou": 0.153166159214419
+          },
+          {
+            "defect": "burnt,small scratches",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "corner and edge breakage",
+            "n": 15,
+            "detected": 0.9333333333333333,
+            "miou": 0.1868341847024685
+          },
+          {
+            "defect": "different colour spot",
+            "n": 10,
+            "detected": 0.8,
+            "miou": 0.05104609091810162
+          },
+          {
+            "defect": "middle breakage,small cracks",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.21110962086328655
+          },
+          {
+            "defect": "middle breakage,small scratches,small cracks",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.3780222608427173
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 20,
+            "detected": 0.15,
+            "miou": 0.017727789507877213
+          },
+          {
+            "defect": "similar colour spot,small scratches",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small scratches",
+            "n": 18,
+            "detected": 0.7222222222222222,
+            "miou": 0.11690224252503678
+          },
+          {
+            "defect": "stuck together",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.22793548110053202
+          }
+        ]
+      }
+    },
+    "resnet18": {
+      "label": "PatchCore ResNet18 (model browser)",
+      "macro": {
+        "image_auroc": 0.9232658140814082,
+        "pixel_auroc": 0.9797933507948869,
+        "aupro": 0.8583473631614672,
+        "miou": 0.11899399858690611
+      },
+      "macro_ci95": {
+        "image_auroc": [
+          0.9116950598184818,
+          0.9341062761276128
+        ],
+        "pixel_auroc": [
+          0.9771377967633117,
+          0.981875223049721
+        ],
+        "aupro": [
+          0.8446656374068863,
+          0.8717698397852667
+        ],
+        "miou": [
+          0.11038051747759949,
+          0.12737883966815944
+        ],
+        "false_reject": [
+          0.059345434543454346,
+          0.09266240374037404
+        ],
+        "miss": [
+          0.20333333333333334,
+          0.24585416666666665
+        ]
+      },
+      "macro_false_reject": 0.07628987898789878,
+      "macro_miss": 0.22416666666666665,
+      "per_class": {
+        "candle": {
+          "image_auroc": 0.9805,
+          "pixel_auroc": 0.9869568301613919,
+          "aupro": 0.9406280574332911,
+          "miou": 0.07766516448854596,
+          "ci95": {
+            "image_auroc": [
+              0.9655900000000001,
+              0.9919025
+            ],
+            "pixel_auroc": [
+              0.9807442821493356,
+              0.9918042991678323
+            ],
+            "aupro": [
+              0.9154038695073918,
+              0.9617253721540437
+            ],
+            "miou": [
+              0.060085969778906144,
+              0.09878532467795755
+            ],
+            "false_reject": [
+              0.06,
+              0.19
+            ],
+            "miss": [
+              0.03,
+              0.12
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 7,
+          "test_false_rejected": 12,
+          "threshold": 1.2599053382873535,
+          "test_false_reject": 0.12,
+          "test_miss": 0.07,
+          "pixel_auroc_exact": 0.9869613532723864,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 4096,
+          "fit_patches": 829440,
+          "seconds_fit": 194.2,
+          "ms_per_test_image": 57.7
+        },
+        "capsules": {
+          "image_auroc": 0.7313333333333333,
+          "pixel_auroc": 0.9721165371733441,
+          "aupro": 0.7049283393083124,
+          "miou": 0.17783431576423214,
+          "ci95": {
+            "image_auroc": [
+              0.6498208333333334,
+              0.8050041666666667
+            ],
+            "pixel_auroc": [
+              0.9556563298313103,
+              0.9833040695896219
+            ],
+            "aupro": [
+              0.6352291160401553,
+              0.7685053627999928
+            ],
+            "miou": [
+              0.12877332652541335,
+              0.22749335555505493
+            ],
+            "false_reject": [
+              0.08333333333333333,
+              0.26666666666666666
+            ],
+            "miss": [
+              0.34,
+              0.54
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 60,
+          "test_missed": 44,
+          "test_false_rejected": 10,
+          "threshold": 2.3325774669647217,
+          "test_false_reject": 0.16666666666666666,
+          "test_miss": 0.44,
+          "pixel_auroc_exact": 0.972123799443495,
+          "fit_images": 488,
+          "val_images": 54,
+          "test_images": 160,
+          "bank_size": 4096,
+          "fit_patches": 499712,
+          "seconds_fit": 119.1,
+          "ms_per_test_image": 57.1
+        },
+        "cashew": {
+          "image_auroc": 0.9534,
+          "pixel_auroc": 0.9896476082464932,
+          "aupro": 0.9247457407602008,
+          "miou": 0.0980592788830743,
+          "ci95": {
+            "image_auroc": [
+              0.919585,
+              0.9786
+            ],
+            "pixel_auroc": [
+              0.9857047894222707,
+              0.9925770956101717
+            ],
+            "aupro": [
+              0.9039999087350349,
+              0.9444783171651664
+            ],
+            "miou": [
+              0.06828933488137688,
+              0.12904295596487442
+            ],
+            "false_reject": [
+              0.02,
+              0.16
+            ],
+            "miss": [
+              0.09,
+              0.22024999999999978
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 16,
+          "test_false_rejected": 4,
+          "threshold": 1.5660061836242676,
+          "test_false_reject": 0.08,
+          "test_miss": 0.16,
+          "pixel_auroc_exact": 0.9896486579874122,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4096,
+          "fit_patches": 414720,
+          "seconds_fit": 97.2,
+          "ms_per_test_image": 64.2
+        },
+        "chewinggum": {
+          "image_auroc": 0.997,
+          "pixel_auroc": 0.9855839570382078,
+          "aupro": 0.8303674241249767,
+          "miou": 0.13496819548846029,
+          "ci95": {
+            "image_auroc": [
+              0.9898,
+              1.0
+            ],
+            "pixel_auroc": [
+              0.9777555791849923,
+              0.9913829149702864
+            ],
+            "aupro": [
+              0.7687696342382119,
+              0.8815866765445287
+            ],
+            "miou": [
+              0.11572329601765662,
+              0.15535496807227905
+            ],
+            "false_reject": [
+              0.0,
+              0.06
+            ],
+            "miss": [
+              0.0,
+              0.07
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 3,
+          "test_false_rejected": 1,
+          "threshold": 1.5455412864685059,
+          "test_false_reject": 0.02,
+          "test_miss": 0.03,
+          "pixel_auroc_exact": 0.9855863714433486,
+          "fit_images": 408,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4096,
+          "fit_patches": 417792,
+          "seconds_fit": 99.9,
+          "ms_per_test_image": 64.1
+        },
+        "fryum": {
+          "image_auroc": 0.9212,
+          "pixel_auroc": 0.9520245689368556,
+          "aupro": 0.8152602300936467,
+          "miou": 0.13923242023531496,
+          "ci95": {
+            "image_auroc": [
+              0.878195,
+              0.9566
+            ],
+            "pixel_auroc": [
+              0.9410174780520052,
+              0.9624543871580743
+            ],
+            "aupro": [
+              0.7584739777409244,
+              0.8657471251587614
+            ],
+            "miou": [
+              0.10754563078050604,
+              0.1726481950246736
+            ],
+            "false_reject": [
+              0.0,
+              0.1
+            ],
+            "miss": [
+              0.17,
+              0.34
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 25,
+          "test_false_rejected": 2,
+          "threshold": 1.6954249143600464,
+          "test_false_reject": 0.04,
+          "test_miss": 0.25,
+          "pixel_auroc_exact": 0.9520246833638636,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4096,
+          "fit_patches": 414720,
+          "seconds_fit": 96.3,
+          "ms_per_test_image": 65.1
+        },
+        "macaroni1": {
+          "image_auroc": 0.9304,
+          "pixel_auroc": 0.9853183458736032,
+          "aupro": 0.9104751935563498,
+          "miou": 0.052133444662967605,
+          "ci95": {
+            "image_auroc": [
+              0.8882924999999999,
+              0.96402
+            ],
+            "pixel_auroc": [
+              0.9789582815209994,
+              0.9898078876334903
+            ],
+            "aupro": [
+              0.8719074716264928,
+              0.942691270097957
+            ],
+            "miou": [
+              0.03423645811813777,
+              0.07291258436898493
+            ],
+            "false_reject": [
+              0.0,
+              0.08
+            ],
+            "miss": [
+              0.2,
+              0.38
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 29,
+          "test_false_rejected": 4,
+          "threshold": 1.4329348802566528,
+          "test_false_reject": 0.04,
+          "test_miss": 0.29,
+          "pixel_auroc_exact": 0.9853297290606453,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 4096,
+          "fit_patches": 829440,
+          "seconds_fit": 192.0,
+          "ms_per_test_image": 64.7
+        },
+        "macaroni2": {
+          "image_auroc": 0.7723,
+          "pixel_auroc": 0.9495410451713004,
+          "aupro": 0.7902977999171747,
+          "miou": 0.030187476159375823,
+          "ci95": {
+            "image_auroc": [
+              0.699755,
+              0.8339075
+            ],
+            "pixel_auroc": [
+              0.9302904210799795,
+              0.9663982334035155
+            ],
+            "aupro": [
+              0.710031986620169,
+              0.8654890124950324
+            ],
+            "miou": [
+              0.018764779570877254,
+              0.04473736399346322
+            ],
+            "false_reject": [
+              0.06,
+              0.18
+            ],
+            "miss": [
+              0.51,
+              0.69
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 60,
+          "test_false_rejected": 12,
+          "threshold": 1.8602501153945923,
+          "test_false_reject": 0.12,
+          "test_miss": 0.6,
+          "pixel_auroc_exact": 0.9495516041958857,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 4096,
+          "fit_patches": 829440,
+          "seconds_fit": 192.1,
+          "ms_per_test_image": 65.1
+        },
+        "pcb1": {
+          "image_auroc": 0.945,
+          "pixel_auroc": 0.9949778665458918,
+          "aupro": 0.8672593374317643,
+          "miou": 0.14727134971126385,
+          "ci95": {
+            "image_auroc": [
+              0.9124,
+              0.9695
+            ],
+            "pixel_auroc": [
+              0.9908090078005849,
+              0.996949865792162
+            ],
+            "aupro": [
+              0.8174762398729052,
+              0.9139129782435012
+            ],
+            "miou": [
+              0.11321373797988823,
+              0.1822467564513545
+            ],
+            "false_reject": [
+              0.01,
+              0.08
+            ],
+            "miss": [
+              0.23,
+              0.42
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 32,
+          "test_false_rejected": 4,
+          "threshold": 1.7417995929718018,
+          "test_false_reject": 0.04,
+          "test_miss": 0.32,
+          "pixel_auroc_exact": 0.9949822924467142,
+          "fit_images": 814,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 4096,
+          "fit_patches": 833536,
+          "seconds_fit": 191.9,
+          "ms_per_test_image": 64.0
+        },
+        "pcb2": {
+          "image_auroc": 0.9373,
+          "pixel_auroc": 0.9813257680413818,
+          "aupro": 0.8487160326356887,
+          "miou": 0.11941485740088996,
+          "ci95": {
+            "image_auroc": [
+              0.8984975,
+              0.9694075
+            ],
+            "pixel_auroc": [
+              0.9752313677008904,
+              0.9863283370232304
+            ],
+            "aupro": [
+              0.8015115409151499,
+              0.8897296334600134
+            ],
+            "miou": [
+              0.09902531586329641,
+              0.14026395324404772
+            ],
+            "false_reject": [
+              0.02,
+              0.12
+            ],
+            "miss": [
+              0.09,
+              0.23
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 16,
+          "test_false_rejected": 7,
+          "threshold": 1.5668095350265503,
+          "test_false_reject": 0.07,
+          "test_miss": 0.16,
+          "pixel_auroc_exact": 0.9813296282976729,
+          "fit_images": 811,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 4096,
+          "fit_patches": 830464,
+          "seconds_fit": 192.9,
+          "ms_per_test_image": 64.2
+        },
+        "pcb3": {
+          "image_auroc": 0.9227722772277228,
+          "pixel_auroc": 0.9857788097778338,
+          "aupro": 0.8583764925141698,
+          "miou": 0.11328636837493018,
+          "ci95": {
+            "image_auroc": [
+              0.8849480198019802,
+              0.9554504950495049
+            ],
+            "pixel_auroc": [
+              0.9802492387564118,
+              0.9902081438202813
+            ],
+            "aupro": [
+              0.8187769964643246,
+              0.8976273856039129
+            ],
+            "miou": [
+              0.08845141595033071,
+              0.1378595169374307
+            ],
+            "false_reject": [
+              0.009900990099009901,
+              0.0891089108910891
+            ],
+            "miss": [
+              0.24,
+              0.42
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 101,
+          "test_missed": 33,
+          "test_false_rejected": 5,
+          "threshold": 1.7024554014205933,
+          "test_false_reject": 0.04950495049504951,
+          "test_miss": 0.33,
+          "pixel_auroc_exact": 0.9857821096986042,
+          "fit_images": 815,
+          "val_images": 90,
+          "test_images": 201,
+          "bank_size": 4096,
+          "fit_patches": 834560,
+          "seconds_fit": 193.4,
+          "ms_per_test_image": 63.7
+        },
+        "pcb4": {
+          "image_auroc": 0.9915841584158416,
+          "pixel_auroc": 0.9831236099064735,
+          "aupro": 0.8717730181225257,
+          "miou": 0.21723860047199003,
+          "ci95": {
+            "image_auroc": [
+              0.9830643564356436,
+              0.998019801980198
+            ],
+            "pixel_auroc": [
+              0.9795879948837346,
+              0.9867444282391872
+            ],
+            "aupro": [
+              0.8440808272094581,
+              0.8969172204321701
+            ],
+            "miou": [
+              0.1941452069414492,
+              0.24350215610856016
+            ],
+            "false_reject": [
+              0.0297029702970297,
+              0.1188118811881188
+            ],
+            "miss": [
+              0.0,
+              0.07
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 101,
+          "test_missed": 3,
+          "test_false_rejected": 7,
+          "threshold": 1.6289142370224,
+          "test_false_reject": 0.06930693069306931,
+          "test_miss": 0.03,
+          "pixel_auroc_exact": 0.9831262955283482,
+          "fit_images": 814,
+          "val_images": 90,
+          "test_images": 201,
+          "bank_size": 4096,
+          "fit_patches": 833536,
+          "seconds_fit": 189.3,
+          "ms_per_test_image": 62.9
+        },
+        "pipe_fryum": {
+          "image_auroc": 0.9964,
+          "pixel_auroc": 0.9911252626658665,
+          "aupro": 0.9373406920395052,
+          "miou": 0.1206365114018282,
+          "ci95": {
+            "image_auroc": [
+              0.9892,
+              1.0
+            ],
+            "pixel_auroc": [
+              0.9883097653272935,
+              0.9944370177129285
+            ],
+            "aupro": [
+              0.9156035866778275,
+              0.9601627904869792
+            ],
+            "miou": [
+              0.08860873835854367,
+              0.15575673799528927
+            ],
+            "false_reject": [
+              0.02,
+              0.2
+            ],
+            "miss": [
+              0.0,
+              0.04
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 1,
+          "test_false_rejected": 5,
+          "threshold": 1.3734960556030273,
+          "test_false_reject": 0.1,
+          "test_miss": 0.01,
+          "pixel_auroc_exact": 0.9911266619943068,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4096,
+          "fit_patches": 414720,
+          "seconds_fit": 93.9,
+          "ms_per_test_image": 63.0
+        }
+      },
+      "by_size": [
+        {
+          "group": "kecil (< 0,2%)",
+          "n": 619,
+          "detected": 0.6332794830371568,
+          "miou": 0.03824144821588529
+        },
+        {
+          "group": "sedang (0,2 sampai 1%)",
+          "n": 388,
+          "detected": 0.8969072164948454,
+          "miou": 0.13532148746137462
+        },
+        {
+          "group": "besar (> 1%)",
+          "n": 193,
+          "detected": 0.9896373056994818,
+          "miou": 0.34516375504477187
+        }
+      ],
+      "by_defect": {
+        "candle": [
+          {
+            "defect": "chunk of wax missing",
+            "n": 12,
+            "detected": 0.9166666666666666,
+            "miou": 0.06419304804045445
+          },
+          {
+            "defect": "chunk of wax missing,damaged corner of packaging,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.03401797175866496
+          },
+          {
+            "defect": "chunk of wax missing,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.15792575132586917
+          },
+          {
+            "defect": "chunk of wax missing,foreign particals on candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.027357998957790515
+          },
+          {
+            "defect": "damaged corner of packaging",
+            "n": 18,
+            "detected": 0.8333333333333334,
+            "miou": 0.0671431477137984
+          },
+          {
+            "defect": "damaged corner of packaging,different colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "damaged corner of packaging,different colour spot,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0010152284263959391
+          },
+          {
+            "defect": "damaged corner of packaging,extra wax in candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "damaged corner of packaging,foreign particals on candle",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.035725246028802365
+          },
+          {
+            "defect": "damaged corner of packaging,weird candle wick",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.08282208588957055
+          },
+          {
+            "defect": "different colour spot",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.005717114134949336
+          },
+          {
+            "defect": "different colour spot,foreign particals on candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.00909090909090909
+          },
+          {
+            "defect": "different colour spot,wax melded out of the candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.08032299192520187
+          },
+          {
+            "defect": "extra wax in candle",
+            "n": 9,
+            "detected": 0.8888888888888888,
+            "miou": 0.1622470174157376
+          },
+          {
+            "defect": "foreign particals on candle",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.02423047782577215
+          },
+          {
+            "defect": "foreign particals on candle,wax melded out of the candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.025407166123778503
+          },
+          {
+            "defect": "wax melded out of the candle",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.22848630763761682
+          },
+          {
+            "defect": "weird candle wick",
+            "n": 9,
+            "detected": 0.8888888888888888,
+            "miou": 0.07401991198061376
+          },
+          {
+            "defect": "weird candle wick,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.053452115812917596
+          }
+        ],
+        "capsules": [
+          {
+            "defect": "bubble",
+            "n": 30,
+            "detected": 0.2,
+            "miou": 0.0
+          },
+          {
+            "defect": "bubble,discolor",
+            "n": 15,
+            "detected": 0.3333333333333333,
+            "miou": 0.0
+          },
+          {
+            "defect": "bubble,discolor,scratch",
+            "n": 15,
+            "detected": 0.4666666666666667,
+            "miou": 0.02288852211830389
+          },
+          {
+            "defect": "bubble,discolor,scratch,leak",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.3462647671363804
+          },
+          {
+            "defect": "bubble,discolor,scratch,leak,misshape",
+            "n": 28,
+            "detected": 0.9285714285714286,
+            "miou": 0.4744616621075747
+          }
+        ],
+        "cashew": [
+          {
+            "defect": "burnt",
+            "n": 10,
+            "detected": 0.9,
+            "miou": 0.1505716702265993
+          },
+          {
+            "defect": "burnt,corner or edge breakage",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.15892669961066186
+          },
+          {
+            "defect": "burnt,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.15611353711790393
+          },
+          {
+            "defect": "burnt,same colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "corner or edge breakage",
+            "n": 14,
+            "detected": 1.0,
+            "miou": 0.06891464751900571
+          },
+          {
+            "defect": "corner or edge breakage,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.14821428571428572
+          },
+          {
+            "defect": "different colour spot",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.01847618873143441
+          },
+          {
+            "defect": "different colour spot,same colour spot",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.057276718914808546
+          },
+          {
+            "defect": "different colour spot,small holes",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "middle breakage",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.2078687863909473
+          },
+          {
+            "defect": "middle breakage,same colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.021598968407479047
+          },
+          {
+            "defect": "middle breakage,small holes",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.10602847621932748
+          },
+          {
+            "defect": "same colour spot",
+            "n": 10,
+            "detected": 0.2,
+            "miou": 0.035119061420389994
+          },
+          {
+            "defect": "small holes",
+            "n": 20,
+            "detected": 1.0,
+            "miou": 0.01175625466809733
+          },
+          {
+            "defect": "small scratches",
+            "n": 15,
+            "detected": 0.6,
+            "miou": 0.037057581664460625
+          },
+          {
+            "defect": "stuck together",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.6525610278006786
+          }
+        ],
+        "chewinggum": [
+          {
+            "defect": "chunk of gum missing",
+            "n": 16,
+            "detected": 1.0,
+            "miou": 0.21439262462768566
+          },
+          {
+            "defect": "chunk of gum missing,corner missing",
+            "n": 7,
+            "detected": 1.0,
+            "miou": 0.25552270546381595
+          },
+          {
+            "defect": "chunk of gum missing,corner missing,small cracks",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.18121711016654116
+          },
+          {
+            "defect": "chunk of gum missing,scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.17837982832618027
+          },
+          {
+            "defect": "chunk of gum missing,scratches,small cracks",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.13123928377097105
+          },
+          {
+            "defect": "chunk of gum missing,small cracks",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.18515954862425837
+          },
+          {
+            "defect": "corner missing",
+            "n": 13,
+            "detected": 0.8461538461538461,
+            "miou": 0.07463887012511118
+          },
+          {
+            "defect": "corner missing,scratches",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.015515151515151515
+          },
+          {
+            "defect": "corner missing,similar colour spot",
+            "n": 3,
+            "detected": 1.0,
+            "miou": 0.1231554003059594
+          },
+          {
+            "defect": "corner missing,similar colour spot,small cracks",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.00709197797754207
+          },
+          {
+            "defect": "corner missing,small cracks",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.15227812794905504
+          },
+          {
+            "defect": "scratches",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.04415145352672957
+          },
+          {
+            "defect": "scratches,similar colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.045648464163822525
+          },
+          {
+            "defect": "scratches,similar colour spot,small cracks",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.04589751650424395
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 19,
+            "detected": 1.0,
+            "miou": 0.07875836645095162
+          }
+        ],
+        "fryum": [
+          {
+            "defect": "burnt",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.217720129823774
+          },
+          {
+            "defect": "corner or edge breakage",
+            "n": 8,
+            "detected": 1.0,
+            "miou": 0.05599502537689113
+          },
+          {
+            "defect": "corner or edge breakage,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1
+          },
+          {
+            "defect": "different colour spot",
+            "n": 14,
+            "detected": 0.35714285714285715,
+            "miou": 0.015053598054811532
+          },
+          {
+            "defect": "different colour spot,similar colour spot",
+            "n": 4,
+            "detected": 0.5,
+            "miou": 0.015251546594219501
+          },
+          {
+            "defect": "fryum stuck together",
+            "n": 20,
+            "detected": 1.0,
+            "miou": 0.38876304839401127
+          },
+          {
+            "defect": "middle breakage",
+            "n": 18,
+            "detected": 1.0,
+            "miou": 0.13184207241590307
+          },
+          {
+            "defect": "middle breakage,similar colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.11397720455908818
+          },
+          {
+            "defect": "middle breakage,small scratches",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.03485805056789923
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 12,
+            "detected": 0.5,
+            "miou": 0.04114993713200762
+          },
+          {
+            "defect": "similar colour spot,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "similar colour spot,small scratches",
+            "n": 4,
+            "detected": 0.5,
+            "miou": 0.07953331757817582
+          },
+          {
+            "defect": "small scratches",
+            "n": 6,
+            "detected": 0.0,
+            "miou": 0.0
+          }
+        ],
+        "macaroni1": [
+          {
+            "defect": "chip around edge and corner",
+            "n": 17,
+            "detected": 0.5294117647058824,
+            "miou": 0.11871609028440219
+          },
+          {
+            "defect": "chip around edge and corner,small cracks",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.03866621183694355
+          },
+          {
+            "defect": "chip around edge and corner,small scratches",
+            "n": 6,
+            "detected": 0.3333333333333333,
+            "miou": 0.04491817398794143
+          },
+          {
+            "defect": "different colour spot",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.014308410861037556
+          },
+          {
+            "defect": "different colour spot,similar colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "middle breakage,small scratches",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.05472826128025293
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 21,
+            "detected": 0.5238095238095238,
+            "miou": 0.05799980404423926
+          },
+          {
+            "defect": "small cracks",
+            "n": 11,
+            "detected": 0.8181818181818182,
+            "miou": 0.00411205828107443
+          },
+          {
+            "defect": "small cracks,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small scratches",
+            "n": 16,
+            "detected": 0.6875,
+            "miou": 0.05144951013259069
+          }
+        ],
+        "macaroni2": [
+          {
+            "defect": "breakage down the middle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.06612410986775177
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.09350649350649351
+          },
+          {
+            "defect": "breakage down the middle,small scratches",
+            "n": 9,
+            "detected": 0.7777777777777778,
+            "miou": 0.0518649814878123
+          },
+          {
+            "defect": "color spot similar to the object",
+            "n": 23,
+            "detected": 0.34782608695652173,
+            "miou": 0.05022702932190051
+          },
+          {
+            "defect": "different color spot",
+            "n": 12,
+            "detected": 0.9166666666666666,
+            "miou": 0.04457142300180189
+          },
+          {
+            "defect": "small chip around edge",
+            "n": 19,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small chip around edge,small scratches",
+            "n": 6,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small cracks",
+            "n": 7,
+            "detected": 0.2857142857142857,
+            "miou": 0.0018315018315018315
+          },
+          {
+            "defect": "small cracks,small scratches",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small scratches",
+            "n": 16,
+            "detected": 0.625,
+            "miou": 0.043089557245448655
+          }
+        ],
+        "pcb1": [
+          {
+            "defect": "bent",
+            "n": 14,
+            "detected": 1.0,
+            "miou": 0.10226463970312465
+          },
+          {
+            "defect": "bent,melt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.11702127659574468
+          },
+          {
+            "defect": "melt",
+            "n": 46,
+            "detected": 0.5869565217391305,
+            "miou": 0.09839927641323212
+          },
+          {
+            "defect": "melt,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.04684014869888476
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 5,
+            "detected": 0.8,
+            "miou": 0.13167457796923118
+          },
+          {
+            "defect": "melt,scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.3084010840108401
+          },
+          {
+            "defect": "missing",
+            "n": 17,
+            "detected": 0.7647058823529411,
+            "miou": 0.35551530196493164
+          },
+          {
+            "defect": "scratch",
+            "n": 14,
+            "detected": 0.42857142857142855,
+            "miou": 0.0727023940370967
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.5768342511991472
+          }
+        ],
+        "pcb2": [
+          {
+            "defect": "bent",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.0993680766414781
+          },
+          {
+            "defect": "bent,melt",
+            "n": 3,
+            "detected": 0.6666666666666666,
+            "miou": 0.042067490032350406
+          },
+          {
+            "defect": "melt",
+            "n": 48,
+            "detected": 0.8333333333333334,
+            "miou": 0.12507117147112973
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 4,
+            "detected": 0.75,
+            "miou": 0.14507006182874868
+          },
+          {
+            "defect": "missing",
+            "n": 17,
+            "detected": 0.6470588235294118,
+            "miou": 0.08772741898871604
+          },
+          {
+            "defect": "scratch",
+            "n": 14,
+            "detected": 1.0,
+            "miou": 0.1493783530723242
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.2282534032721369
+          }
+        ],
+        "pcb3": [
+          {
+            "defect": "bent",
+            "n": 19,
+            "detected": 0.9473684210526315,
+            "miou": 0.12726499720967305
+          },
+          {
+            "defect": "bent,melt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.09711964549483014
+          },
+          {
+            "defect": "melt",
+            "n": 38,
+            "detected": 0.5526315789473685,
+            "miou": 0.10157491797380842
+          },
+          {
+            "defect": "melt,missing",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.14601769911504425
+          },
+          {
+            "defect": "melt,scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "missing",
+            "n": 16,
+            "detected": 0.6875,
+            "miou": 0.12321591649263809
+          },
+          {
+            "defect": "scratch",
+            "n": 20,
+            "detected": 0.6,
+            "miou": 0.11117720565376013
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.23330059341109063
+          }
+        ],
+        "pcb4": [
+          {
+            "defect": "burnt",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.2974406616547085
+          },
+          {
+            "defect": "burnt,dirt",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.33761137321721735
+          },
+          {
+            "defect": "burnt,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.06914893617021277
+          },
+          {
+            "defect": "burnt,scratch,dirt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.2650201852291617
+          },
+          {
+            "defect": "damage",
+            "n": 7,
+            "detected": 0.8571428571428571,
+            "miou": 0.21136425675279866
+          },
+          {
+            "defect": "damage,dirt",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.2741430185718625
+          },
+          {
+            "defect": "damage,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.14918341708542712
+          },
+          {
+            "defect": "extra",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.16578942743682143
+          },
+          {
+            "defect": "extra,dirt",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.16051845153806607
+          },
+          {
+            "defect": "missing",
+            "n": 19,
+            "detected": 0.9473684210526315,
+            "miou": 0.24108463059901908
+          },
+          {
+            "defect": "missing,damage",
+            "n": 3,
+            "detected": 1.0,
+            "miou": 0.24191626644712058
+          },
+          {
+            "defect": "missing,damage,extra",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "missing,dirt",
+            "n": 5,
+            "detected": 1.0,
+            "miou": 0.24721865648414937
+          },
+          {
+            "defect": "missing,wrong place",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.3875417130144605
+          },
+          {
+            "defect": "scratch",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.10944382354874761
+          },
+          {
+            "defect": "scratch,damage",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1529497450837582
+          },
+          {
+            "defect": "scratch,damage,dirt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.28393726338561387
+          },
+          {
+            "defect": "scratch,damage,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.3228915662650602
+          },
+          {
+            "defect": "scratch,dirt",
+            "n": 3,
+            "detected": 1.0,
+            "miou": 0.19538442950684873
+          },
+          {
+            "defect": "scratch,extra",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.11619346128218802
+          },
+          {
+            "defect": "scratch,extra,dirt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.11036339165545088
+          },
+          {
+            "defect": "scratch,extra,wrong place",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.21016483516483517
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.2889439051075963
+          },
+          {
+            "defect": "scratch,missing,dirt",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.3340318925736464
+          },
+          {
+            "defect": "wrong place",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.1995304853146569
+          },
+          {
+            "defect": "wrong place,dirt",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.20926401525841828
+          }
+        ],
+        "pipe_fryum": [
+          {
+            "defect": "burnt",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.07205576340168257
+          },
+          {
+            "defect": "burnt,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.23461538461538461
+          },
+          {
+            "defect": "corner and edge breakage",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.09568668407769686
+          },
+          {
+            "defect": "different colour spot",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.008932171035978381
+          },
+          {
+            "defect": "middle breakage,small cracks",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.039036004981003694
+          },
+          {
+            "defect": "middle breakage,small scratches,small cracks",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.07754343530727714
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 20,
+            "detected": 0.95,
+            "miou": 0.029217807767228
+          },
+          {
+            "defect": "similar colour spot,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.15428571428571428
+          },
+          {
+            "defect": "small scratches",
+            "n": 18,
+            "detected": 1.0,
+            "miou": 0.10748919470481418
+          },
+          {
+            "defect": "stuck together",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.60057401875849
+          }
+        ]
+      }
+    },
+    "wrn50": {
+      "label": "PatchCore WideResNet50",
+      "macro": {
+        "image_auroc": 0.9164177667766777,
+        "pixel_auroc": 0.9808780963446172,
+        "aupro": 0.8648463397123208,
+        "miou": 0.11838029573684876
+      },
+      "macro_ci95": {
+        "image_auroc": [
+          0.9050767739273928,
+          0.926891188118812
+        ],
+        "pixel_auroc": [
+          0.9786025319621287,
+          0.9828550317479126
+        ],
+        "aupro": [
+          0.8510156628408417,
+          0.8783472084245971
+        ],
+        "miou": [
+          0.11053662782226226,
+          0.12612836165606695
+        ],
+        "false_reject": [
+          0.061218165566556654,
+          0.09487451870187019
+        ],
+        "miss": [
+          0.21416666666666664,
+          0.2525
+        ]
+      },
+      "macro_false_reject": 0.07872387238723873,
+      "macro_miss": 0.2333333333333333,
+      "per_class": {
+        "candle": {
+          "image_auroc": 0.9788,
+          "pixel_auroc": 0.992764334877817,
+          "aupro": 0.9545022176625658,
+          "miou": 0.08563817649335365,
+          "ci95": {
+            "image_auroc": [
+              0.9621975,
+              0.9916
+            ],
+            "pixel_auroc": [
+              0.9906655717122788,
+              0.9945861593907992
+            ],
+            "aupro": [
+              0.9318979508097716,
+              0.9724320414572587
+            ],
+            "miou": [
+              0.06579421261194071,
+              0.10815247579837337
+            ],
+            "false_reject": [
+              0.09,
+              0.2302499999999998
+            ],
+            "miss": [
+              0.0,
+              0.07
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 3,
+          "test_false_rejected": 16,
+          "threshold": 0.7779251337051392,
+          "test_false_reject": 0.16,
+          "test_miss": 0.03,
+          "pixel_auroc_exact": 0.9927680597180873,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 8295,
+          "fit_patches": 829440,
+          "seconds_fit": 475.7,
+          "ms_per_test_image": 334.2
+        },
+        "capsules": {
+          "image_auroc": 0.7476666666666667,
+          "pixel_auroc": 0.9676471565435529,
+          "aupro": 0.6821679773653732,
+          "miou": 0.16979312773298352,
+          "ci95": {
+            "image_auroc": [
+              0.6733250000000001,
+              0.81985
+            ],
+            "pixel_auroc": [
+              0.95271424797295,
+              0.9789826596644862
+            ],
+            "aupro": [
+              0.6140572341460752,
+              0.7455628665982469
+            ],
+            "miou": [
+              0.11917248502076488,
+              0.219881016274921
+            ],
+            "false_reject": [
+              0.0,
+              0.05
+            ],
+            "miss": [
+              0.47,
+              0.67
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 60,
+          "test_missed": 57,
+          "test_false_rejected": 1,
+          "threshold": 1.4671050310134888,
+          "test_false_reject": 0.016666666666666666,
+          "test_miss": 0.57,
+          "pixel_auroc_exact": 0.9676522079162605,
+          "fit_images": 488,
+          "val_images": 54,
+          "test_images": 160,
+          "bank_size": 4998,
+          "fit_patches": 499712,
+          "seconds_fit": 204.2,
+          "ms_per_test_image": 269.3
+        },
+        "cashew": {
+          "image_auroc": 0.9736,
+          "pixel_auroc": 0.9930658264271577,
+          "aupro": 0.9298403215966918,
+          "miou": 0.10159886018910014,
+          "ci95": {
+            "image_auroc": [
+              0.9494,
+              0.9914
+            ],
+            "pixel_auroc": [
+              0.9902213792310686,
+              0.9950147245260381
+            ],
+            "aupro": [
+              0.9080609151003254,
+              0.9504678323028861
+            ],
+            "miou": [
+              0.07252473072908165,
+              0.13139080473471984
+            ],
+            "false_reject": [
+              0.08,
+              0.2804999999999996
+            ],
+            "miss": [
+              0.01,
+              0.08
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 4,
+          "test_false_rejected": 9,
+          "threshold": 0.9289524555206299,
+          "test_false_reject": 0.18,
+          "test_miss": 0.04,
+          "pixel_auroc_exact": 0.9930672554715408,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4148,
+          "fit_patches": 414720,
+          "seconds_fit": 152.9,
+          "ms_per_test_image": 245.0
+        },
+        "chewinggum": {
+          "image_auroc": 0.9964,
+          "pixel_auroc": 0.9835273945191827,
+          "aupro": 0.8451947516832381,
+          "miou": 0.14060019502854082,
+          "ci95": {
+            "image_auroc": [
+              0.9894,
+              1.0
+            ],
+            "pixel_auroc": [
+              0.974468599276866,
+              0.990182401245139
+            ],
+            "aupro": [
+              0.7890079648258733,
+              0.890583150115087
+            ],
+            "miou": [
+              0.12126724062975085,
+              0.1607092861839648
+            ],
+            "false_reject": [
+              0.0,
+              0.06
+            ],
+            "miss": [
+              0.01,
+              0.1
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 5,
+          "test_false_rejected": 1,
+          "threshold": 0.9961841702461243,
+          "test_false_reject": 0.02,
+          "test_miss": 0.05,
+          "pixel_auroc_exact": 0.9835294643516569,
+          "fit_images": 408,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4178,
+          "fit_patches": 417792,
+          "seconds_fit": 157.3,
+          "ms_per_test_image": 253.0
+        },
+        "fryum": {
+          "image_auroc": 0.9378,
+          "pixel_auroc": 0.9539683227569051,
+          "aupro": 0.7950491762018848,
+          "miou": 0.14317934589959458,
+          "ci95": {
+            "image_auroc": [
+              0.899995,
+              0.968415
+            ],
+            "pixel_auroc": [
+              0.9423789985490654,
+              0.96489477832008
+            ],
+            "aupro": [
+              0.7294709485028419,
+              0.857360119734431
+            ],
+            "miou": [
+              0.11199329087324794,
+              0.17710638769017906
+            ],
+            "false_reject": [
+              0.0,
+              0.0
+            ],
+            "miss": [
+              0.19,
+              0.36
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 27,
+          "test_false_rejected": 0,
+          "threshold": 1.028821587562561,
+          "test_false_reject": 0.0,
+          "test_miss": 0.27,
+          "pixel_auroc_exact": 0.9539680464653105,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4148,
+          "fit_patches": 414720,
+          "seconds_fit": 155.7,
+          "ms_per_test_image": 244.3
+        },
+        "macaroni1": {
+          "image_auroc": 0.8972,
+          "pixel_auroc": 0.9784002544030822,
+          "aupro": 0.8941418750391156,
+          "miou": 0.03302920647327205,
+          "ci95": {
+            "image_auroc": [
+              0.8558775,
+              0.936505
+            ],
+            "pixel_auroc": [
+              0.9679294145873342,
+              0.9856577902554646
+            ],
+            "aupro": [
+              0.8414939199717386,
+              0.9350816993102038
+            ],
+            "miou": [
+              0.021665922797826132,
+              0.04588213084565505
+            ],
+            "false_reject": [
+              0.01,
+              0.1
+            ],
+            "miss": [
+              0.38,
+              0.57
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 47,
+          "test_false_rejected": 5,
+          "threshold": 0.9541093111038208,
+          "test_false_reject": 0.05,
+          "test_miss": 0.47,
+          "pixel_auroc_exact": 0.9784150229605695,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 8295,
+          "fit_patches": 829440,
+          "seconds_fit": 453.8,
+          "ms_per_test_image": 279.1
+        },
+        "macaroni2": {
+          "image_auroc": 0.6215,
+          "pixel_auroc": 0.9543962689820236,
+          "aupro": 0.8022165143842523,
+          "miou": 0.01834550687426743,
+          "ci95": {
+            "image_auroc": [
+              0.5428825,
+              0.6983050000000001
+            ],
+            "pixel_auroc": [
+              0.9421961687783272,
+              0.964768326937147
+            ],
+            "aupro": [
+              0.7200553506565811,
+              0.8704077543097043
+            ],
+            "miou": [
+              0.008397024165443056,
+              0.029590242702841427
+            ],
+            "false_reject": [
+              0.02,
+              0.12
+            ],
+            "miss": [
+              0.78,
+              0.92
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 85,
+          "test_false_rejected": 7,
+          "threshold": 1.2027767896652222,
+          "test_false_reject": 0.07,
+          "test_miss": 0.85,
+          "pixel_auroc_exact": 0.9544051230163734,
+          "fit_images": 810,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 8295,
+          "fit_patches": 829440,
+          "seconds_fit": 473.9,
+          "ms_per_test_image": 333.6
+        },
+        "pcb1": {
+          "image_auroc": 0.9552,
+          "pixel_auroc": 0.9969964574593086,
+          "aupro": 0.9238595232057153,
+          "miou": 0.1729538782073366,
+          "ci95": {
+            "image_auroc": [
+              0.925595,
+              0.978005
+            ],
+            "pixel_auroc": [
+              0.9947346192695645,
+              0.9980611123743983
+            ],
+            "aupro": [
+              0.9002503161691852,
+              0.9464636023853696
+            ],
+            "miou": [
+              0.14346955713911536,
+              0.2055216832260054
+            ],
+            "false_reject": [
+              0.04,
+              0.17
+            ],
+            "miss": [
+              0.03,
+              0.14
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 8,
+          "test_false_rejected": 10,
+          "threshold": 0.9669470191001892,
+          "test_false_reject": 0.1,
+          "test_miss": 0.08,
+          "pixel_auroc_exact": 0.9970012724148648,
+          "fit_images": 814,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 8336,
+          "fit_patches": 833536,
+          "seconds_fit": 488.2,
+          "ms_per_test_image": 276.4
+        },
+        "pcb2": {
+          "image_auroc": 0.9541,
+          "pixel_auroc": 0.9852299572306107,
+          "aupro": 0.883532674935819,
+          "miou": 0.13473533017150732,
+          "ci95": {
+            "image_auroc": [
+              0.9226,
+              0.9823025
+            ],
+            "pixel_auroc": [
+              0.9797411746016278,
+              0.9902494733650848
+            ],
+            "aupro": [
+              0.8421339690349365,
+              0.9183301738199705
+            ],
+            "miou": [
+              0.11111353342335444,
+              0.16141629521132056
+            ],
+            "false_reject": [
+              0.01,
+              0.09
+            ],
+            "miss": [
+              0.11,
+              0.26
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 100,
+          "test_missed": 18,
+          "test_false_rejected": 5,
+          "threshold": 0.943938136100769,
+          "test_false_reject": 0.05,
+          "test_miss": 0.18,
+          "pixel_auroc_exact": 0.9852313105997922,
+          "fit_images": 811,
+          "val_images": 90,
+          "test_images": 200,
+          "bank_size": 8305,
+          "fit_patches": 830464,
+          "seconds_fit": 473.6,
+          "ms_per_test_image": 324.0
+        },
+        "pcb3": {
+          "image_auroc": 0.9553465346534653,
+          "pixel_auroc": 0.9868793810071037,
+          "aupro": 0.8520030486065998,
+          "miou": 0.11554775357652516,
+          "ci95": {
+            "image_auroc": [
+              0.9288985148514852,
+              0.9771361386138614
+            ],
+            "pixel_auroc": [
+              0.9819366649832414,
+              0.990835458732898
+            ],
+            "aupro": [
+              0.8083684752137855,
+              0.8921198941568181
+            ],
+            "miou": [
+              0.09573638506343907,
+              0.1362359654782087
+            ],
+            "false_reject": [
+              0.0297029702970297,
+              0.13861386138613863
+            ],
+            "miss": [
+              0.14,
+              0.29
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 101,
+          "test_missed": 21,
+          "test_false_rejected": 8,
+          "threshold": 1.0009702444076538,
+          "test_false_reject": 0.07920792079207921,
+          "test_miss": 0.21,
+          "pixel_auroc_exact": 0.9868855051548144,
+          "fit_images": 815,
+          "val_images": 90,
+          "test_images": 201,
+          "bank_size": 8346,
+          "fit_patches": 834560,
+          "seconds_fit": 478.2,
+          "ms_per_test_image": 321.8
+        },
+        "pcb4": {
+          "image_auroc": 0.99,
+          "pixel_auroc": 0.9839436061651066,
+          "aupro": 0.8805322887609428,
+          "miou": 0.17097477223088142,
+          "ci95": {
+            "image_auroc": [
+              0.9798985148514852,
+              0.9973267326732673
+            ],
+            "pixel_auroc": [
+              0.9799279111059407,
+              0.9875795099896182
+            ],
+            "aupro": [
+              0.8555955511129936,
+              0.9066339875666517
+            ],
+            "miou": [
+              0.1525953935580815,
+              0.19339322873184578
+            ],
+            "false_reject": [
+              0.0594059405940594,
+              0.18811881188118812
+            ],
+            "miss": [
+              0.0,
+              0.06
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 101,
+          "test_missed": 3,
+          "test_false_rejected": 12,
+          "threshold": 0.9491693377494812,
+          "test_false_reject": 0.1188118811881188,
+          "test_miss": 0.03,
+          "pixel_auroc_exact": 0.983945266300681,
+          "fit_images": 814,
+          "val_images": 90,
+          "test_images": 201,
+          "bank_size": 8336,
+          "fit_patches": 833536,
+          "seconds_fit": 482.7,
+          "ms_per_test_image": 291.2
+        },
+        "pipe_fryum": {
+          "image_auroc": 0.9894,
+          "pixel_auroc": 0.9937181957635576,
+          "aupro": 0.9351157071056501,
+          "miou": 0.13416739596482233,
+          "ci95": {
+            "image_auroc": [
+              0.977185,
+              0.9976
+            ],
+            "pixel_auroc": [
+              0.991845725209873,
+              0.9958235323059689
+            ],
+            "aupro": [
+              0.904198234726008,
+              0.9616758275071002
+            ],
+            "miou": [
+              0.09885948505530845,
+              0.17231846869765052
+            ],
+            "false_reject": [
+              0.02,
+              0.18
+            ],
+            "miss": [
+              0.0,
+              0.05
+            ]
+          },
+          "test_defect_images": 100,
+          "test_normal_images": 50,
+          "test_missed": 2,
+          "test_false_rejected": 5,
+          "threshold": 0.9267195463180542,
+          "test_false_reject": 0.1,
+          "test_miss": 0.02,
+          "pixel_auroc_exact": 0.9937198043258585,
+          "fit_images": 405,
+          "val_images": 45,
+          "test_images": 150,
+          "bank_size": 4148,
+          "fit_patches": 414720,
+          "seconds_fit": 153.7,
+          "ms_per_test_image": 228.8
+        }
+      },
+      "by_size": [
+        {
+          "group": "kecil (< 0,2%)",
+          "n": 619,
+          "detected": 0.5880452342487884,
+          "miou": 0.044379058643880816
+        },
+        {
+          "group": "sedang (0,2 sampai 1%)",
+          "n": 388,
+          "detected": 0.9407216494845361,
+          "miou": 0.1373038635518604
+        },
+        {
+          "group": "besar (> 1%)",
+          "n": 193,
+          "detected": 0.9896373056994818,
+          "miou": 0.317677816194479
+        }
+      ],
+      "by_defect": {
+        "candle": [
+          {
+            "defect": "chunk of wax missing",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.08402090008018209
+          },
+          {
+            "defect": "chunk of wax missing,damaged corner of packaging,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.024878312601406164
+          },
+          {
+            "defect": "chunk of wax missing,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.17643186306780778
+          },
+          {
+            "defect": "chunk of wax missing,foreign particals on candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.02531950807812877
+          },
+          {
+            "defect": "damaged corner of packaging",
+            "n": 18,
+            "detected": 0.9444444444444444,
+            "miou": 0.09632776199531841
+          },
+          {
+            "defect": "damaged corner of packaging,different colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "damaged corner of packaging,different colour spot,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0013049151805132667
+          },
+          {
+            "defect": "damaged corner of packaging,extra wax in candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1203263086335826
+          },
+          {
+            "defect": "damaged corner of packaging,foreign particals on candle",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.03432040849918772
+          },
+          {
+            "defect": "damaged corner of packaging,weird candle wick",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.06505576208178439
+          },
+          {
+            "defect": "different colour spot",
+            "n": 15,
+            "detected": 0.9333333333333333,
+            "miou": 0.006389877281376551
+          },
+          {
+            "defect": "different colour spot,foreign particals on candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0017006802721088435
+          },
+          {
+            "defect": "different colour spot,wax melded out of the candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.07440944881889763
+          },
+          {
+            "defect": "extra wax in candle",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.19816804165458396
+          },
+          {
+            "defect": "foreign particals on candle",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.02152925625993221
+          },
+          {
+            "defect": "foreign particals on candle,wax melded out of the candle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.023853211009174313
+          },
+          {
+            "defect": "wax melded out of the candle",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.187051191087661
+          },
+          {
+            "defect": "weird candle wick",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.09415782260362718
+          },
+          {
+            "defect": "weird candle wick,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.01
+          }
+        ],
+        "capsules": [
+          {
+            "defect": "bubble",
+            "n": 30,
+            "detected": 0.1,
+            "miou": 0.0
+          },
+          {
+            "defect": "bubble,discolor",
+            "n": 15,
+            "detected": 0.13333333333333333,
+            "miou": 0.0
+          },
+          {
+            "defect": "bubble,discolor,scratch",
+            "n": 15,
+            "detected": 0.06666666666666667,
+            "miou": 0.013333333333333334
+          },
+          {
+            "defect": "bubble,discolor,scratch,leak",
+            "n": 12,
+            "detected": 0.9166666666666666,
+            "miou": 0.3151700402195967
+          },
+          {
+            "defect": "bubble,discolor,scratch,leak,misshape",
+            "n": 28,
+            "detected": 0.9285714285714286,
+            "miou": 0.46418829609511414
+          }
+        ],
+        "cashew": [
+          {
+            "defect": "burnt",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.12185470347704094
+          },
+          {
+            "defect": "burnt,corner or edge breakage",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.1386424766068548
+          },
+          {
+            "defect": "burnt,different colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.31592039800995025
+          },
+          {
+            "defect": "burnt,same colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "corner or edge breakage",
+            "n": 14,
+            "detected": 1.0,
+            "miou": 0.05806152227310558
+          },
+          {
+            "defect": "corner or edge breakage,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.11536231884057971
+          },
+          {
+            "defect": "different colour spot",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.017468924729309606
+          },
+          {
+            "defect": "different colour spot,same colour spot",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.07758495248920334
+          },
+          {
+            "defect": "different colour spot,small holes",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "middle breakage",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.17589670946289007
+          },
+          {
+            "defect": "middle breakage,same colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.022658099425093
+          },
+          {
+            "defect": "middle breakage,small holes",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.10429082240762813
+          },
+          {
+            "defect": "same colour spot",
+            "n": 10,
+            "detected": 0.6,
+            "miou": 0.06469500296182522
+          },
+          {
+            "defect": "small holes",
+            "n": 20,
+            "detected": 1.0,
+            "miou": 0.011492360622263546
+          },
+          {
+            "defect": "small scratches",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.08140227520970586
+          },
+          {
+            "defect": "stuck together",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.6378932043150866
+          }
+        ],
+        "chewinggum": [
+          {
+            "defect": "chunk of gum missing",
+            "n": 16,
+            "detected": 1.0,
+            "miou": 0.23276942426990183
+          },
+          {
+            "defect": "chunk of gum missing,corner missing",
+            "n": 7,
+            "detected": 1.0,
+            "miou": 0.25702580062445624
+          },
+          {
+            "defect": "chunk of gum missing,corner missing,small cracks",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.17343857606678534
+          },
+          {
+            "defect": "chunk of gum missing,scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1792452830188679
+          },
+          {
+            "defect": "chunk of gum missing,scratches,small cracks",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.14478559505436112
+          },
+          {
+            "defect": "chunk of gum missing,small cracks",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.1830553517777886
+          },
+          {
+            "defect": "corner missing",
+            "n": 13,
+            "detected": 0.6923076923076923,
+            "miou": 0.06826718151190757
+          },
+          {
+            "defect": "corner missing,scratches",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.014075214427094787
+          },
+          {
+            "defect": "corner missing,similar colour spot",
+            "n": 3,
+            "detected": 1.0,
+            "miou": 0.14611702995752449
+          },
+          {
+            "defect": "corner missing,similar colour spot,small cracks",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.005946198587453261
+          },
+          {
+            "defect": "corner missing,small cracks",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.16240089661850826
+          },
+          {
+            "defect": "scratches",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.036522566698575176
+          },
+          {
+            "defect": "scratches,similar colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.05456570155902005
+          },
+          {
+            "defect": "scratches,similar colour spot,small cracks",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.04057017543859649
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 19,
+            "detected": 1.0,
+            "miou": 0.09725717174955206
+          }
+        ],
+        "fryum": [
+          {
+            "defect": "burnt",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.2035065025890648
+          },
+          {
+            "defect": "corner or edge breakage",
+            "n": 8,
+            "detected": 1.0,
+            "miou": 0.08658661771665793
+          },
+          {
+            "defect": "corner or edge breakage,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.1138996138996139
+          },
+          {
+            "defect": "different colour spot",
+            "n": 14,
+            "detected": 0.14285714285714285,
+            "miou": 0.020535714285714286
+          },
+          {
+            "defect": "different colour spot,similar colour spot",
+            "n": 4,
+            "detected": 0.25,
+            "miou": 0.004032258064516129
+          },
+          {
+            "defect": "fryum stuck together",
+            "n": 20,
+            "detected": 1.0,
+            "miou": 0.3759807897819634
+          },
+          {
+            "defect": "middle breakage",
+            "n": 18,
+            "detected": 1.0,
+            "miou": 0.1573462966604816
+          },
+          {
+            "defect": "middle breakage,similar colour spot",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.10010266940451745
+          },
+          {
+            "defect": "middle breakage,small scratches",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.11543735414207851
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 12,
+            "detected": 0.6666666666666666,
+            "miou": 0.044895951189033716
+          },
+          {
+            "defect": "similar colour spot,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "similar colour spot,small scratches",
+            "n": 4,
+            "detected": 0.5,
+            "miou": 0.03864413782047882
+          },
+          {
+            "defect": "small scratches",
+            "n": 6,
+            "detected": 0.0,
+            "miou": 0.0
+          }
+        ],
+        "macaroni1": [
+          {
+            "defect": "chip around edge and corner",
+            "n": 17,
+            "detected": 0.29411764705882354,
+            "miou": 0.05302414877947741
+          },
+          {
+            "defect": "chip around edge and corner,small cracks",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.0
+          },
+          {
+            "defect": "chip around edge and corner,small scratches",
+            "n": 6,
+            "detected": 0.16666666666666666,
+            "miou": 0.019575406672180867
+          },
+          {
+            "defect": "different colour spot",
+            "n": 15,
+            "detected": 0.8666666666666667,
+            "miou": 0.0480620861719868
+          },
+          {
+            "defect": "different colour spot,similar colour spot",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "middle breakage,small scratches",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.10969785126976772
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 21,
+            "detected": 0.2857142857142857,
+            "miou": 0.0
+          },
+          {
+            "defect": "small cracks",
+            "n": 11,
+            "detected": 0.7272727272727273,
+            "miou": 0.0034753711073541777
+          },
+          {
+            "defect": "small cracks,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.02023608768971332
+          },
+          {
+            "defect": "small scratches",
+            "n": 16,
+            "detected": 0.5,
+            "miou": 0.025480168930932207
+          }
+        ],
+        "macaroni2": [
+          {
+            "defect": "breakage down the middle",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.3051643192488263
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches,other",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.08585858585858586
+          },
+          {
+            "defect": "breakage down the middle,small scratches",
+            "n": 9,
+            "detected": 0.4444444444444444,
+            "miou": 0.08480712406395467
+          },
+          {
+            "defect": "color spot similar to the object",
+            "n": 23,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "different color spot",
+            "n": 12,
+            "detected": 0.25,
+            "miou": 0.027266037303234365
+          },
+          {
+            "defect": "small chip around edge",
+            "n": 19,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small chip around edge,small scratches",
+            "n": 6,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small cracks",
+            "n": 7,
+            "detected": 0.14285714285714285,
+            "miou": 0.002838221381267739
+          },
+          {
+            "defect": "small cracks,small scratches",
+            "n": 2,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "small scratches",
+            "n": 16,
+            "detected": 0.3125,
+            "miou": 0.020825229277253266
+          }
+        ],
+        "pcb1": [
+          {
+            "defect": "bent",
+            "n": 14,
+            "detected": 1.0,
+            "miou": 0.05925446652257399
+          },
+          {
+            "defect": "bent,melt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.06843483955468238
+          },
+          {
+            "defect": "melt",
+            "n": 46,
+            "detected": 0.8478260869565217,
+            "miou": 0.15937959037750787
+          },
+          {
+            "defect": "melt,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.03086232980332829
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 5,
+            "detected": 1.0,
+            "miou": 0.1689122939314062
+          },
+          {
+            "defect": "melt,scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.23654125961338598
+          },
+          {
+            "defect": "missing",
+            "n": 17,
+            "detected": 0.9411764705882353,
+            "miou": 0.29143502610685834
+          },
+          {
+            "defect": "scratch",
+            "n": 14,
+            "detected": 1.0,
+            "miou": 0.18241633094337054
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.4457401564000549
+          }
+        ],
+        "pcb2": [
+          {
+            "defect": "bent",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.08274427605238523
+          },
+          {
+            "defect": "bent,melt",
+            "n": 3,
+            "detected": 0.6666666666666666,
+            "miou": 0.03189119827352082
+          },
+          {
+            "defect": "melt",
+            "n": 48,
+            "detected": 0.7916666666666666,
+            "miou": 0.15895497983877968
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.19982109248588342
+          },
+          {
+            "defect": "missing",
+            "n": 17,
+            "detected": 0.5882352941176471,
+            "miou": 0.08124132610031846
+          },
+          {
+            "defect": "scratch",
+            "n": 14,
+            "detected": 1.0,
+            "miou": 0.15576652918764752
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.19698537758205448
+          }
+        ],
+        "pcb3": [
+          {
+            "defect": "bent",
+            "n": 19,
+            "detected": 1.0,
+            "miou": 0.11835844947917085
+          },
+          {
+            "defect": "bent,melt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.07423946413619871
+          },
+          {
+            "defect": "melt",
+            "n": 38,
+            "detected": 0.7631578947368421,
+            "miou": 0.1266803938024303
+          },
+          {
+            "defect": "melt,missing",
+            "n": 1,
+            "detected": 0.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "melt,scratch",
+            "n": 2,
+            "detected": 0.5,
+            "miou": 0.12259615384615384
+          },
+          {
+            "defect": "melt,scratch,missing",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "missing",
+            "n": 16,
+            "detected": 0.625,
+            "miou": 0.0924627060947266
+          },
+          {
+            "defect": "scratch",
+            "n": 20,
+            "detected": 0.8,
+            "miou": 0.11657257544736677
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.18091163738222563
+          }
+        ],
+        "pcb4": [
+          {
+            "defect": "burnt",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.20374447007711166
+          },
+          {
+            "defect": "burnt,dirt",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.2802938997039745
+          },
+          {
+            "defect": "burnt,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.06783681214421253
+          },
+          {
+            "defect": "burnt,scratch,dirt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.37675350701402804
+          },
+          {
+            "defect": "damage",
+            "n": 7,
+            "detected": 0.8571428571428571,
+            "miou": 0.20544056892004223
+          },
+          {
+            "defect": "damage,dirt",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.20968922066214624
+          },
+          {
+            "defect": "damage,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.11748701459312391
+          },
+          {
+            "defect": "extra",
+            "n": 12,
+            "detected": 1.0,
+            "miou": 0.10985494985118475
+          },
+          {
+            "defect": "extra,dirt",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.16635110396919842
+          },
+          {
+            "defect": "missing",
+            "n": 19,
+            "detected": 0.8947368421052632,
+            "miou": 0.15530465906556237
+          },
+          {
+            "defect": "missing,damage",
+            "n": 3,
+            "detected": 1.0,
+            "miou": 0.14099736956626083
+          },
+          {
+            "defect": "missing,damage,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.0
+          },
+          {
+            "defect": "missing,dirt",
+            "n": 5,
+            "detected": 1.0,
+            "miou": 0.22542718003662743
+          },
+          {
+            "defect": "missing,wrong place",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.2831599479843953
+          },
+          {
+            "defect": "scratch",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.05792610194230541
+          },
+          {
+            "defect": "scratch,damage",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.15359477124183007
+          },
+          {
+            "defect": "scratch,damage,dirt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.23122923588039868
+          },
+          {
+            "defect": "scratch,damage,extra",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.173053152039555
+          },
+          {
+            "defect": "scratch,dirt",
+            "n": 3,
+            "detected": 1.0,
+            "miou": 0.12585799614666168
+          },
+          {
+            "defect": "scratch,extra",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.08067461927488725
+          },
+          {
+            "defect": "scratch,extra,dirt",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.08883745771764287
+          },
+          {
+            "defect": "scratch,extra,wrong place",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.173371104815864
+          },
+          {
+            "defect": "scratch,missing",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.19046024974136078
+          },
+          {
+            "defect": "scratch,missing,dirt",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.20070887573547797
+          },
+          {
+            "defect": "wrong place",
+            "n": 2,
+            "detected": 1.0,
+            "miou": 0.13383750871852013
+          },
+          {
+            "defect": "wrong place,dirt",
+            "n": 9,
+            "detected": 1.0,
+            "miou": 0.2244216339972114
+          }
+        ],
+        "pipe_fryum": [
+          {
+            "defect": "burnt",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.09190827605518208
+          },
+          {
+            "defect": "burnt,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.13333333333333333
+          },
+          {
+            "defect": "corner and edge breakage",
+            "n": 15,
+            "detected": 1.0,
+            "miou": 0.12618383875909353
+          },
+          {
+            "defect": "different colour spot",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.007422590009959022
+          },
+          {
+            "defect": "middle breakage,small cracks",
+            "n": 6,
+            "detected": 1.0,
+            "miou": 0.0435496180249203
+          },
+          {
+            "defect": "middle breakage,small scratches,small cracks",
+            "n": 4,
+            "detected": 1.0,
+            "miou": 0.08474828740347003
+          },
+          {
+            "defect": "similar colour spot",
+            "n": 20,
+            "detected": 0.9,
+            "miou": 0.0407244476252863
+          },
+          {
+            "defect": "similar colour spot,small scratches",
+            "n": 1,
+            "detected": 1.0,
+            "miou": 0.09646856158484066
+          },
+          {
+            "defect": "small scratches",
+            "n": 18,
+            "detected": 1.0,
+            "miou": 0.1132849091253281
+          },
+          {
+            "defect": "stuck together",
+            "n": 10,
+            "detected": 1.0,
+            "miou": 0.6387421904725302
+          }
+        ]
+      }
+    }
+  },
+  "paired": {
+    "resnet18_vs_classical": {
+      "image_auroc": {
+        "diff": 0.11195775577557754,
+        "ci95": [
+          0.09402434199669955,
+          0.12960403534103423
+        ],
+        "p_le_zero": 0.0
+      },
+      "pixel_auroc": {
+        "diff": 0.06472262230195247,
+        "ci95": [
+          0.05633113544760933,
+          0.07277068143460885
+        ],
+        "p_le_zero": 0.0
+      },
+      "aupro": {
+        "diff": 0.14216271706256067,
+        "ci95": [
+          0.12258478324754282,
+          0.1605839178474063
+        ],
+        "p_le_zero": 0.0
+      },
+      "miou": {
+        "diff": -0.005791617758809847,
+        "ci95": [
+          -0.016432863205056516,
+          0.0050358487395199755
+        ],
+        "p_le_zero": 0.846
+      },
+      "false_reject": {
+        "diff": 0.005057755775577544,
+        "ci95": [
+          -0.015757769526952705,
+          0.027318481848184806
+        ],
+        "p_le_zero": 0.317
+      },
+      "miss": {
+        "diff": -0.23250000000000007,
+        "ci95": [
+          -0.2616666666666667,
+          -0.20583333333333345
+        ],
+        "p_le_zero": 1.0
+      }
+    },
+    "wrn50_vs_classical": {
+      "image_auroc": {
+        "diff": 0.10510970847084711,
+        "ci95": [
+          0.08770007838283839,
+          0.12442621424642468
+        ],
+        "p_le_zero": 0.0
+      },
+      "pixel_auroc": {
+        "diff": 0.06580736785168273,
+        "ci95": [
+          0.056981060546398885,
+          0.07383202681046082
+        ],
+        "p_le_zero": 0.0
+      },
+      "aupro": {
+        "diff": 0.1486616936134143,
+        "ci95": [
+          0.12769859661622843,
+          0.16681901272589822
+        ],
+        "p_le_zero": 0.0
+      },
+      "miou": {
+        "diff": -0.006405320608867199,
+        "ci95": [
+          -0.01607571885934409,
+          0.004255740569402165
+        ],
+        "p_le_zero": 0.883
+      },
+      "false_reject": {
+        "diff": 0.007491749174917489,
+        "ci95": [
+          -0.015512995049504954,
+          0.0297499312431243
+        ],
+        "p_le_zero": 0.274
+      },
+      "miss": {
+        "diff": -0.2233333333333334,
+        "ci95": [
+          -0.2516666666666666,
+          -0.1974791666666667
+        ],
+        "p_le_zero": 1.0
+      }
+    },
+    "wrn50_vs_resnet18": {
+      "image_auroc": {
+        "diff": -0.006848047304730431,
+        "ci95": [
+          -0.015299607398239684,
+          0.0030833292079209917
+        ],
+        "p_le_zero": 0.919
+      },
+      "pixel_auroc": {
+        "diff": 0.0010847455497302594,
+        "ci95": [
+          -0.0005357914145490805,
+          0.0027932082241870935
+        ],
+        "p_le_zero": 0.107
+      },
+      "aupro": {
+        "diff": 0.00649897655085363,
+        "ci95": [
+          -0.0015664837766164812,
+          0.014931424136370193
+        ],
+        "p_le_zero": 0.057
+      },
+      "miou": {
+        "diff": -0.0006137028500573516,
+        "ci95": [
+          -0.005842803476156716,
+          0.004453819483209596
+        ],
+        "p_le_zero": 0.57
+      },
+      "false_reject": {
+        "diff": 0.0024339933993399454,
+        "ci95": [
+          -0.01422442244224422,
+          0.018479922992299214
+        ],
+        "p_le_zero": 0.401
+      },
+      "miss": {
+        "diff": 0.009166666666666656,
+        "ci95": [
+          -0.010833333333333334,
+          0.026687500000000013
+        ],
+        "p_le_zero": 0.182
+      }
+    }
+  }
+}

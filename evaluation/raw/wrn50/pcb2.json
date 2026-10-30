@@ -1,0 +1,19 @@
+{
+  "method": "wrn50",
+  "class": "pcb2",
+  "fit_images": 811,
+  "val_images": 90,
+  "test_images": 200,
+  "fit_patches": 830464,
+  "bank_size": 8305,
+  "seconds_fit": 473.6,
+  "ms_per_test_image": 324.0,
+  "threshold": 0.943938136100769,
+  "image_auroc": 0.9541,
+  "pixel_auroc": 0.9852313105997922,
+  "pixel_auroc_hist": 0.9852299572306107,
+  "aupro": 0.883532674935819,
+  "miou": 0.13473533017150732,
+  "test_false_reject": 0.05,
+  "test_miss": 0.18
+}

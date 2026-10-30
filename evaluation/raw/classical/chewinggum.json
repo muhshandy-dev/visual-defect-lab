@@ -1,0 +1,19 @@
+{
+  "method": "classical",
+  "class": "chewinggum",
+  "fit_images": 408,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 417792,
+  "bank_size": 8356,
+  "seconds_fit": 37.5,
+  "ms_per_test_image": 51.9,
+  "threshold": 2.860183000564575,
+  "image_auroc": 0.8595,
+  "pixel_auroc": 0.9522581692655671,
+  "pixel_auroc_hist": 0.9522543161161354,
+  "aupro": 0.5363254068319888,
+  "miou": 0.3000495518877953,
+  "test_false_reject": 0.06,
+  "test_miss": 0.33
+}

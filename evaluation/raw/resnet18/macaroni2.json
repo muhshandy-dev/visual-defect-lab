@@ -1,0 +1,19 @@
+{
+  "method": "resnet18",
+  "class": "macaroni2",
+  "fit_images": 810,
+  "val_images": 90,
+  "test_images": 200,
+  "fit_patches": 829440,
+  "bank_size": 4096,
+  "seconds_fit": 192.1,
+  "ms_per_test_image": 65.1,
+  "threshold": 1.8602501153945923,
+  "image_auroc": 0.7723,
+  "pixel_auroc": 0.9495516041958857,
+  "pixel_auroc_hist": 0.9495410451713004,
+  "aupro": 0.7902977999171747,
+  "miou": 0.030187476159375823,
+  "test_false_reject": 0.12,
+  "test_miss": 0.6
+}

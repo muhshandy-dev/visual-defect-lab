@@ -1,0 +1,19 @@
+{
+  "method": "classical",
+  "class": "pcb2",
+  "fit_images": 811,
+  "val_images": 90,
+  "test_images": 200,
+  "fit_patches": 830464,
+  "bank_size": 16610,
+  "seconds_fit": 142.8,
+  "ms_per_test_image": 96.4,
+  "threshold": 2.9409384727478027,
+  "image_auroc": 0.9221,
+  "pixel_auroc": 0.9465651251102148,
+  "pixel_auroc_hist": 0.9465596259525862,
+  "aupro": 0.8338531554209859,
+  "miou": 0.14856407146488265,
+  "test_false_reject": 0.01,
+  "test_miss": 0.32
+}
