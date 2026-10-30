@@ -39,4 +39,4 @@ web/              React + Vite + TypeScript, onnxruntime-web
 docs/             DATA_CARD, MODEL_CARD, EVALUATION_REPORT, KRITERIA_STATUS, ARCHITECTURE, REPRODUCE, DEPLOY_CLOUDFLARE
 ```
 
-Cara menjalankan ulang: [docs/REPRODUCE.md](docs/REPRODUCE.md), atau workflow **Reproduksi penuh** di tab Actions (unduh data dan bobot, jalankan semua, commit hasil ke branch baru). Laporan: [docs/EVALUATION_REPORT.md](docs/EVALUATION_REPORT.md), [docs/MODEL_CARD.md](docs/MODEL_CARD.md), status kriteria: [docs/KRITERIA_STATUS.md](docs/KRITERIA_STATUS.md). Atribusi data: [NOTICE.md](NOTICE.md). Kode: MIT.
+Cara menjalankan ulang: [docs/REPRODUCE.md](docs/REPRODUCE.md), atau workflow **Reproduksi penuh** di tab Actions atau label `reproduksi` pada PR (unduh data dan bobot, jalankan semua, commit hasil ke branch baru). Laporan: [docs/EVALUATION_REPORT.md](docs/EVALUATION_REPORT.md), [docs/MODEL_CARD.md](docs/MODEL_CARD.md), status kriteria: [docs/KRITERIA_STATUS.md](docs/KRITERIA_STATUS.md). Atribusi data: [NOTICE.md](NOTICE.md). Kode: MIT.

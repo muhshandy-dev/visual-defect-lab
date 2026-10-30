@@ -4,20 +4,27 @@ name: Reproduksi penuh
 # resmi torchvision, fit dan evaluasi tiga metode, bootstrap, ekspor ONNX int8 dan data web,
 # pemeriksaan independen, lalu tes e2e termasuk paritas inferensi browser.
 # Hasil di-commit ke branch baru `hasil/reproduksi-<nomor run>` untuk ditinjau lewat PR.
-# Dijalankan manual dari tab Actions (kira-kira 1,5 sampai 2,5 jam).
+# Dijalankan manual dari tab Actions, atau dengan memberi label `reproduksi` pada PR
+# (kira-kira 1,5 sampai 2,5 jam). Label dilepas otomatis setelah selesai agar bisa diulang.
 
 on:
   workflow_dispatch:
+  pull_request:
+    types: [labeled]
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   reproduce:
+    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'reproduksi'
     runs-on: ubuntu-latest
     timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
@@ -58,7 +65,7 @@ jobs:
         run: |
           {
             echo "run: ${{ github.run_id }}"
-            echo "commit: ${{ github.sha }}"
+            echo "commit: ${{ github.event.pull_request.head.sha || github.sha }}"
             python -c "import torch, timm, onnxruntime, cv2, numpy, platform; print('python', platform.python_version()); print('torch', torch.__version__); print('timm', timm.__version__); print('onnxruntime', onnxruntime.__version__); print('opencv', cv2.__version__); print('numpy', numpy.__version__)"
             nproc
             sha256sum data/weights/*.pth
@@ -86,3 +93,8 @@ jobs:
           git commit -m "Hasil reproduksi penuh (run ${{ github.run_id }})"
           git push origin "$branch"
           echo "Branch: $branch" >> "$GITHUB_STEP_SUMMARY"
+      - name: Lepas label reproduksi
+        if: always() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr edit ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --remove-label reproduksi || true
