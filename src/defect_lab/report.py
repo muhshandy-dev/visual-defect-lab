@@ -16,6 +16,10 @@ import numpy as np
 from . import config, metrics
 
 METRICS = ("image_auroc", "pixel_auroc", "aupro", "miou")
+# Laju kesalahan pada ambang operasi (q0,95 skor validasi normal), ikut dibootstrap
+# dengan sampel ulang yang sama sehingga punya CI 95% dan selisih berpasangan.
+OP_METRICS = ("false_reject", "miss")
+BOOT_KEYS = METRICS + OP_METRICS
 # Batas kelompok ukuran cacat (bagian luas citra), ditetapkan sebelum melihat skor.
 SIZE_BINS = ((0.0, 0.002, "kecil (< 0,2%)"), (0.002, 0.01, "sedang (0,2 sampai 1%)"),
              (0.01, 1.01, "besar (> 1%)"))  # fmt: skip
@@ -54,7 +58,10 @@ def class_metrics(r: Raw, idx: np.ndarray) -> dict[str, float]:
     keep = reg_w > 0
     region = np.repeat(r.region_hist[keep], reg_w[keep], axis=0)
     an = idx[r.labels[idx] == 1]
+    nm = idx[r.labels[idx] == 0]
     return {
+        "false_reject": float((r.scores[nm] > r.threshold).mean()) if len(nm) else float("nan"),
+        "miss": float((r.scores[an] <= r.threshold).mean()) if len(an) else float("nan"),
         "image_auroc": metrics.auroc(r.scores[idx], r.labels[idx]),
         "pixel_auroc": metrics.auroc_from_hist(pos, neg),
         "aupro": metrics.aupro_from_hist(region, neg, config.AUPRO_FPR_LIMIT),
@@ -87,7 +94,7 @@ def build_results(methods: list[str], reps: int = config.BOOTSTRAP_REPS) -> dict
 
     point = {m: {c: class_metrics(raws[m][c], np.arange(len(raws[m][c].labels)))
                  for c in config.CLASSES} for m in methods}  # fmt: skip
-    boot = {m: {k: np.zeros((reps, len(config.CLASSES))) for k in METRICS} for m in methods}
+    boot = {m: {k: np.zeros((reps, len(config.CLASSES))) for k in BOOT_KEYS} for m in methods}
     for ci, c in enumerate(config.CLASSES):
         labels = raws[methods[0]][c].labels
         rng = np.random.default_rng([config.SEED, ci, 7])
@@ -95,7 +102,7 @@ def build_results(methods: list[str], reps: int = config.BOOTSTRAP_REPS) -> dict
             idx = resample(labels, rng)
             for m in methods:
                 vals = class_metrics(raws[m][c], idx)
-                for k in METRICS:
+                for k in BOOT_KEYS:
                     boot[m][k][b, ci] = vals[k]
 
     out: dict = {
@@ -118,8 +125,14 @@ def build_results(methods: list[str], reps: int = config.BOOTSTRAP_REPS) -> dict
             s = summaries[m][c]
             r = raws[m][c]
             entry = {k: point[m][c][k] for k in METRICS}
-            entry["ci95"] = {k: metrics.bootstrap_ci(boot[m][k][:, ci]) for k in METRICS}
+            entry["ci95"] = {k: metrics.bootstrap_ci(boot[m][k][:, ci]) for k in BOOT_KEYS}
+            n_def = int((r.labels == 1).sum())
+            n_norm = int((r.labels == 0).sum())
             entry.update({
+                "test_defect_images": n_def,
+                "test_normal_images": n_norm,
+                "test_missed": int(round(point[m][c]["miss"] * n_def)),
+                "test_false_rejected": int(round(point[m][c]["false_reject"] * n_norm)),
                 "threshold": r.threshold,
                 "test_false_reject": s["test_false_reject"],
                 "test_miss": s["test_miss"],
@@ -131,7 +144,7 @@ def build_results(methods: list[str], reps: int = config.BOOTSTRAP_REPS) -> dict
             })  # fmt: skip
             per_class[c] = entry
         macro = {k: float(np.mean([point[m][c][k] for c in config.CLASSES])) for k in METRICS}
-        macro_ci = {k: metrics.bootstrap_ci(boot[m][k].mean(1)) for k in METRICS}
+        macro_ci = {k: metrics.bootstrap_ci(boot[m][k].mean(1)) for k in BOOT_KEYS}
         fr = float(np.mean([summaries[m][c]["test_false_reject"] for c in config.CLASSES]))
         miss = float(np.mean([summaries[m][c]["test_miss"] for c in config.CLASSES]))
         out["methods"][m] = {
@@ -149,21 +162,26 @@ def build_results(methods: list[str], reps: int = config.BOOTSTRAP_REPS) -> dict
         if m == base:
             continue
         diff = {}
-        for k in METRICS:
+        for k in BOOT_KEYS:
             d = boot[m][k].mean(1) - boot[base][k].mean(1)
-            point_d = out["methods"][m]["macro"][k] - out["methods"][base]["macro"][k]
+            point_d = macro_of(out, m, k) - macro_of(out, base, k)
             diff[k] = {"diff": point_d, "ci95": metrics.bootstrap_ci(d),
                        "p_le_zero": float((d <= 0).mean())}  # fmt: skip
         out["paired"][f"{m}_vs_{base}"] = diff
     if "wrn50" in methods and "resnet18" in methods:
         diff = {}
-        for k in METRICS:
+        for k in BOOT_KEYS:
             d = boot["wrn50"][k].mean(1) - boot["resnet18"][k].mean(1)
-            point_d = out["methods"]["wrn50"]["macro"][k] - out["methods"]["resnet18"]["macro"][k]
+            point_d = macro_of(out, "wrn50", k) - macro_of(out, "resnet18", k)
             diff[k] = {"diff": point_d, "ci95": metrics.bootstrap_ci(d),
                        "p_le_zero": float((d <= 0).mean())}  # fmt: skip
         out["paired"]["wrn50_vs_resnet18"] = diff
     return out
+
+
+def macro_of(out: dict, m: str, k: str) -> float:
+    e = out["methods"][m]
+    return e["macro"][k] if k in e["macro"] else e[f"macro_{k}"]
 
 
 def size_breakdown(raws: dict[str, Raw]) -> list[dict]:

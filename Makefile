@@ -13,6 +13,7 @@ web:
 	.venv/bin/defect-lab export-web
 verify:
 	.venv/bin/python tools/verify_published.py
+	.venv/bin/python tools/render_report.py
 lint:
 	.venv/bin/ruff check . && .venv/bin/ruff format --check .
 fmt:

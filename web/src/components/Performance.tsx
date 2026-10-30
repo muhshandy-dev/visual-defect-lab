@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { bytes, ci, num, pct, signed } from "../lib/format.ts";
+import { bytes, ci, num, pct, signed, pctCi } from "../lib/format.ts";
 import { CLASS_NAMES, METHOD_SHORT } from "../lib/labels.ts";
 import type { MetricKey, Summary } from "../lib/types.ts";
 
@@ -69,8 +69,9 @@ export function Performance({ summary }: { summary: Summary }) {
                   <span className="muted small sub">Alarm palsu pada ambang operasi. Ambang dipilih agar sekitar 5% foto normal validasi ditolak.</span>
                 </th>
                 {ms.map((m) => (
-                  <td key={m} className="mono">
-                    {pct(summary.methods[m].macro_false_reject, 1)}
+                  <td key={m}>
+                    <span className="mono">{pct(summary.methods[m].macro_false_reject, 1)}</span>
+                    <span className="muted small sub">{pctCi(summary.methods[m].macro_ci95.false_reject, 1)}</span>
                   </td>
                 ))}
               </tr>
@@ -80,8 +81,9 @@ export function Performance({ summary }: { summary: Summary }) {
                   <span className="muted small sub">Cacat terlewat pada ambang yang sama.</span>
                 </th>
                 {ms.map((m) => (
-                  <td key={m} className="mono">
-                    {pct(summary.methods[m].macro_miss, 1)}
+                  <td key={m}>
+                    <span className="mono">{pct(summary.methods[m].macro_miss, 1)}</span>
+                    <span className="muted small sub">{pctCi(summary.methods[m].macro_ci95.miss, 1)}</span>
                   </td>
                 ))}
               </tr>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { loadSamples, url } from "../lib/data.ts";
-import { num, pct } from "../lib/format.ts";
+import { num, pct, pctCi } from "../lib/format.ts";
 import { CLASS_NAMES, METHOD_SHORT, defectName } from "../lib/labels.ts";
 import { href } from "../lib/route.ts";
 import type { ClassSamples, Summary } from "../lib/types.ts";
@@ -50,8 +50,22 @@ export function Errors({ summary }: { summary: Summary }) {
                   <tr key={c}>
                     <th scope="row">{CLASS_NAMES[c]}</th>
                     <td className="mono">{num(r.image_auroc)}</td>
-                    <td className="mono">{pct(r.test_miss)}</td>
-                    <td className="mono">{pct(r.test_false_reject)}</td>
+                    <td>
+                      <span className="mono">{pct(r.test_miss)}</span>
+                      {r.test_defect_images !== undefined && (
+                        <span className="muted small sub">
+                          {r.test_missed}/{r.test_defect_images}, CI {pctCi(r.ci95.miss)}
+                        </span>
+                      )}
+                    </td>
+                    <td>
+                      <span className="mono">{pct(r.test_false_reject)}</span>
+                      {r.test_normal_images !== undefined && (
+                        <span className="muted small sub">
+                          {r.test_false_rejected}/{r.test_normal_images}, CI {pctCi(r.ci95.false_reject)}
+                        </span>
+                      )}
+                    </td>
                     <td className="mono">{num(r.miou, 2)}</td>
                   </tr>
                 );
@@ -59,6 +73,9 @@ export function Errors({ summary }: { summary: Summary }) {
             </tbody>
           </table>
         </div>
+        <p className="muted small">
+          Angka kecil di bawah persentase: jumlah foto (salah per total) dan rentang kepercayaan 95% dari bootstrap 1000 kali.
+        </p>
       </section>
 
       <section className="block">

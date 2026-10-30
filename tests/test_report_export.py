@@ -29,6 +29,16 @@ def test_class_metrics_full_index_matches_direct():
     assert out["miou"] == np.nanmean(r.ious[10:])
 
 
+def test_operating_point_rates_match_threshold():
+    r, _, _ = _raw()
+    out = class_metrics(r, np.arange(20))
+    assert out["false_reject"] == float((r.scores[:10] > r.threshold).mean())
+    assert out["miss"] == float((r.scores[10:] <= r.threshold).mean())
+    # Sampel ulang hanya berisi foto cacat tertentu: laju dihitung pada sampel itu saja.
+    sub = class_metrics(r, np.array([0, 1, 10, 10]))
+    assert sub["miss"] == float(r.scores[10] <= r.threshold)
+
+
 def test_resample_is_stratified():
     labels = np.array([0] * 7 + [1] * 3)
     idx = resample(labels, np.random.default_rng(0))

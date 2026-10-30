@@ -67,6 +67,14 @@
     "miou": [
      0.11481051996826207,
      0.13444795444915794
+    ],
+    "false_reject": [
+     0.05486991199119912,
+     0.08871369636963695
+    ],
+    "miss": [
+     0.43083333333333335,
+     0.48335416666666664
     ]
    },
    "macro_false_reject": 0.07123212321232124,
@@ -93,8 +101,20 @@
       "miou": [
        0.07984941587986889,
        0.1476249788319433
+      ],
+      "false_reject": [
+       0.03,
+       0.14
+      ],
+      "miss": [
+       0.35,
+       0.55
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 100,
+     "test_missed": 44,
+     "test_false_rejected": 8,
      "threshold": 2.2458982467651367,
      "test_false_reject": 0.08,
      "test_miss": 0.44,
@@ -128,8 +148,20 @@
       "miou": [
        0.06917818137335786,
        0.14127404507472488
+      ],
+      "false_reject": [
+       0.03333333333333333,
+       0.2
+      ],
+      "miss": [
+       0.48,
+       0.67
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 60,
+     "test_missed": 57,
+     "test_false_rejected": 7,
      "threshold": 2.717439889907837,
      "test_false_reject": 0.11666666666666667,
      "test_miss": 0.57,
@@ -163,8 +195,20 @@
       "miou": [
        0.08708648002241212,
        0.15993284155506984
+      ],
+      "false_reject": [
+       0.0,
+       0.06
+      ],
+      "miss": [
+       0.38,
+       0.58
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 50,
+     "test_missed": 48,
+     "test_false_rejected": 1,
      "threshold": 3.303616762161255,
      "test_false_reject": 0.02,
      "test_miss": 0.48,
@@ -198,8 +242,20 @@
       "miou": [
        0.24151930401399913,
        0.36087219900808326
+      ],
+      "false_reject": [
+       0.0,
+       0.14
+      ],
+      "miss": [
+       0.24,
+       0.42
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 50,
+     "test_missed": 33,
+     "test_false_rejected": 3,
      "threshold": 2.860182523727417,
      "test_false_reject": 0.06,
      "test_miss": 0.33,
@@ -233,8 +289,20 @@
       "miou": [
        0.0638967007034044,
        0.1247916682494127
+      ],
+      "false_reject": [
+       0.02,
+       0.18049999999999955
+      ],
+      "miss": [
+       0.22,
+       0.39
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 50,
+     "test_missed": 30,
+     "test_false_rejected": 5,
      "threshold": 3.799409866333008,
      "test_false_reject": 0.1,
      "test_miss": 0.3,
@@ -268,8 +336,20 @@
       "miou": [
        0.03648604619634724,
        0.08867892351992142
+      ],
+      "false_reject": [
+       0.01,
+       0.1
+      ],
+      "miss": [
+       0.64,
+       0.82
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 100,
+     "test_missed": 73,
+     "test_false_rejected": 5,
      "threshold": 2.7697298526763916,
      "test_false_reject": 0.05,
      "test_miss": 0.73,
@@ -303,8 +383,20 @@
       "miou": [
        0.0,
        0.005823596792668957
+      ],
+      "false_reject": [
+       0.06,
+       0.19
+      ],
+      "miss": [
+       0.83,
+       0.95
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 100,
+     "test_missed": 89,
+     "test_false_rejected": 12,
      "threshold": 3.0081722736358643,
      "test_false_reject": 0.12,
      "test_miss": 0.89,
@@ -338,8 +430,20 @@
       "miou": [
        0.18542250868476223,
        0.26362533242099173
+      ],
+      "false_reject": [
+       0.02,
+       0.12
+      ],
+      "miss": [
+       0.13,
+       0.29
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 100,
+     "test_missed": 21,
+     "test_false_rejected": 7,
      "threshold": 2.9175941944122314,
      "test_false_reject": 0.07,
      "test_miss": 0.21,
@@ -373,8 +477,20 @@
       "miou": [
        0.1183312129536928,
        0.18268875495153186
+      ],
+      "false_reject": [
+       0.0,
+       0.03
+      ],
+      "miss": [
+       0.23,
+       0.4002499999999998
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 100,
+     "test_missed": 32,
+     "test_false_rejected": 1,
      "threshold": 2.9409384727478027,
      "test_false_reject": 0.01,
      "test_miss": 0.32,
@@ -408,8 +524,20 @@
       "miou": [
        0.10868770252410744,
        0.17754919113317227
+      ],
+      "false_reject": [
+       0.06930693069306931,
+       0.19801980198019803
+      ],
+      "miss": [
+       0.33,
+       0.51
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 101,
+     "test_missed": 41,
+     "test_false_rejected": 13,
      "threshold": 2.827462911605835,
      "test_false_reject": 0.12871287128712872,
      "test_miss": 0.41,
@@ -443,8 +571,20 @@
       "miou": [
        0.03041889283630033,
        0.07530521238637643
+      ],
+      "false_reject": [
+       0.019801980198019802,
+       0.10891089108910891
+      ],
+      "miss": [
+       0.36,
+       0.56
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 101,
+     "test_missed": 46,
+     "test_false_rejected": 6,
      "threshold": 3.1883492469787598,
      "test_false_reject": 0.0594059405940594,
      "test_miss": 0.46,
@@ -478,8 +618,20 @@
       "miou": [
        0.1030292432898113,
        0.15922225764559714
+      ],
+      "false_reject": [
+       0.0,
+       0.1
+      ],
+      "miss": [
+       0.25,
+       0.44
       ]
      },
+     "test_defect_images": 100,
+     "test_normal_images": 50,
+     "test_missed": 34,
+     "test_false_rejected": 2,
      "threshold": 4.379860877990723,
      "test_false_reject": 0.04,
      "test_miss": 0.34,

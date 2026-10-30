@@ -121,6 +121,24 @@ def int8_scores(cls: str, inputs: np.ndarray) -> list[float] | None:
     return out
 
 
+def refresh_summary() -> None:
+    """Perbarui angka di summary.json dari evaluation/results.json tanpa menyentuh gambar.
+
+    Dipakai bila laporan dihitung ulang (misalnya CI tambahan) sementara peta skor dan
+    sampel tetap sama. Metode dan urutan sampel tidak boleh berubah.
+    """
+    path = config.WEB_PUBLIC / "data" / "summary.json"
+    summary = json.loads(path.read_text())
+    results = json.loads((config.EVAL_DIR / "results.json").read_text())
+    methods = summary["method_order"]
+    assert set(methods) <= set(results["methods"]), "metode di website tidak ada di results.json"
+    summary["config"] = results["config"]
+    summary["methods"] = {m: {"key": m, **results["methods"][m]} for m in methods}
+    summary["paired"] = results["paired"]
+    path.write_text(json.dumps(summary, indent=1, ensure_ascii=False))
+    print("summary.json diperbarui dari results.json")
+
+
 def export() -> None:
     methods = [
         m for m in ORDER if (config.EVAL_DIR / "raw" / m / f"{config.CLASSES[-1]}.npz").exists()

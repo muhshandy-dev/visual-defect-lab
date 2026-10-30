@@ -60,10 +60,10 @@ def cmd_export_onnx(_: argparse.Namespace) -> None:
     print(json.dumps(export_all(), indent=2))
 
 
-def cmd_export_web(_: argparse.Namespace) -> None:
-    from .export_web import export
+def cmd_export_web(args: argparse.Namespace) -> None:
+    from .export_web import export, refresh_summary
 
-    export()
+    refresh_summary() if args.summary_only else export()
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -84,7 +84,10 @@ def main(argv: list[str] | None = None) -> None:
     sub.add_parser("export-onnx", help="ekspor model browser ke ONNX int8").set_defaults(
         fn=cmd_export_onnx
     )
-    sub.add_parser("export-web", help="tulis data website").set_defaults(fn=cmd_export_web)
+    ew = sub.add_parser("export-web", help="tulis data website")
+    ew.add_argument("--summary-only", action="store_true",
+                    help="hanya perbarui angka di summary.json dari results.json")  # fmt: skip
+    ew.set_defaults(fn=cmd_export_web)
     args = p.parse_args(argv)
     args.fn(args)
 

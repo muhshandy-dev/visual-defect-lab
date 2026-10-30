@@ -1,15 +1,20 @@
 export type MetricKey = "image_auroc" | "pixel_auroc" | "aupro" | "miou";
 export type CI = [number, number];
+export type OpKey = "false_reject" | "miss";
 
 export interface ClassMetrics {
   image_auroc: number;
   pixel_auroc: number;
   aupro: number;
   miou: number;
-  ci95: Record<MetricKey, CI>;
+  ci95: Record<MetricKey, CI> & Partial<Record<OpKey, CI>>;
   threshold: number;
   test_false_reject: number;
   test_miss: number;
+  test_missed?: number;
+  test_defect_images?: number;
+  test_false_rejected?: number;
+  test_normal_images?: number;
   ms_per_test_image: number;
   bank_size: number;
   fit_images: number;
@@ -35,7 +40,7 @@ export interface MethodSummary {
   key: string;
   label: string;
   macro: Record<MetricKey, number>;
-  macro_ci95: Record<MetricKey, CI>;
+  macro_ci95: Record<MetricKey, CI> & Partial<Record<OpKey, CI>>;
   macro_false_reject: number;
   macro_miss: number;
   per_class: Record<string, ClassMetrics>;

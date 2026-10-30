@@ -61,6 +61,8 @@ jobs:
         run: defect-lab export-web
       - name: Pemeriksaan independen
         run: python tools/verify_published.py
+      - name: Tabel hasil per produk
+        run: python tools/render_report.py
       - name: Catat lingkungan
         run: |
           {
@@ -89,7 +91,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           branch="hasil/reproduksi-${{ github.run_id }}"
           git checkout -b "$branch"
-          git add evaluation web/public
+          git add evaluation web/public docs/HASIL_PER_PRODUK.md
           git commit -m "Hasil reproduksi penuh (run ${{ github.run_id }})"
           git push origin "$branch"
           echo "Branch: $branch" >> "$GITHUB_STEP_SUMMARY"

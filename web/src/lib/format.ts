@@ -16,6 +16,11 @@ export function ci(c: [number, number] | undefined, d = 3): string {
   return `${num(c[0], d)} sampai ${num(c[1], d)}`;
 }
 
+export function pctCi(c: [number, number] | undefined, d = 0): string {
+  if (!c) return "";
+  return `${nf(d).format(c[0] * 100)} sampai ${pct(c[1], d)}`;
+}
+
 export function signed(v: number, d = 3): string {
   const s = num(Math.abs(v), d);
   return v > 0 ? `+${s}` : v < 0 ? `−${s}` : s;
