@@ -1,0 +1,272 @@
+{
+ "cls": "candle",
+ "thresholds": {
+  "classical": 2.2458982467651367
+ },
+ "items": [
+  {
+   "id": "a009",
+   "group": "acak",
+   "label": 1,
+   "defect": "chunk of wax missing",
+   "area": 0.0031585693359375,
+   "img": "img/candle/a009.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a009.png",
+   "mask": "mask/candle/a009.png",
+   "maps": {
+    "classical": "map/classical/candle/a009.png",
+    "classical_thumb": "map/classical_thumb/candle/a009.jpg"
+   },
+   "scores": {
+    "classical": 2.630311965942383
+   },
+   "iou": {
+    "classical": 0.368705035971223
+   }
+  },
+  {
+   "id": "a031",
+   "group": "acak",
+   "label": 1,
+   "defect": "weird candle wick",
+   "area": 0.0016021728515625,
+   "img": "img/candle/a031.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a031.png",
+   "mask": "mask/candle/a031.png",
+   "maps": {
+    "classical": "map/classical/candle/a031.png",
+    "classical_thumb": "map/classical_thumb/candle/a031.jpg"
+   },
+   "scores": {
+    "classical": 2.056431293487549
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a004",
+   "group": "acak",
+   "label": 1,
+   "defect": "chunk of wax missing",
+   "area": 0.00335693359375,
+   "img": "img/candle/a004.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a004.png",
+   "mask": "mask/candle/a004.png",
+   "maps": {
+    "classical": "map/classical/candle/a004.png",
+    "classical_thumb": "map/classical_thumb/candle/a004.jpg"
+   },
+   "scores": {
+    "classical": 2.4682846069335938
+   },
+   "iou": {
+    "classical": 0.04424778761061947
+   }
+  },
+  {
+   "id": "a076",
+   "group": "acak",
+   "label": 1,
+   "defect": "foreign particals on candle",
+   "area": 0.0005950927734375,
+   "img": "img/candle/a076.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a076.png",
+   "mask": "mask/candle/a076.png",
+   "maps": {
+    "classical": "map/classical/candle/a076.png",
+    "classical_thumb": "map/classical_thumb/candle/a076.jpg"
+   },
+   "scores": {
+    "classical": 2.070131301879883
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a036",
+   "group": "acak",
+   "label": 1,
+   "defect": "weird candle wick",
+   "area": 0.001251220703125,
+   "img": "img/candle/a036.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a036.png",
+   "mask": "mask/candle/a036.png",
+   "maps": {
+    "classical": "map/classical/candle/a036.png",
+    "classical_thumb": "map/classical_thumb/candle/a036.jpg"
+   },
+   "scores": {
+    "classical": 2.3095970153808594
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0297",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0297.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0297.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/candle/n0297.png",
+    "classical_thumb": "map/classical_thumb/candle/n0297.jpg"
+   },
+   "scores": {
+    "classical": 2.0395612716674805
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0178",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0178.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0178.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/candle/n0178.png",
+    "classical_thumb": "map/classical_thumb/candle/n0178.jpg"
+   },
+   "scores": {
+    "classical": 2.047534227371216
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0100",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0100.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0100.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/candle/n0100.png",
+    "classical_thumb": "map/classical_thumb/candle/n0100.jpg"
+   },
+   "scores": {
+    "classical": 2.0652146339416504
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "a017",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "damaged corner of packaging,different colour spot",
+   "area": 0.0018463134765625,
+   "img": "img/candle/a017.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a017.png",
+   "mask": "mask/candle/a017.png",
+   "maps": {
+    "classical": "map/classical/candle/a017.png",
+    "classical_thumb": "map/classical_thumb/candle/a017.jpg"
+   },
+   "scores": {
+    "classical": 2.002609968185425
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a039",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "weird candle wick",
+   "area": 0.0024261474609375,
+   "img": "img/candle/a039.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a039.png",
+   "mask": "mask/candle/a039.png",
+   "maps": {
+    "classical": "map/classical/candle/a039.png",
+    "classical_thumb": "map/classical_thumb/candle/a039.jpg"
+   },
+   "scores": {
+    "classical": 2.025408983230591
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0751",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0751.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0751.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/candle/n0751.png",
+    "classical_thumb": "map/classical_thumb/candle/n0751.jpg"
+   },
+   "scores": {
+    "classical": 2.6530117988586426
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0615",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0615.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0615.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/candle/n0615.png",
+    "classical_thumb": "map/classical_thumb/candle/n0615.jpg"
+   },
+   "scores": {
+    "classical": 2.4704337120056152
+   },
+   "iou": {
+    "classical": null
+   }
+  }
+ ]
+}

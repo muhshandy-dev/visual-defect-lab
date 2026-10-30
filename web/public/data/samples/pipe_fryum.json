@@ -1,0 +1,272 @@
+{
+ "cls": "pipe_fryum",
+ "thresholds": {
+  "classical": 4.379860877990723
+ },
+ "items": [
+  {
+   "id": "a087",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot,small scratches",
+   "area": 0.0020751953125,
+   "img": "img/pipe_fryum/a087.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a087.png",
+   "mask": "mask/pipe_fryum/a087.png",
+   "maps": {
+    "classical": "map/classical/pipe_fryum/a087.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/a087.jpg"
+   },
+   "scores": {
+    "classical": 3.731797218322754
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a035",
+   "group": "acak",
+   "label": 1,
+   "defect": "different colour spot",
+   "area": 0.000274658203125,
+   "img": "img/pipe_fryum/a035.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a035.png",
+   "mask": "mask/pipe_fryum/a035.png",
+   "maps": {
+    "classical": "map/classical/pipe_fryum/a035.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/a035.jpg"
+   },
+   "scores": {
+    "classical": 5.063518047332764
+   },
+   "iou": {
+    "classical": 0.03180212014134275
+   }
+  },
+  {
+   "id": "a079",
+   "group": "acak",
+   "label": 1,
+   "defect": "small scratches",
+   "area": 0.003692626953125,
+   "img": "img/pipe_fryum/a079.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a079.png",
+   "mask": "mask/pipe_fryum/a079.png",
+   "maps": {
+    "classical": "map/classical/pipe_fryum/a079.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/a079.jpg"
+   },
+   "scores": {
+    "classical": 5.66323709487915
+   },
+   "iou": {
+    "classical": 0.4508670520231214
+   }
+  },
+  {
+   "id": "a067",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.00067138671875,
+   "img": "img/pipe_fryum/a067.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a067.png",
+   "mask": "mask/pipe_fryum/a067.png",
+   "maps": {
+    "classical": "map/classical/pipe_fryum/a067.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/a067.jpg"
+   },
+   "scores": {
+    "classical": 4.1009039878845215
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a052",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.0005035400390625,
+   "img": "img/pipe_fryum/a052.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a052.png",
+   "mask": "mask/pipe_fryum/a052.png",
+   "maps": {
+    "classical": "map/classical/pipe_fryum/a052.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/a052.jpg"
+   },
+   "scores": {
+    "classical": 3.6484031677246094
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n309",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n309.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n309.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pipe_fryum/n309.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/n309.jpg"
+   },
+   "scores": {
+    "classical": 3.7688755989074707
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n484",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n484.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n484.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pipe_fryum/n484.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/n484.jpg"
+   },
+   "scores": {
+    "classical": 3.512735605239868
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n143",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n143.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n143.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pipe_fryum/n143.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/n143.jpg"
+   },
+   "scores": {
+    "classical": 3.6132442951202393
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "a055",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.00042724609375,
+   "img": "img/pipe_fryum/a055.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a055.png",
+   "mask": "mask/pipe_fryum/a055.png",
+   "maps": {
+    "classical": "map/classical/pipe_fryum/a055.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/a055.jpg"
+   },
+   "scores": {
+    "classical": 3.2656660079956055
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a064",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.0004425048828125,
+   "img": "img/pipe_fryum/a064.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a064.png",
+   "mask": "mask/pipe_fryum/a064.png",
+   "maps": {
+    "classical": "map/classical/pipe_fryum/a064.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/a064.jpg"
+   },
+   "scores": {
+    "classical": 3.4583165645599365
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n352",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n352.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n352.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pipe_fryum/n352.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/n352.jpg"
+   },
+   "scores": {
+    "classical": 6.815387725830078
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n181",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n181.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n181.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pipe_fryum/n181.png",
+    "classical_thumb": "map/classical_thumb/pipe_fryum/n181.jpg"
+   },
+   "scores": {
+    "classical": 5.407018184661865
+   },
+   "iou": {
+    "classical": null
+   }
+  }
+ ]
+}

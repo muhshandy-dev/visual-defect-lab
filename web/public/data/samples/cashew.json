@@ -1,0 +1,250 @@
+{
+ "cls": "cashew",
+ "thresholds": {
+  "classical": 3.303616762161255
+ },
+ "items": [
+  {
+   "id": "a087",
+   "group": "acak",
+   "label": 1,
+   "defect": "small scratches",
+   "area": 0.001556396484375,
+   "img": "img/cashew/a087.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/a087.png",
+   "mask": "mask/cashew/a087.png",
+   "maps": {
+    "classical": "map/classical/cashew/a087.png",
+    "classical_thumb": "map/classical_thumb/cashew/a087.jpg"
+   },
+   "scores": {
+    "classical": 3.40450119972229
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a082",
+   "group": "acak",
+   "label": 1,
+   "defect": "small scratches",
+   "area": 0.002044677734375,
+   "img": "img/cashew/a082.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/a082.png",
+   "mask": "mask/cashew/a082.png",
+   "maps": {
+    "classical": "map/classical/cashew/a082.png",
+    "classical_thumb": "map/classical_thumb/cashew/a082.jpg"
+   },
+   "scores": {
+    "classical": 3.285922050476074
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a035",
+   "group": "acak",
+   "label": 1,
+   "defect": "middle breakage",
+   "area": 0.0066680908203125,
+   "img": "img/cashew/a035.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/a035.png",
+   "mask": "mask/cashew/a035.png",
+   "maps": {
+    "classical": "map/classical/cashew/a035.png",
+    "classical_thumb": "map/classical_thumb/cashew/a035.jpg"
+   },
+   "scores": {
+    "classical": 3.7202067375183105
+   },
+   "iou": {
+    "classical": 0.25140712945590993
+   }
+  },
+  {
+   "id": "a041",
+   "group": "acak",
+   "label": 1,
+   "defect": "middle breakage",
+   "area": 0.004638671875,
+   "img": "img/cashew/a041.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/a041.png",
+   "mask": "mask/cashew/a041.png",
+   "maps": {
+    "classical": "map/classical/cashew/a041.png",
+    "classical_thumb": "map/classical_thumb/cashew/a041.jpg"
+   },
+   "scores": {
+    "classical": 4.203369617462158
+   },
+   "iou": {
+    "classical": 0.6757493188010899
+   }
+  },
+  {
+   "id": "a068",
+   "group": "acak",
+   "label": 1,
+   "defect": "different colour spot",
+   "area": 0.00018310546875,
+   "img": "img/cashew/a068.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/a068.png",
+   "mask": "mask/cashew/a068.png",
+   "maps": {
+    "classical": "map/classical/cashew/a068.png",
+    "classical_thumb": "map/classical_thumb/cashew/a068.jpg"
+   },
+   "scores": {
+    "classical": 3.094264030456543
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n166",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/cashew/n166.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/n166.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/cashew/n166.png",
+    "classical_thumb": "map/classical_thumb/cashew/n166.jpg"
+   },
+   "scores": {
+    "classical": 2.93027663230896
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n402",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/cashew/n402.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/n402.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/cashew/n402.png",
+    "classical_thumb": "map/classical_thumb/cashew/n402.jpg"
+   },
+   "scores": {
+    "classical": 2.950730800628662
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n272",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/cashew/n272.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/n272.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/cashew/n272.png",
+    "classical_thumb": "map/classical_thumb/cashew/n272.jpg"
+   },
+   "scores": {
+    "classical": 2.8958771228790283
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "a083",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "small scratches",
+   "area": 0.0031280517578125,
+   "img": "img/cashew/a083.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/a083.png",
+   "mask": "mask/cashew/a083.png",
+   "maps": {
+    "classical": "map/classical/cashew/a083.png",
+    "classical_thumb": "map/classical_thumb/cashew/a083.jpg"
+   },
+   "scores": {
+    "classical": 2.821711301803589
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a069",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "small holes",
+   "area": 0.000152587890625,
+   "img": "img/cashew/a069.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/a069.png",
+   "mask": "mask/cashew/a069.png",
+   "maps": {
+    "classical": "map/classical/cashew/a069.png",
+    "classical_thumb": "map/classical_thumb/cashew/a069.jpg"
+   },
+   "scores": {
+    "classical": 2.858980417251587
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n084",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/cashew/n084.jpg",
+   "w": 1274,
+   "h": 1176,
+   "input": "in/cashew/n084.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/cashew/n084.png",
+    "classical_thumb": "map/classical_thumb/cashew/n084.jpg"
+   },
+   "scores": {
+    "classical": 3.6958987712860107
+   },
+   "iou": {
+    "classical": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,272 @@
+{
+ "cls": "pcb4",
+ "thresholds": {
+  "classical": 3.1883492469787598
+ },
+ "items": [
+  {
+   "id": "a096",
+   "group": "acak",
+   "label": 1,
+   "defect": "wrong place",
+   "area": 0.0039520263671875,
+   "img": "img/pcb4/a096.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/a096.png",
+   "mask": "mask/pcb4/a096.png",
+   "maps": {
+    "classical": "map/classical/pcb4/a096.png",
+    "classical_thumb": "map/classical_thumb/pcb4/a096.jpg"
+   },
+   "scores": {
+    "classical": 2.999124765396118
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a092",
+   "group": "acak",
+   "label": 1,
+   "defect": "wrong place,dirt",
+   "area": 0.019012451171875,
+   "img": "img/pcb4/a092.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/a092.png",
+   "mask": "mask/pcb4/a092.png",
+   "maps": {
+    "classical": "map/classical/pcb4/a092.png",
+    "classical_thumb": "map/classical_thumb/pcb4/a092.jpg"
+   },
+   "scores": {
+    "classical": 3.3147201538085938
+   },
+   "iou": {
+    "classical": 0.06500802568218299
+   }
+  },
+  {
+   "id": "a022",
+   "group": "acak",
+   "label": 1,
+   "defect": "scratch,damage",
+   "area": 0.004180908203125,
+   "img": "img/pcb4/a022.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/a022.png",
+   "mask": "mask/pcb4/a022.png",
+   "maps": {
+    "classical": "map/classical/pcb4/a022.png",
+    "classical_thumb": "map/classical_thumb/pcb4/a022.jpg"
+   },
+   "scores": {
+    "classical": 3.093538284301758
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a078",
+   "group": "acak",
+   "label": 1,
+   "defect": "scratch,dirt",
+   "area": 0.0061492919921875,
+   "img": "img/pcb4/a078.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/a078.png",
+   "mask": "mask/pcb4/a078.png",
+   "maps": {
+    "classical": "map/classical/pcb4/a078.png",
+    "classical_thumb": "map/classical_thumb/pcb4/a078.jpg"
+   },
+   "scores": {
+    "classical": 3.158977508544922
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a021",
+   "group": "acak",
+   "label": 1,
+   "defect": "damage,dirt",
+   "area": 0.0033416748046875,
+   "img": "img/pcb4/a021.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/a021.png",
+   "mask": "mask/pcb4/a021.png",
+   "maps": {
+    "classical": "map/classical/pcb4/a021.png",
+    "classical_thumb": "map/classical_thumb/pcb4/a021.jpg"
+   },
+   "scores": {
+    "classical": 3.0313825607299805
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0811",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pcb4/n0811.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/n0811.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pcb4/n0811.png",
+    "classical_thumb": "map/classical_thumb/pcb4/n0811.jpg"
+   },
+   "scores": {
+    "classical": 2.822585105895996
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0427",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pcb4/n0427.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/n0427.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pcb4/n0427.png",
+    "classical_thumb": "map/classical_thumb/pcb4/n0427.jpg"
+   },
+   "scores": {
+    "classical": 3.2139782905578613
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0617",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pcb4/n0617.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/n0617.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pcb4/n0617.png",
+    "classical_thumb": "map/classical_thumb/pcb4/n0617.jpg"
+   },
+   "scores": {
+    "classical": 2.8959877490997314
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "a074",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "missing,dirt",
+   "area": 0.0106658935546875,
+   "img": "img/pcb4/a074.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/a074.png",
+   "mask": "mask/pcb4/a074.png",
+   "maps": {
+    "classical": "map/classical/pcb4/a074.png",
+    "classical_thumb": "map/classical_thumb/pcb4/a074.jpg"
+   },
+   "scores": {
+    "classical": 2.887643337249756
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a049",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "missing",
+   "area": 0.0281982421875,
+   "img": "img/pcb4/a049.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/a049.png",
+   "mask": "mask/pcb4/a049.png",
+   "maps": {
+    "classical": "map/classical/pcb4/a049.png",
+    "classical_thumb": "map/classical_thumb/pcb4/a049.jpg"
+   },
+   "scores": {
+    "classical": 2.913679361343384
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0333",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pcb4/n0333.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/n0333.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pcb4/n0333.png",
+    "classical_thumb": "map/classical_thumb/pcb4/n0333.jpg"
+   },
+   "scores": {
+    "classical": 3.732297420501709
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0261",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pcb4/n0261.jpg",
+   "w": 1358,
+   "h": 1104,
+   "input": "in/pcb4/n0261.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/pcb4/n0261.png",
+    "classical_thumb": "map/classical_thumb/pcb4/n0261.jpg"
+   },
+   "scores": {
+    "classical": 3.474287509918213
+   },
+   "iou": {
+    "classical": null
+   }
+  }
+ ]
+}

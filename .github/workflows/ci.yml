@@ -28,7 +28,7 @@ jobs:
           cache: pip
           cache-dependency-path: pyproject.toml
       - name: Pasang PyTorch CPU
-        run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       - name: Pasang paket
         run: pip install -e ".[model,dev]"
       - name: Lint

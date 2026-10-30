@@ -1,0 +1,272 @@
+{
+ "cls": "macaroni1",
+ "thresholds": {
+  "classical": 2.7697298526763916
+ },
+ "items": [
+  {
+   "id": "a038",
+   "group": "acak",
+   "label": 1,
+   "defect": "middle breakage,small scratches",
+   "area": 0.0009307861328125,
+   "img": "img/macaroni1/a038.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/a038.png",
+   "mask": "mask/macaroni1/a038.png",
+   "maps": {
+    "classical": "map/classical/macaroni1/a038.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/a038.jpg"
+   },
+   "scores": {
+    "classical": 2.7114500999450684
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a054",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.0007171630859375,
+   "img": "img/macaroni1/a054.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/a054.png",
+   "mask": "mask/macaroni1/a054.png",
+   "maps": {
+    "classical": "map/classical/macaroni1/a054.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/a054.jpg"
+   },
+   "scores": {
+    "classical": 2.934067964553833
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a041",
+   "group": "acak",
+   "label": 1,
+   "defect": "middle breakage,small scratches",
+   "area": 0.001495361328125,
+   "img": "img/macaroni1/a041.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/a041.png",
+   "mask": "mask/macaroni1/a041.png",
+   "maps": {
+    "classical": "map/classical/macaroni1/a041.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/a041.jpg"
+   },
+   "scores": {
+    "classical": 3.2383363246917725
+   },
+   "iou": {
+    "classical": 0.3655913978494624
+   }
+  },
+  {
+   "id": "a043",
+   "group": "acak",
+   "label": 1,
+   "defect": "middle breakage,small scratches",
+   "area": 0.001129150390625,
+   "img": "img/macaroni1/a043.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/a043.png",
+   "mask": "mask/macaroni1/a043.png",
+   "maps": {
+    "classical": "map/classical/macaroni1/a043.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/a043.jpg"
+   },
+   "scores": {
+    "classical": 2.8736209869384766
+   },
+   "iou": {
+    "classical": 0.1782178217821782
+   }
+  },
+  {
+   "id": "a069",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.0004730224609375,
+   "img": "img/macaroni1/a069.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/a069.png",
+   "mask": "mask/macaroni1/a069.png",
+   "maps": {
+    "classical": "map/classical/macaroni1/a069.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/a069.jpg"
+   },
+   "scores": {
+    "classical": 2.3881852626800537
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0469",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni1/n0469.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/n0469.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni1/n0469.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/n0469.jpg"
+   },
+   "scores": {
+    "classical": 2.447883367538452
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0621",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni1/n0621.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/n0621.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni1/n0621.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/n0621.jpg"
+   },
+   "scores": {
+    "classical": 2.9434328079223633
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0869",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni1/n0869.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/n0869.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni1/n0869.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/n0869.jpg"
+   },
+   "scores": {
+    "classical": 2.4091806411743164
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "a055",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "different colour spot,similar colour spot",
+   "area": 0.0004425048828125,
+   "img": "img/macaroni1/a055.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/a055.png",
+   "mask": "mask/macaroni1/a055.png",
+   "maps": {
+    "classical": "map/classical/macaroni1/a055.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/a055.jpg"
+   },
+   "scores": {
+    "classical": 2.3968217372894287
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a056",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.0008392333984375,
+   "img": "img/macaroni1/a056.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/a056.png",
+   "mask": "mask/macaroni1/a056.png",
+   "maps": {
+    "classical": "map/classical/macaroni1/a056.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/a056.jpg"
+   },
+   "scores": {
+    "classical": 2.4196715354919434
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0174",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni1/n0174.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/n0174.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni1/n0174.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/n0174.jpg"
+   },
+   "scores": {
+    "classical": 3.2694432735443115
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0457",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni1/n0457.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni1/n0457.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni1/n0457.png",
+    "classical_thumb": "map/classical_thumb/macaroni1/n0457.jpg"
+   },
+   "scores": {
+    "classical": 2.897552013397217
+   },
+   "iou": {
+    "classical": null
+   }
+  }
+ ]
+}

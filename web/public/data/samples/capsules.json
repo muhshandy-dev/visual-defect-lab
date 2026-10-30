@@ -1,0 +1,272 @@
+{
+ "cls": "capsules",
+ "thresholds": {
+  "classical": 2.717439889907837
+ },
+ "items": [
+  {
+   "id": "a015",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble",
+   "area": 0.0012359619140625,
+   "img": "img/capsules/a015.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a015.png",
+   "mask": "mask/capsules/a015.png",
+   "maps": {
+    "classical": "map/classical/capsules/a015.png",
+    "classical_thumb": "map/classical_thumb/capsules/a015.jpg"
+   },
+   "scores": {
+    "classical": 2.705794334411621
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a058",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak",
+   "area": 0.00933837890625,
+   "img": "img/capsules/a058.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a058.png",
+   "mask": "mask/capsules/a058.png",
+   "maps": {
+    "classical": "map/classical/capsules/a058.png",
+    "classical_thumb": "map/classical_thumb/capsules/a058.jpg"
+   },
+   "scores": {
+    "classical": 3.13612961769104
+   },
+   "iou": {
+    "classical": 0.29036144578313255
+   }
+  },
+  {
+   "id": "a082",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak,misshape",
+   "area": 0.0153350830078125,
+   "img": "img/capsules/a082.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a082.png",
+   "mask": "mask/capsules/a082.png",
+   "maps": {
+    "classical": "map/classical/capsules/a082.png",
+    "classical_thumb": "map/classical_thumb/capsules/a082.jpg"
+   },
+   "scores": {
+    "classical": 2.8104968070983887
+   },
+   "iou": {
+    "classical": 0.06618962432915922
+   }
+  },
+  {
+   "id": "a049",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak,misshape",
+   "area": 0.0085296630859375,
+   "img": "img/capsules/a049.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a049.png",
+   "mask": "mask/capsules/a049.png",
+   "maps": {
+    "classical": "map/classical/capsules/a049.png",
+    "classical_thumb": "map/classical_thumb/capsules/a049.jpg"
+   },
+   "scores": {
+    "classical": 2.80684494972229
+   },
+   "iou": {
+    "classical": 0.16506410256410256
+   }
+  },
+  {
+   "id": "a061",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak",
+   "area": 0.0067901611328125,
+   "img": "img/capsules/a061.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a061.png",
+   "mask": "mask/capsules/a061.png",
+   "maps": {
+    "classical": "map/classical/capsules/a061.png",
+    "classical_thumb": "map/classical_thumb/capsules/a061.jpg"
+   },
+   "scores": {
+    "classical": 2.631427526473999
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n011",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n011.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n011.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/capsules/n011.png",
+    "classical_thumb": "map/classical_thumb/capsules/n011.jpg"
+   },
+   "scores": {
+    "classical": 2.6447176933288574
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n417",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n417.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n417.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/capsules/n417.png",
+    "classical_thumb": "map/classical_thumb/capsules/n417.jpg"
+   },
+   "scores": {
+    "classical": 2.6122395992279053
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n514",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n514.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n514.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/capsules/n514.png",
+    "classical_thumb": "map/classical_thumb/capsules/n514.jpg"
+   },
+   "scores": {
+    "classical": 2.645045757293701
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "a022",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "bubble",
+   "area": 0.0008392333984375,
+   "img": "img/capsules/a022.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a022.png",
+   "mask": "mask/capsules/a022.png",
+   "maps": {
+    "classical": "map/classical/capsules/a022.png",
+    "classical_thumb": "map/classical_thumb/capsules/a022.jpg"
+   },
+   "scores": {
+    "classical": 2.491638422012329
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a013",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "bubble",
+   "area": 0.001373291015625,
+   "img": "img/capsules/a013.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a013.png",
+   "mask": "mask/capsules/a013.png",
+   "maps": {
+    "classical": "map/classical/capsules/a013.png",
+    "classical_thumb": "map/classical_thumb/capsules/a013.jpg"
+   },
+   "scores": {
+    "classical": 2.506805658340454
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n469",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n469.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n469.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/capsules/n469.png",
+    "classical_thumb": "map/classical_thumb/capsules/n469.jpg"
+   },
+   "scores": {
+    "classical": 2.969292163848877
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n423",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n423.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n423.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/capsules/n423.png",
+    "classical_thumb": "map/classical_thumb/capsules/n423.jpg"
+   },
+   "scores": {
+    "classical": 2.9342968463897705
+   },
+   "iou": {
+    "classical": null
+   }
+  }
+ ]
+}

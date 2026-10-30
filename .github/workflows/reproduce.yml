@@ -32,7 +32,7 @@ jobs:
           cache-dependency-path: pyproject.toml
       - name: Pasang PyTorch CPU dan paket
         run: |
-          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
           pip install -e ".[model,dev]"
       - name: Cache arsip VisA (1,9 GB)
         uses: actions/cache@v4
@@ -66,7 +66,7 @@ jobs:
           {
             echo "run: ${{ github.run_id }}"
             echo "commit: ${{ github.event.pull_request.head.sha || github.sha }}"
-            python -c "import torch, timm, onnxruntime, cv2, numpy, platform; print('python', platform.python_version()); print('torch', torch.__version__); print('timm', timm.__version__); print('onnxruntime', onnxruntime.__version__); print('opencv', cv2.__version__); print('numpy', numpy.__version__)"
+            python -c "import torch, timm, onnxruntime, cv2, numpy, platform; print('python', platform.python_version()); print('torch', torch.__version__); import torchvision; print('torchvision', torchvision.__version__); print('timm', timm.__version__); print('onnxruntime', onnxruntime.__version__); print('opencv', cv2.__version__); print('numpy', numpy.__version__)"
             nproc
             sha256sum data/weights/*.pth
           } > evaluation/environment.txt

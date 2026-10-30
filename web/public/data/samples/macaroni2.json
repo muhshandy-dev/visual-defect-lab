@@ -1,0 +1,272 @@
+{
+ "cls": "macaroni2",
+ "thresholds": {
+  "classical": 3.0081722736358643
+ },
+ "items": [
+  {
+   "id": "a045",
+   "group": "acak",
+   "label": 1,
+   "defect": "small chip around edge",
+   "area": 0.0001983642578125,
+   "img": "img/macaroni2/a045.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a045.png",
+   "mask": "mask/macaroni2/a045.png",
+   "maps": {
+    "classical": "map/classical/macaroni2/a045.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/a045.jpg"
+   },
+   "scores": {
+    "classical": 2.9557666778564453
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a052",
+   "group": "acak",
+   "label": 1,
+   "defect": "small chip around edge",
+   "area": 0.001190185546875,
+   "img": "img/macaroni2/a052.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a052.png",
+   "mask": "mask/macaroni2/a052.png",
+   "maps": {
+    "classical": "map/classical/macaroni2/a052.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/a052.jpg"
+   },
+   "scores": {
+    "classical": 2.790879964828491
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a087",
+   "group": "acak",
+   "label": 1,
+   "defect": "small scratches",
+   "area": 0.00054931640625,
+   "img": "img/macaroni2/a087.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a087.png",
+   "mask": "mask/macaroni2/a087.png",
+   "maps": {
+    "classical": "map/classical/macaroni2/a087.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/a087.jpg"
+   },
+   "scores": {
+    "classical": 2.755606174468994
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a005",
+   "group": "acak",
+   "label": 1,
+   "defect": "breakage down the middle,small scratches",
+   "area": 0.0005645751953125,
+   "img": "img/macaroni2/a005.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a005.png",
+   "mask": "mask/macaroni2/a005.png",
+   "maps": {
+    "classical": "map/classical/macaroni2/a005.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/a005.jpg"
+   },
+   "scores": {
+    "classical": 2.826369047164917
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a080",
+   "group": "acak",
+   "label": 1,
+   "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches",
+   "area": 0.0004425048828125,
+   "img": "img/macaroni2/a080.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a080.png",
+   "mask": "mask/macaroni2/a080.png",
+   "maps": {
+    "classical": "map/classical/macaroni2/a080.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/a080.jpg"
+   },
+   "scores": {
+    "classical": 2.6635501384735107
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0694",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0694.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0694.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni2/n0694.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/n0694.jpg"
+   },
+   "scores": {
+    "classical": 2.7169599533081055
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0985",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0985.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0985.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni2/n0985.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/n0985.jpg"
+   },
+   "scores": {
+    "classical": 2.8190102577209473
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0755",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0755.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0755.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni2/n0755.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/n0755.jpg"
+   },
+   "scores": {
+    "classical": 2.8298118114471436
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "a047",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "small chip around edge",
+   "area": 0.0005340576171875,
+   "img": "img/macaroni2/a047.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a047.png",
+   "mask": "mask/macaroni2/a047.png",
+   "maps": {
+    "classical": "map/classical/macaroni2/a047.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/a047.jpg"
+   },
+   "scores": {
+    "classical": 2.640880823135376
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a009",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "breakage down the middle,small scratches",
+   "area": 0.000762939453125,
+   "img": "img/macaroni2/a009.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a009.png",
+   "mask": "mask/macaroni2/a009.png",
+   "maps": {
+    "classical": "map/classical/macaroni2/a009.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/a009.jpg"
+   },
+   "scores": {
+    "classical": 2.7005629539489746
+   },
+   "iou": {
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0107",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0107.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0107.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni2/n0107.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/n0107.jpg"
+   },
+   "scores": {
+    "classical": 3.305405855178833
+   },
+   "iou": {
+    "classical": null
+   }
+  },
+  {
+   "id": "n0427",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0427.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0427.png",
+   "mask": null,
+   "maps": {
+    "classical": "map/classical/macaroni2/n0427.png",
+    "classical_thumb": "map/classical_thumb/macaroni2/n0427.jpg"
+   },
+   "scores": {
+    "classical": 3.134267807006836
+   },
+   "iou": {
+    "classical": null
+   }
+  }
+ ]
+}
