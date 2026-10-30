@@ -85,14 +85,31 @@ jobs:
           npm run build
           npx playwright install --with-deps chromium
           npm run e2e | tee ../evaluation/e2e.txt
+      - name: Simpan hasil sebagai artifact (cadangan)
+        uses: actions/upload-artifact@v4
+        with:
+          name: hasil-reproduksi-${{ github.run_id }}
+          path: |
+            evaluation
+            web/public
+            docs/HASIL_PER_PRODUK.md
+          retention-days: 30
       - name: Commit hasil ke branch baru
+        # Branch hasil dibuat dari main dan hanya berisi berkas hasil. Token Actions tidak boleh
+        # mendorong ref yang membawa perubahan .github/workflows, jadi kode PR tidak ikut.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           branch="hasil/reproduksi-${{ github.run_id }}"
-          git checkout -b "$branch"
-          git add evaluation web/public docs/HASIL_PER_PRODUK.md
-          git commit -m "Hasil reproduksi penuh (run ${{ github.run_id }})"
+          git fetch --depth=1 origin main
+          git worktree add -b "$branch" "$RUNNER_TEMP/hasil" origin/main
+          mkdir -p "$RUNNER_TEMP/hasil/web" "$RUNNER_TEMP/hasil/docs"
+          cp -r evaluation "$RUNNER_TEMP/hasil/"
+          cp -r web/public "$RUNNER_TEMP/hasil/web/"
+          cp docs/HASIL_PER_PRODUK.md "$RUNNER_TEMP/hasil/docs/"
+          cd "$RUNNER_TEMP/hasil"
+          git add -f evaluation web/public docs/HASIL_PER_PRODUK.md
+          git commit -q -m "Hasil reproduksi penuh (run ${{ github.run_id }}, kode ${{ github.event.pull_request.head.sha || github.sha }})"
           git push origin "$branch"
           echo "Branch: $branch" >> "$GITHUB_STEP_SUMMARY"
       - name: Lepas label reproduksi
