@@ -209,7 +209,13 @@ export function Performance({ summary }: { summary: Summary }) {
           <>
             <h3>Model browser setelah kuantisasi int8</h3>
             <p>
-              Backbone ResNet18 dipadatkan ke int8 ({bytes(onnx.backbone.bytes)}, dari {bytes(onnx.backbone.fp32_bytes)}). Memori patch normal tiap produk
+              Backbone ResNet18 dipadatkan ke int8 ({bytes(onnx.backbone.bytes)}, dari {bytes(onnx.backbone.fp32_bytes)}).{" "}
+              {onnx.backbone.variant === "weights"
+                ? "Hanya bobot yang dibulatkan ke int8; perhitungan di browser tetap float32."
+                : "Bobot dan aktivasi dibulatkan ke int8."}{" "}
+              {onnx.selection &&
+                `Cara kuantisasi dipilih dari kesetiaan skor pada foto normal validasi, bukan dari foto uji: selisih maksimum ${num(onnx.selection.val_max_rel_diff[onnx.backbone.variant ?? "weights"], 3)} kali ambang (batas ${num(onnx.selection.fidelity_limit, 2)}).`}{" "}
+              Memori patch normal tiap produk
               disimpan sebagai berkas terpisah sekitar {bytes(onnx.head_bytes_max)} yang diunduh hanya saat produk itu dihitung. Pada seluruh{" "}
               {onnx.test_images_total} foto uji, kuantisasi mengubah pemisahan foto dari {num(onnx.macro.image_auroc_torch)} menjadi{" "}
               {num(onnx.macro.image_auroc_int8)} dan pemisahan piksel dari {num(onnx.macro.pixel_auroc_torch)} menjadi {num(onnx.macro.pixel_auroc_int8)}.

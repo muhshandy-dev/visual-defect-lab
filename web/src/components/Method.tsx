@@ -55,7 +55,8 @@ export function Method({ summary }: { summary: Summary }) {
         <h2>Model di browser</h2>
         {summary.onnx ? (
           <p>
-            Tombol "Hitung ulang di browser" menjalankan ResNet18 yang diekspor ke ONNX dan dipadatkan ke int8 ({bytes(summary.onnx.backbone.bytes)}) dengan
+            Tombol "Hitung ulang di browser" menjalankan ResNet18 yang diekspor ke ONNX dengan bobot int8 ({bytes(summary.onnx.backbone.bytes)}
+            {summary.onnx.backbone.variant === "weights" ? ", perhitungan tetap float32" : ", bobot dan aktivasi int8"}) dengan
             onnxruntime-web (WebAssembly). Foto contoh disimpan sebagai PNG 256 x 256 tanpa kompresi lossy agar piksel yang masuk ke model sama persis dengan
             di Python. Skor yang dihitung browser ditampilkan berdampingan dengan skor tersimpan agar bisa dicek. Hasil WideResNet50 dan model klasik
             dihitung lebih dulu di Python dan ditandai sebagai skor tersimpan.

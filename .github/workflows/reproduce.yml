@@ -81,10 +81,11 @@ jobs:
       - name: Build dan e2e (termasuk paritas inferensi browser)
         working-directory: web
         run: |
+          set -o pipefail
           npm ci
           npm run build
           npx playwright install --with-deps chromium
-          npm run e2e | tee ../evaluation/e2e.txt
+          npm run e2e 2>&1 | tee ../evaluation/e2e.txt
       - name: Simpan hasil sebagai artifact (cadangan)
         uses: actions/upload-artifact@v4
         with:

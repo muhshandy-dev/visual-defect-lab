@@ -1,0 +1,19 @@
+{
+  "method": "resnet18",
+  "class": "candle",
+  "fit_images": 810,
+  "val_images": 90,
+  "test_images": 200,
+  "fit_patches": 829440,
+  "bank_size": 4096,
+  "seconds_fit": 194.2,
+  "ms_per_test_image": 57.7,
+  "threshold": 1.2599053382873535,
+  "image_auroc": 0.9805,
+  "pixel_auroc": 0.9869613532723864,
+  "pixel_auroc_hist": 0.9869568301613919,
+  "aupro": 0.9406280574332911,
+  "miou": 0.07766516448854598,
+  "test_false_reject": 0.12,
+  "test_miss": 0.07
+}

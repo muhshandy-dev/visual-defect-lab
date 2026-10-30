@@ -1,0 +1,19 @@
+{
+  "method": "wrn50",
+  "class": "fryum",
+  "fit_images": 405,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 414720,
+  "bank_size": 4148,
+  "seconds_fit": 155.7,
+  "ms_per_test_image": 244.3,
+  "threshold": 1.028821587562561,
+  "image_auroc": 0.9378,
+  "pixel_auroc": 0.9539680464653105,
+  "pixel_auroc_hist": 0.9539683227569051,
+  "aupro": 0.7950491762018848,
+  "miou": 0.14317934589959458,
+  "test_false_reject": 0.0,
+  "test_miss": 0.27
+}

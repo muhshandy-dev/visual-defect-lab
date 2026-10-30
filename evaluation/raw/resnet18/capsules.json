@@ -1,0 +1,19 @@
+{
+  "method": "resnet18",
+  "class": "capsules",
+  "fit_images": 488,
+  "val_images": 54,
+  "test_images": 160,
+  "fit_patches": 499712,
+  "bank_size": 4096,
+  "seconds_fit": 119.1,
+  "ms_per_test_image": 57.1,
+  "threshold": 2.3325774669647217,
+  "image_auroc": 0.7313333333333333,
+  "pixel_auroc": 0.972123799443495,
+  "pixel_auroc_hist": 0.9721165371733441,
+  "aupro": 0.7049283393083124,
+  "miou": 0.17783431576423214,
+  "test_false_reject": 0.16666666666666666,
+  "test_miss": 0.44
+}

@@ -1,0 +1,19 @@
+{
+  "method": "wrn50",
+  "class": "chewinggum",
+  "fit_images": 408,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 417792,
+  "bank_size": 4178,
+  "seconds_fit": 157.3,
+  "ms_per_test_image": 253.0,
+  "threshold": 0.9961841702461243,
+  "image_auroc": 0.9964,
+  "pixel_auroc": 0.9835294643516569,
+  "pixel_auroc_hist": 0.9835273945191827,
+  "aupro": 0.8451947516832381,
+  "miou": 0.14060019502854085,
+  "test_false_reject": 0.02,
+  "test_miss": 0.05
+}

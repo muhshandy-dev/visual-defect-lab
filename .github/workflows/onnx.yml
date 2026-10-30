@@ -1,0 +1,122 @@
+name: Ekspor model browser
+
+# Versi ringan dari "Reproduksi penuh" untuk model browser saja (sekitar 1 jam):
+# fit ulang PatchCore ResNet18 (memori patch tidak disimpan di repo), cek bahwa skor sama
+# dengan hasil yang sudah di-commit, ekspor ONNX (dua cara kuantisasi, dipilih dari data
+# validasi), pasang ke website tanpa membuat ulang gambar, lalu e2e dengan paritas browser.
+# Dipicu dengan label `ekspor-onnx` pada PR atau dari tab Actions.
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  onnx:
+    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'ekspor-onnx'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Pasang PyTorch CPU dan paket
+        run: |
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[model,dev]"
+      - name: Cache arsip VisA (1,9 GB)
+        uses: actions/cache@v4
+        with:
+          path: data/raw/VisA_20220922.tar
+          key: visa-2eb8690c803ab37de0324772964100169ec8ba1fa3f7e94291c9ca673f40f362
+      - name: Unduh bobot ImageNet torchvision
+        run: |
+          mkdir -p data/weights
+          curl -fsSL -o data/weights/resnet18-f37072fd.pth https://download.pytorch.org/models/resnet18-f37072fd.pth
+          sha256sum data/weights/*.pth
+      - name: Data (unduh, cek SHA-256, cache 256 px, split)
+        run: defect-lab data
+      - name: Simpan hasil ResNet18 yang sudah di-commit
+        run: cp -r evaluation/raw/resnet18 "$RUNNER_TEMP/resnet18_committed"
+      - name: Fit ulang PatchCore ResNet18
+        run: defect-lab evaluate --method resnet18
+      - name: Cek fit ulang sama dengan hasil yang di-commit
+        run: |
+          set -o pipefail
+          python - "$RUNNER_TEMP/resnet18_committed" <<'PY' | tee evaluation/onnx_refit_check.txt
+          import sys
+          from pathlib import Path
+          import numpy as np
+          old_dir, new_dir = Path(sys.argv[1]), Path("evaluation/raw/resnet18")
+          worst = 0.0
+          for f in sorted(old_dir.glob("*.npz")):
+              a, b = np.load(f), np.load(new_dir / f.name)
+              rel = float(np.abs(a["scores"] - b["scores"]).max() / float(a["threshold"]))
+              worst = max(worst, rel)
+              print(f.stem, "selisih skor maks / ambang", f"{rel:.2e}")
+          print("terburuk", f"{worst:.2e}")
+          sys.exit(0 if worst < 1e-3 else 1)
+          PY
+          # Kembalikan berkas yang di-commit (waktu fit berbeda), angka laporan tidak berubah.
+          rm -rf evaluation/raw/resnet18 && cp -r "$RUNNER_TEMP/resnet18_committed" evaluation/raw/resnet18
+      - name: Ekspor ONNX, pilih kuantisasi dari data validasi, paritas pada seluruh foto uji
+        run: defect-lab export-onnx
+      - name: Pasang model browser di website
+        run: defect-lab export-web --onnx-only
+      - name: Pemeriksaan independen
+        run: python tools/verify_published.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build dan e2e (termasuk paritas inferensi browser)
+        working-directory: web
+        run: |
+          set -o pipefail
+          npm ci
+          npm run build
+          npx playwright install --with-deps chromium
+          npm run e2e 2>&1 | tee ../evaluation/e2e.txt
+      - name: Simpan hasil sebagai artifact (cadangan)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-browser-${{ github.run_id }}
+          path: |
+            evaluation/onnx_parity.json
+            evaluation/onnx_refit_check.txt
+            evaluation/e2e.txt
+            web/public/models
+            web/public/data
+          retention-days: 30
+      - name: Commit hasil ke branch baru
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          branch="hasil/onnx-${{ github.run_id }}"
+          git fetch --depth=1 origin main
+          git worktree add -b "$branch" "$RUNNER_TEMP/hasil" origin/main
+          mkdir -p "$RUNNER_TEMP/hasil/evaluation" "$RUNNER_TEMP/hasil/web/public"
+          cp evaluation/onnx_parity.json evaluation/onnx_refit_check.txt evaluation/e2e.txt "$RUNNER_TEMP/hasil/evaluation/" 2>/dev/null || true
+          cp -r web/public/models web/public/data "$RUNNER_TEMP/hasil/web/public/" 2>/dev/null || true
+          cd "$RUNNER_TEMP/hasil"
+          git add -f evaluation web/public
+          git commit -q -m "Model browser (run ${{ github.run_id }}, kode ${{ github.event.pull_request.head.sha || github.sha }})"
+          git push origin "$branch"
+          echo "Branch: $branch" >> "$GITHUB_STEP_SUMMARY"
+      - name: Lepas label
+        if: always() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr edit ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --remove-label ekspor-onnx || true

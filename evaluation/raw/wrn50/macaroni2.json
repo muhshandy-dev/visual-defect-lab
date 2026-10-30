@@ -1,0 +1,19 @@
+{
+  "method": "wrn50",
+  "class": "macaroni2",
+  "fit_images": 810,
+  "val_images": 90,
+  "test_images": 200,
+  "fit_patches": 829440,
+  "bank_size": 8295,
+  "seconds_fit": 473.9,
+  "ms_per_test_image": 333.6,
+  "threshold": 1.2027767896652222,
+  "image_auroc": 0.6215,
+  "pixel_auroc": 0.9544051230163734,
+  "pixel_auroc_hist": 0.9543962689820236,
+  "aupro": 0.8022165143842523,
+  "miou": 0.01834550687426743,
+  "test_false_reject": 0.07,
+  "test_miss": 0.85
+}

@@ -61,9 +61,14 @@ def cmd_export_onnx(_: argparse.Namespace) -> None:
 
 
 def cmd_export_web(args: argparse.Namespace) -> None:
-    from .export_web import export, refresh_summary
+    from .export_web import export, refresh_onnx, refresh_summary
 
-    refresh_summary() if args.summary_only else export()
+    if args.summary_only:
+        refresh_summary()
+    elif args.onnx_only:
+        refresh_onnx()
+    else:
+        export()
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -87,6 +92,8 @@ def main(argv: list[str] | None = None) -> None:
     ew = sub.add_parser("export-web", help="tulis data website")
     ew.add_argument("--summary-only", action="store_true",
                     help="hanya perbarui angka di summary.json dari results.json")  # fmt: skip
+    ew.add_argument("--onnx-only", action="store_true",
+                    help="hanya pasang model browser dan skor referensinya")  # fmt: skip
     ew.set_defaults(fn=cmd_export_web)
     args = p.parse_args(argv)
     args.fn(args)

@@ -77,3 +77,19 @@ def test_onnx_export_parity_random_weights(tmp_path):
     emb = ort.InferenceSession(str(tmp_path / "b.onnx")).run(None, {"image": x.numpy()})[0]
     out = ort.InferenceSession(str(tmp_path / "h.onnx")).run(None, {"patches": emb})[0]
     assert np.abs(out - ref_map.numpy()).max() < 1e-3
+
+
+def test_weight_only_int8_is_small_and_faithful(tmp_path):
+    ort = pytest.importorskip("onnxruntime")
+    from defect_lab.export_onnx import export_backbone, quantize_weights
+
+    torch.manual_seed(0)
+    m = PatchEmbedder("resnet18", 384, weights=None)
+    export_backbone(m, tmp_path / "b.onnx")
+    quantize_weights(tmp_path / "b.onnx", tmp_path / "q.onnx")
+    assert (tmp_path / "q.onnx").stat().st_size < 0.35 * (tmp_path / "b.onnx").stat().st_size
+    x = torch.rand(1, 3, 256, 256).numpy()
+    a = ort.InferenceSession(str(tmp_path / "b.onnx")).run(None, {"image": x})[0]
+    b = ort.InferenceSession(str(tmp_path / "q.onnx")).run(None, {"image": x})[0]
+    # Hanya bobot yang dibulatkan: fitur hampir sama (relatif terhadap skala fitur).
+    assert np.abs(a - b).max() < 0.02 * np.abs(a).max()

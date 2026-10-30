@@ -1,7 +1,7 @@
 """Fixture uji jalur inferensi browser dengan bobot ACAK. Bukan model, bukan hasil.
 
 Menyalin web/dist ke folder tujuan, lalu menambahkan backbone ResNet18 berbobot acak
-(dikuantisasi int8 seperti model asli) dan kepala dengan bank acak untuk beberapa produk.
+(bobot int8 seperti model asli) dan kepala dengan bank acak untuk beberapa produk.
 Skor referensi dihitung dengan onnxruntime Python, sehingga `npm run e2e` dengan
 DIST_DIR=<tujuan> menguji: pemuatan onnxruntime-web di bawah CSP, praproses piksel,
 eksekusi int8 di WASM, dan paritas skor browser vs Python. Angka dari fixture ini tidak
@@ -25,7 +25,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from defect_lab.export_onnx import _Calib, export_backbone, export_head  # noqa: E402
+from defect_lab.export_onnx import export_backbone, export_head, quantize_weights  # noqa: E402
 from defect_lab.patchcore import NearestHead, PatchEmbedder, to_tensor  # noqa: E402
 
 out = Path(sys.argv[1]).resolve()
@@ -41,19 +41,10 @@ model = PatchEmbedder("resnet18", 384, weights=None)
 summary = json.loads((out / "data" / "summary.json").read_text())
 classes = summary["classes"][:n_classes]
 
-calib = []
-for cls in classes:
-    data = json.loads((out / "data" / "samples" / f"{cls}.json").read_text())
-    calib += [np.asarray(Image.open(out / s["input"]).convert("RGB")) for s in data["items"][:4]]
 fp32 = out / "models" / "_fp32.onnx"
 export_backbone(model, fp32)
-from onnxruntime.quantization import QuantFormat, QuantType, quantize_static  # noqa: E402
-
 int8 = out / "models" / "backbone_int8.onnx"
-quantize_static(
-    str(fp32), str(int8), _Calib(np.stack(calib)), quant_format=QuantFormat.QDQ,
-    per_channel=True, activation_type=QuantType.QUInt8, weight_type=QuantType.QInt8,
-)  # fmt: skip
+quantize_weights(fp32, int8)
 fp32.unlink()
 sb = ort.InferenceSession(str(int8), providers=["CPUExecutionProvider"])
 

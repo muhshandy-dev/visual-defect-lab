@@ -35,6 +35,11 @@ def p(v: float, d: int = 1) -> str:
     return f"{v * 100:.{d}f}%".replace(".", ",")
 
 
+def pp(v: float) -> str:
+    """Selisih laju dalam poin persen."""
+    return f"{v * 100:.1f} poin".replace(".", ",")
+
+
 def ci(c: list[float], d: int = 3) -> str:
     return f"{f(c[0], d)} sampai {f(c[1], d)}"
 
@@ -94,8 +99,8 @@ def render(res: dict, parity: dict | None) -> str:
             name = f"{label.get(a, a)} vs {label.get(b, b)}"
             for k, d in diff.items():
                 rate = k in ("false_reject", "miss")
-                val = p(d["diff"]) if rate else f(d["diff"])
-                band = pci(d["ci95"]) if rate else ci(d["ci95"])
+                val = pp(d["diff"]) if rate else f(d["diff"])
+                band = f"{pp(d['ci95'][0])} sampai {pp(d['ci95'][1])}" if rate else ci(d["ci95"])
                 out.append(f"| {name} | {METRIC_NAMES[k]} | {val} | {band} |")
 
     for m in methods:

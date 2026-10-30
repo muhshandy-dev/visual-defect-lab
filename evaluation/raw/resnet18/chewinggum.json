@@ -1,0 +1,19 @@
+{
+  "method": "resnet18",
+  "class": "chewinggum",
+  "fit_images": 408,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 417792,
+  "bank_size": 4096,
+  "seconds_fit": 99.9,
+  "ms_per_test_image": 64.1,
+  "threshold": 1.5455412864685059,
+  "image_auroc": 0.997,
+  "pixel_auroc": 0.9855863714433486,
+  "pixel_auroc_hist": 0.9855839570382078,
+  "aupro": 0.8303674241249767,
+  "miou": 0.1349681954884603,
+  "test_false_reject": 0.02,
+  "test_miss": 0.03
+}

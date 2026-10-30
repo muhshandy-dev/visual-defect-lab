@@ -55,7 +55,8 @@ export interface PairedDiff {
 }
 
 export interface OnnxReport {
-  backbone: { file: string; bytes: number; fp32_bytes: number; sha256: string };
+  backbone: { file: string; bytes: number; fp32_bytes: number; sha256: string; variant?: string };
+  selection?: { fidelity_limit: number; val_max_rel_diff: Record<string, number>; passed: boolean } | null;
   head_bytes_total: number;
   head_bytes_max: number;
   macro: Record<string, number>;

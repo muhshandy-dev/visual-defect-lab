@@ -121,6 +121,50 @@ def int8_scores(cls: str, inputs: np.ndarray) -> list[float] | None:
     return out
 
 
+def onnx_summary() -> dict | None:
+    parity_path = config.EVAL_DIR / "onnx_parity.json"
+    if not parity_path.exists():
+        return None
+    p = json.loads(parity_path.read_text())
+    heads = [c["head_bytes"] for c in p["classes"].values()]
+    return {
+        "backbone": p["backbone"],
+        "selection": p.get("selection"),
+        "head_bytes_total": int(sum(heads)),
+        "head_bytes_max": int(max(heads)),
+        "macro": p["macro"],
+        "decision_flips_int8_total": p["decision_flips_int8_total"],
+        "test_images_total": p["test_images_total"],
+    }
+
+
+def refresh_onnx() -> None:
+    """Pasang model browser baru tanpa membuat ulang gambar dan peta skor.
+
+    Skor referensi `resnet18_int8` dihitung onnxruntime Python dari berkas `in/` (PNG
+    tanpa rugi, sama persis dengan masukan model) untuk uji paritas browser di e2e.
+    """
+    from PIL import Image
+
+    pub = config.WEB_PUBLIC
+    summary = json.loads((pub / "data" / "summary.json").read_text())
+    for cls in summary["classes"]:
+        path = pub / "data" / "samples" / f"{cls}.json"
+        data = json.loads(path.read_text())
+        inputs = np.stack([np.asarray(Image.open(pub / s["input"]).convert("RGB"))
+                           for s in data["items"]])  # fmt: skip
+        scores = int8_scores(cls, inputs)
+        if scores is None:
+            raise SystemExit(f"model browser untuk {cls} belum diekspor")
+        for s, v in zip(data["items"], scores, strict=True):
+            s["scores"]["resnet18_int8"] = v
+        path.write_text(json.dumps(data, indent=1))
+    summary["onnx"] = onnx_summary()
+    summary["live_method"] = "resnet18" if summary["onnx"] else None
+    (pub / "data" / "summary.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False))
+    print("model browser dipasang; skor referensi Python diperbarui")
+
+
 def refresh_summary() -> None:
     """Perbarui angka di summary.json dari evaluation/results.json tanpa menyentuh gambar.
 
@@ -236,19 +280,7 @@ def export() -> None:
             key = it.split if it.split != "test" else ("test_defect" if it.label else "test_normal")
             counts[key] += 1
 
-    onnx_report = None
-    parity_path = config.EVAL_DIR / "onnx_parity.json"
-    if parity_path.exists() and has_int8:
-        p = json.loads(parity_path.read_text())
-        heads = [c["head_bytes"] for c in p["classes"].values()]
-        onnx_report = {
-            "backbone": p["backbone"],
-            "head_bytes_total": int(sum(heads)),
-            "head_bytes_max": int(max(heads)),
-            "macro": p["macro"],
-            "decision_flips_int8_total": p["decision_flips_int8_total"],
-            "test_images_total": p["test_images_total"],
-        }
+    onnx_report = onnx_summary() if has_int8 else None
 
     summary = {
         "generated": date.today().isoformat(),
