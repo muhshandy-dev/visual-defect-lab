@@ -1,0 +1,358 @@
+{
+ "cls": "macaroni2",
+ "thresholds": {
+  "wrn50": 1.2027767896652222,
+  "resnet18": 1.8602501153945923,
+  "classical": 3.008172035217285
+ },
+ "items": [
+  {
+   "id": "a045",
+   "group": "acak",
+   "label": 1,
+   "defect": "small chip around edge",
+   "area": 0.0001983642578125,
+   "img": "img/macaroni2/a045.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a045.png",
+   "mask": "mask/macaroni2/a045.png",
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/a045.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/a045.jpg",
+    "resnet18": "map/resnet18/macaroni2/a045.png",
+    "classical": "map/classical/macaroni2/a045.png"
+   },
+   "scores": {
+    "wrn50": 1.0461010932922363,
+    "resnet18": 1.6670513153076172,
+    "classical": 2.955766439437866,
+    "resnet18_int8": 1.6669819355010986
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a052",
+   "group": "acak",
+   "label": 1,
+   "defect": "small chip around edge",
+   "area": 0.001190185546875,
+   "img": "img/macaroni2/a052.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a052.png",
+   "mask": "mask/macaroni2/a052.png",
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/a052.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/a052.jpg",
+    "resnet18": "map/resnet18/macaroni2/a052.png",
+    "classical": "map/classical/macaroni2/a052.png"
+   },
+   "scores": {
+    "wrn50": 1.0761730670928955,
+    "resnet18": 1.6662157773971558,
+    "classical": 2.790879964828491,
+    "resnet18_int8": 1.670336127281189
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a087",
+   "group": "acak",
+   "label": 1,
+   "defect": "small scratches",
+   "area": 0.00054931640625,
+   "img": "img/macaroni2/a087.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a087.png",
+   "mask": "mask/macaroni2/a087.png",
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/a087.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/a087.jpg",
+    "resnet18": "map/resnet18/macaroni2/a087.png",
+    "classical": "map/classical/macaroni2/a087.png"
+   },
+   "scores": {
+    "wrn50": 1.0438188314437866,
+    "resnet18": 1.6715490818023682,
+    "classical": 2.755605697631836,
+    "resnet18_int8": 1.6758239269256592
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a005",
+   "group": "acak",
+   "label": 1,
+   "defect": "breakage down the middle,small scratches",
+   "area": 0.0005645751953125,
+   "img": "img/macaroni2/a005.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a005.png",
+   "mask": "mask/macaroni2/a005.png",
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/a005.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/a005.jpg",
+    "resnet18": "map/resnet18/macaroni2/a005.png",
+    "classical": "map/classical/macaroni2/a005.png"
+   },
+   "scores": {
+    "wrn50": 1.0722390413284302,
+    "resnet18": 1.8044742345809937,
+    "classical": 2.826368808746338,
+    "resnet18_int8": 1.793034315109253
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a080",
+   "group": "acak",
+   "label": 1,
+   "defect": "breakage down the middle,color spot similar to the object,different color spot,small chip around edge,small cracks,small scratches",
+   "area": 0.0004425048828125,
+   "img": "img/macaroni2/a080.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a080.png",
+   "mask": "mask/macaroni2/a080.png",
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/a080.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/a080.jpg",
+    "resnet18": "map/resnet18/macaroni2/a080.png",
+    "classical": "map/classical/macaroni2/a080.png"
+   },
+   "scores": {
+    "wrn50": 1.127805233001709,
+    "resnet18": 1.755239486694336,
+    "classical": 2.6635513305664062,
+    "resnet18_int8": 1.7517099380493164
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0694",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0694.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0694.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/n0694.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/n0694.jpg",
+    "resnet18": "map/resnet18/macaroni2/n0694.png",
+    "classical": "map/classical/macaroni2/n0694.png"
+   },
+   "scores": {
+    "wrn50": 1.0721744298934937,
+    "resnet18": 1.6568562984466553,
+    "classical": 2.7169597148895264,
+    "resnet18_int8": 1.6639162302017212
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n0985",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0985.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0985.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/n0985.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/n0985.jpg",
+    "resnet18": "map/resnet18/macaroni2/n0985.png",
+    "classical": "map/classical/macaroni2/n0985.png"
+   },
+   "scores": {
+    "wrn50": 1.246626615524292,
+    "resnet18": 1.7908875942230225,
+    "classical": 2.8190104961395264,
+    "resnet18_int8": 1.800825595855713
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n0755",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0755.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0755.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/n0755.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/n0755.jpg",
+    "resnet18": "map/resnet18/macaroni2/n0755.png",
+    "classical": "map/classical/macaroni2/n0755.png"
+   },
+   "scores": {
+    "wrn50": 1.065378189086914,
+    "resnet18": 1.64994478225708,
+    "classical": 2.829813003540039,
+    "resnet18_int8": 1.6541216373443604
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "a069",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "small chip around edge",
+   "area": 0.0002288818359375,
+   "img": "img/macaroni2/a069.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a069.png",
+   "mask": "mask/macaroni2/a069.png",
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/a069.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/a069.jpg",
+    "resnet18": "map/resnet18/macaroni2/a069.png",
+    "classical": "map/classical/macaroni2/a069.png"
+   },
+   "scores": {
+    "wrn50": 1.027025580406189,
+    "resnet18": 1.665911316871643,
+    "classical": 3.0215041637420654,
+    "resnet18_int8": 1.662536382675171
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a028",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "color spot similar to the object",
+   "area": 0.0002288818359375,
+   "img": "img/macaroni2/a028.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/a028.png",
+   "mask": "mask/macaroni2/a028.png",
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/a028.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/a028.jpg",
+    "resnet18": "map/resnet18/macaroni2/a028.png",
+    "classical": "map/classical/macaroni2/a028.png"
+   },
+   "scores": {
+    "wrn50": 1.027929663658142,
+    "resnet18": 1.6407314538955688,
+    "classical": 2.773913621902466,
+    "resnet18_int8": 1.6502199172973633
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0107",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0107.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0107.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/n0107.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/n0107.jpg",
+    "resnet18": "map/resnet18/macaroni2/n0107.png",
+    "classical": "map/classical/macaroni2/n0107.png"
+   },
+   "scores": {
+    "wrn50": 1.3373855352401733,
+    "resnet18": 2.251085042953491,
+    "classical": 3.305406332015991,
+    "resnet18_int8": 2.2550954818725586
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n0483",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/macaroni2/n0483.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/macaroni2/n0483.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/macaroni2/n0483.png",
+    "wrn50_thumb": "map/wrn50_thumb/macaroni2/n0483.jpg",
+    "resnet18": "map/resnet18/macaroni2/n0483.png",
+    "classical": "map/classical/macaroni2/n0483.png"
+   },
+   "scores": {
+    "wrn50": 1.2879316806793213,
+    "resnet18": 1.8877960443496704,
+    "classical": 2.830679178237915,
+    "resnet18_int8": 1.8863098621368408
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,329 @@
+{
+ "cls": "chewinggum",
+ "thresholds": {
+  "wrn50": 0.9961841702461243,
+  "resnet18": 1.5455412864685059,
+  "classical": 2.860183000564575
+ },
+ "items": [
+  {
+   "id": "a029",
+   "group": "acak",
+   "label": 1,
+   "defect": "corner missing",
+   "area": 0.00177001953125,
+   "img": "img/chewinggum/a029.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/a029.png",
+   "mask": "mask/chewinggum/a029.png",
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/a029.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/a029.jpg",
+    "resnet18": "map/resnet18/chewinggum/a029.png",
+    "classical": "map/classical/chewinggum/a029.png"
+   },
+   "scores": {
+    "wrn50": 1.1290910243988037,
+    "resnet18": 1.7460814714431763,
+    "classical": 3.2341792583465576,
+    "resnet18_int8": 1.7501143217086792
+   },
+   "iou": {
+    "wrn50": 0.19365609348914858,
+    "resnet18": 0.08929946112394149,
+    "classical": 0.3481781376518219
+   }
+  },
+  {
+   "id": "a095",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.00189208984375,
+   "img": "img/chewinggum/a095.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/a095.png",
+   "mask": "mask/chewinggum/a095.png",
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/a095.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/a095.jpg",
+    "resnet18": "map/resnet18/chewinggum/a095.png",
+    "classical": "map/classical/chewinggum/a095.png"
+   },
+   "scores": {
+    "wrn50": 1.245448350906372,
+    "resnet18": 2.3365249633789062,
+    "classical": 2.5236876010894775,
+    "resnet18_int8": 2.3457045555114746
+   },
+   "iou": {
+    "wrn50": 0.09880478087649402,
+    "resnet18": 0.07979407979407979,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a050",
+   "group": "acak",
+   "label": 1,
+   "defect": "chunk of gum missing",
+   "area": 0.0216064453125,
+   "img": "img/chewinggum/a050.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/a050.png",
+   "mask": "mask/chewinggum/a050.png",
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/a050.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/a050.jpg",
+    "resnet18": "map/resnet18/chewinggum/a050.png",
+    "classical": "map/classical/chewinggum/a050.png"
+   },
+   "scores": {
+    "wrn50": 1.7139378786087036,
+    "resnet18": 2.5724008083343506,
+    "classical": 4.001753330230713,
+    "resnet18_int8": 2.590754747390747
+   },
+   "iou": {
+    "wrn50": 0.2726747544771808,
+    "resnet18": 0.21134328358208956,
+    "classical": 0.5855978260869565
+   }
+  },
+  {
+   "id": "a071",
+   "group": "acak",
+   "label": 1,
+   "defect": "scratches",
+   "area": 0.001190185546875,
+   "img": "img/chewinggum/a071.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/a071.png",
+   "mask": "mask/chewinggum/a071.png",
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/a071.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/a071.jpg",
+    "resnet18": "map/resnet18/chewinggum/a071.png",
+    "classical": "map/classical/chewinggum/a071.png"
+   },
+   "scores": {
+    "wrn50": 1.2165287733078003,
+    "resnet18": 1.9972119331359863,
+    "classical": 2.7446813583374023,
+    "resnet18_int8": 1.9949967861175537
+   },
+   "iou": {
+    "wrn50": 0.034105815478793176,
+    "resnet18": 0.0384995064165844,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a011",
+   "group": "acak",
+   "label": 1,
+   "defect": "chunk of gum missing,corner missing,small cracks",
+   "area": 0.0275421142578125,
+   "img": "img/chewinggum/a011.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/a011.png",
+   "mask": "mask/chewinggum/a011.png",
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/a011.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/a011.jpg",
+    "resnet18": "map/resnet18/chewinggum/a011.png",
+    "classical": "map/classical/chewinggum/a011.png"
+   },
+   "scores": {
+    "wrn50": 1.9423749446868896,
+    "resnet18": 3.0774459838867188,
+    "classical": 4.307149410247803,
+    "resnet18_int8": 3.0863778591156006
+   },
+   "iou": {
+    "wrn50": 0.24858757062146894,
+    "resnet18": 0.2586435191996469,
+    "classical": 0.6455813953488372
+   }
+  },
+  {
+   "id": "n272",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/chewinggum/n272.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/n272.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/n272.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/n272.jpg",
+    "resnet18": "map/resnet18/chewinggum/n272.png",
+    "classical": "map/classical/chewinggum/n272.png"
+   },
+   "scores": {
+    "wrn50": 0.9301878809928894,
+    "resnet18": 1.4528615474700928,
+    "classical": 2.879732847213745,
+    "resnet18_int8": 1.466536283493042
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n130",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/chewinggum/n130.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/n130.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/n130.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/n130.jpg",
+    "resnet18": "map/resnet18/chewinggum/n130.png",
+    "classical": "map/classical/chewinggum/n130.png"
+   },
+   "scores": {
+    "wrn50": 0.9736359119415283,
+    "resnet18": 1.4641060829162598,
+    "classical": 2.6074471473693848,
+    "resnet18_int8": 1.4682430028915405
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n369",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/chewinggum/n369.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/n369.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/n369.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/n369.jpg",
+    "resnet18": "map/resnet18/chewinggum/n369.png",
+    "classical": "map/classical/chewinggum/n369.png"
+   },
+   "scores": {
+    "wrn50": 0.921912670135498,
+    "resnet18": 1.512579083442688,
+    "classical": 2.652406692504883,
+    "resnet18_int8": 1.5283796787261963
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "a033",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "corner missing",
+   "area": 0.000762939453125,
+   "img": "img/chewinggum/a033.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/a033.png",
+   "mask": "mask/chewinggum/a033.png",
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/a033.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/a033.jpg",
+    "resnet18": "map/resnet18/chewinggum/a033.png",
+    "classical": "map/classical/chewinggum/a033.png"
+   },
+   "scores": {
+    "wrn50": 0.9626452326774597,
+    "resnet18": 1.5342113971710205,
+    "classical": 2.4636502265930176,
+    "resnet18_int8": 1.5573245286941528
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a034",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "corner missing",
+   "area": 0.001861572265625,
+   "img": "img/chewinggum/a034.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/a034.png",
+   "mask": "mask/chewinggum/a034.png",
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/a034.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/a034.jpg",
+    "resnet18": "map/resnet18/chewinggum/a034.png",
+    "classical": "map/classical/chewinggum/a034.png"
+   },
+   "scores": {
+    "wrn50": 0.9673213958740234,
+    "resnet18": 1.5727483034133911,
+    "classical": 2.6829111576080322,
+    "resnet18_int8": 1.5747065544128418
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n013",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/chewinggum/n013.jpg",
+   "w": 1342,
+   "h": 1118,
+   "input": "in/chewinggum/n013.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/chewinggum/n013.png",
+    "wrn50_thumb": "map/wrn50_thumb/chewinggum/n013.jpg",
+    "resnet18": "map/resnet18/chewinggum/n013.png",
+    "classical": "map/classical/chewinggum/n013.png"
+   },
+   "scores": {
+    "wrn50": 1.0188711881637573,
+    "resnet18": 1.4965450763702393,
+    "classical": 2.4179253578186035,
+    "resnet18_int8": 1.5055254697799683
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  }
+ ]
+}
