@@ -1,0 +1,19 @@
+{
+  "method": "wrn50",
+  "class": "cashew",
+  "fit_images": 405,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 414720,
+  "bank_size": 4148,
+  "seconds_fit": 152.9,
+  "ms_per_test_image": 245.0,
+  "threshold": 0.9289524555206299,
+  "image_auroc": 0.9736,
+  "pixel_auroc": 0.9930672554715408,
+  "pixel_auroc_hist": 0.9930658264271577,
+  "aupro": 0.9298403215966918,
+  "miou": 0.10159886018910011,
+  "test_false_reject": 0.18,
+  "test_miss": 0.04
+}

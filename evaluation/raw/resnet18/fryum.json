@@ -1,0 +1,19 @@
+{
+  "method": "resnet18",
+  "class": "fryum",
+  "fit_images": 405,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 414720,
+  "bank_size": 4096,
+  "seconds_fit": 96.3,
+  "ms_per_test_image": 65.1,
+  "threshold": 1.6954249143600464,
+  "image_auroc": 0.9212,
+  "pixel_auroc": 0.9520246833638636,
+  "pixel_auroc_hist": 0.9520245689368556,
+  "aupro": 0.8152602300936467,
+  "miou": 0.13923242023531496,
+  "test_false_reject": 0.04,
+  "test_miss": 0.25
+}

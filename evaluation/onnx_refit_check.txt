@@ -1,0 +1,13 @@
+candle selisih skor maks / ambang 0.00e+00
+capsules selisih skor maks / ambang 0.00e+00
+cashew selisih skor maks / ambang 0.00e+00
+chewinggum selisih skor maks / ambang 0.00e+00
+fryum selisih skor maks / ambang 0.00e+00
+macaroni1 selisih skor maks / ambang 0.00e+00
+macaroni2 selisih skor maks / ambang 0.00e+00
+pcb1 selisih skor maks / ambang 0.00e+00
+pcb2 selisih skor maks / ambang 0.00e+00
+pcb3 selisih skor maks / ambang 0.00e+00
+pcb4 selisih skor maks / ambang 0.00e+00
+pipe_fryum selisih skor maks / ambang 0.00e+00
+terburuk 0.00e+00

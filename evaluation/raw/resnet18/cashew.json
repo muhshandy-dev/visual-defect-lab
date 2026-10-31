@@ -1,0 +1,19 @@
+{
+  "method": "resnet18",
+  "class": "cashew",
+  "fit_images": 405,
+  "val_images": 45,
+  "test_images": 150,
+  "fit_patches": 414720,
+  "bank_size": 4096,
+  "seconds_fit": 97.2,
+  "ms_per_test_image": 64.2,
+  "threshold": 1.5660061836242676,
+  "image_auroc": 0.9534,
+  "pixel_auroc": 0.9896486579874122,
+  "pixel_auroc_hist": 0.9896476082464932,
+  "aupro": 0.9247457407602008,
+  "miou": 0.09805927888307432,
+  "test_false_reject": 0.08,
+  "test_miss": 0.16
+}

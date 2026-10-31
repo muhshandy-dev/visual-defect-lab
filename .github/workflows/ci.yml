@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Pasang PyTorch CPU
+        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - name: Pasang paket
+        run: pip install -e ".[model,dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Format
+        run: ruff format --check .
+      - name: Tes unit (metrik, fitur klasik, PatchCore, ekspor ONNX dengan bobot acak)
+        run: pytest
+      - name: Pemeriksaan independen angka yang dipublikasikan
+        run: python tools/verify_published.py
+      - name: Tabel hasil per produk sesuai results.json
+        run: |
+          python tools/render_report.py
+          git diff --exit-code docs/HASIL_PER_PRODUK.md
+
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Pasang dependensi
+        working-directory: web
+        run: npm ci
+      - name: Tes logika peta skor
+        working-directory: web
+        run: npm test
+      - name: Build (tipe, Vite, batas ukuran Cloudflare)
+        working-directory: web
+        run: npm run build
+      - name: Pasang Chromium
+        working-directory: web
+        run: npx playwright install --with-deps chromium
+      - name: Tes e2e, aksesibilitas, CSP, inferensi browser dan paritas
+        working-directory: web
+        run: SHOT_DIR=$RUNNER_TEMP/screenshots npm run e2e
+      - name: Audit dependensi npm
+        working-directory: web
+        run: npm audit --audit-level=high
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshots
+          path: ${{ runner.temp }}/screenshots
+          retention-days: 7

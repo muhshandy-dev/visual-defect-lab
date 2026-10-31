@@ -1,0 +1,19 @@
+{
+  "method": "wrn50",
+  "class": "candle",
+  "fit_images": 810,
+  "val_images": 90,
+  "test_images": 200,
+  "fit_patches": 829440,
+  "bank_size": 8295,
+  "seconds_fit": 475.7,
+  "ms_per_test_image": 334.2,
+  "threshold": 0.7779251337051392,
+  "image_auroc": 0.9788,
+  "pixel_auroc": 0.9927680597180873,
+  "pixel_auroc_hist": 0.992764334877817,
+  "aupro": 0.9545022176625658,
+  "miou": 0.08563817649335363,
+  "test_false_reject": 0.16,
+  "test_miss": 0.03
+}

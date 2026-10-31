@@ -1,0 +1,358 @@
+{
+ "cls": "pipe_fryum",
+ "thresholds": {
+  "wrn50": 0.9267195463180542,
+  "resnet18": 1.3734960556030273,
+  "classical": 4.379860877990723
+ },
+ "items": [
+  {
+   "id": "a087",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot,small scratches",
+   "area": 0.0020751953125,
+   "img": "img/pipe_fryum/a087.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a087.png",
+   "mask": "mask/pipe_fryum/a087.png",
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/a087.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/a087.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/a087.png",
+    "classical": "map/classical/pipe_fryum/a087.png"
+   },
+   "scores": {
+    "wrn50": 1.1445598602294922,
+    "resnet18": 1.5725066661834717,
+    "classical": 3.731797218322754,
+    "resnet18_int8": 1.5723096132278442
+   },
+   "iou": {
+    "wrn50": 0.09646856158484066,
+    "resnet18": 0.15428571428571428,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a035",
+   "group": "acak",
+   "label": 1,
+   "defect": "different colour spot",
+   "area": 0.000274658203125,
+   "img": "img/pipe_fryum/a035.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a035.png",
+   "mask": "mask/pipe_fryum/a035.png",
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/a035.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/a035.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/a035.png",
+    "classical": "map/classical/pipe_fryum/a035.png"
+   },
+   "scores": {
+    "wrn50": 1.3338487148284912,
+    "resnet18": 2.6343002319335938,
+    "classical": 5.0635199546813965,
+    "resnet18_int8": 2.655292510986328
+   },
+   "iou": {
+    "wrn50": 0.004686279614683676,
+    "resnet18": 0.003478933127174333,
+    "classical": 0.03180212014134275
+   }
+  },
+  {
+   "id": "a079",
+   "group": "acak",
+   "label": 1,
+   "defect": "small scratches",
+   "area": 0.003692626953125,
+   "img": "img/pipe_fryum/a079.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a079.png",
+   "mask": "mask/pipe_fryum/a079.png",
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/a079.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/a079.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/a079.png",
+    "classical": "map/classical/pipe_fryum/a079.png"
+   },
+   "scores": {
+    "wrn50": 1.2631176710128784,
+    "resnet18": 2.0227267742156982,
+    "classical": 5.66323709487915,
+    "resnet18_int8": 2.0190045833587646
+   },
+   "iou": {
+    "wrn50": 0.1200201714573878,
+    "resnet18": 0.14061592097617664,
+    "classical": 0.4508670520231214
+   }
+  },
+  {
+   "id": "a067",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.00067138671875,
+   "img": "img/pipe_fryum/a067.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a067.png",
+   "mask": "mask/pipe_fryum/a067.png",
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/a067.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/a067.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/a067.png",
+    "classical": "map/classical/pipe_fryum/a067.png"
+   },
+   "scores": {
+    "wrn50": 1.1829792261123657,
+    "resnet18": 2.130732297897339,
+    "classical": 4.100903034210205,
+    "resnet18_int8": 2.136434316635132
+   },
+   "iou": {
+    "wrn50": 0.017557861133280128,
+    "resnet18": 0.014468924695823742,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a052",
+   "group": "acak",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.0005035400390625,
+   "img": "img/pipe_fryum/a052.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a052.png",
+   "mask": "mask/pipe_fryum/a052.png",
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/a052.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/a052.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/a052.png",
+    "classical": "map/classical/pipe_fryum/a052.png"
+   },
+   "scores": {
+    "wrn50": 1.0121475458145142,
+    "resnet18": 1.6396830081939697,
+    "classical": 3.6484031677246094,
+    "resnet18_int8": 1.6487154960632324
+   },
+   "iou": {
+    "wrn50": 0.06804123711340206,
+    "resnet18": 0.04114713216957606,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n309",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n309.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n309.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/n309.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/n309.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/n309.png",
+    "classical": "map/classical/pipe_fryum/n309.png"
+   },
+   "scores": {
+    "wrn50": 0.9246423244476318,
+    "resnet18": 1.417081594467163,
+    "classical": 3.768876314163208,
+    "resnet18_int8": 1.416263222694397
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n484",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n484.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n484.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/n484.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/n484.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/n484.png",
+    "classical": "map/classical/pipe_fryum/n484.png"
+   },
+   "scores": {
+    "wrn50": 0.8377813696861267,
+    "resnet18": 1.2680566310882568,
+    "classical": 3.5127358436584473,
+    "resnet18_int8": 1.2782254219055176
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n143",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n143.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n143.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/n143.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/n143.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/n143.png",
+    "classical": "map/classical/pipe_fryum/n143.png"
+   },
+   "scores": {
+    "wrn50": 0.8652287721633911,
+    "resnet18": 1.319833517074585,
+    "classical": 3.6132423877716064,
+    "resnet18_int8": 1.3090921640396118
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "a063",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.0002899169921875,
+   "img": "img/pipe_fryum/a063.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a063.png",
+   "mask": "mask/pipe_fryum/a063.png",
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/a063.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/a063.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/a063.png",
+    "classical": "map/classical/pipe_fryum/a063.png"
+   },
+   "scores": {
+    "wrn50": 0.8884702324867249,
+    "resnet18": 1.31430184841156,
+    "classical": 3.825052499771118,
+    "resnet18_int8": 1.3172721862792969
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a053",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "similar colour spot",
+   "area": 0.000457763671875,
+   "img": "img/pipe_fryum/a053.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/a053.png",
+   "mask": "mask/pipe_fryum/a053.png",
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/a053.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/a053.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/a053.png",
+    "classical": "map/classical/pipe_fryum/a053.png"
+   },
+   "scores": {
+    "wrn50": 0.8956304788589478,
+    "resnet18": 1.5369454622268677,
+    "classical": 4.018637657165527,
+    "resnet18_int8": 1.5434247255325317
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.07194244604316546,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n352",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n352.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n352.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/n352.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/n352.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/n352.png",
+    "classical": "map/classical/pipe_fryum/n352.png"
+   },
+   "scores": {
+    "wrn50": 0.9936105012893677,
+    "resnet18": 1.427537202835083,
+    "classical": 6.81538724899292,
+    "resnet18_int8": 1.4418317079544067
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n324",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/pipe_fryum/n324.jpg",
+   "w": 1300,
+   "h": 1154,
+   "input": "in/pipe_fryum/n324.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/pipe_fryum/n324.png",
+    "wrn50_thumb": "map/wrn50_thumb/pipe_fryum/n324.jpg",
+    "resnet18": "map/resnet18/pipe_fryum/n324.png",
+    "classical": "map/classical/pipe_fryum/n324.png"
+   },
+   "scores": {
+    "wrn50": 0.962224543094635,
+    "resnet18": 1.4242750406265259,
+    "classical": 4.266757965087891,
+    "resnet18_int8": 1.4356083869934082
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  }
+ ]
+}

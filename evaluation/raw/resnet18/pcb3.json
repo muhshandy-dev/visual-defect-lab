@@ -1,0 +1,19 @@
+{
+  "method": "resnet18",
+  "class": "pcb3",
+  "fit_images": 815,
+  "val_images": 90,
+  "test_images": 201,
+  "fit_patches": 834560,
+  "bank_size": 4096,
+  "seconds_fit": 193.4,
+  "ms_per_test_image": 63.7,
+  "threshold": 1.7024554014205933,
+  "image_auroc": 0.9227722772277228,
+  "pixel_auroc": 0.9857821096986042,
+  "pixel_auroc_hist": 0.9857788097778338,
+  "aupro": 0.8583764925141698,
+  "miou": 0.11328636837493018,
+  "test_false_reject": 0.04950495049504951,
+  "test_miss": 0.33
+}

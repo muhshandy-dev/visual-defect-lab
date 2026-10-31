@@ -1,0 +1,12 @@
+run: 41125770404
+commit: 41d08e8fe56cafe0c23d15a21853fb54226c2ddf
+python 3.13.17
+torch 2.15.0+cpu
+torchvision 0.29.2+cpu
+timm 1.0.30
+onnxruntime 1.31.1
+opencv 5.0.0
+numpy 2.5.4
+4
+f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec  data/weights/resnet18-f37072fd.pth
+95faca4d11227dddf8633dbb5ff6c8a9003c1aa5b8945c73834b8007b10950b8  data/weights/wide_resnet50_2-95faca4d.pth

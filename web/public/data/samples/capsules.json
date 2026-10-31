@@ -1,0 +1,329 @@
+{
+ "cls": "capsules",
+ "thresholds": {
+  "wrn50": 1.4671050310134888,
+  "resnet18": 2.3325774669647217,
+  "classical": 2.717440128326416
+ },
+ "items": [
+  {
+   "id": "a015",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble",
+   "area": 0.0012359619140625,
+   "img": "img/capsules/a015.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a015.png",
+   "mask": "mask/capsules/a015.png",
+   "maps": {
+    "wrn50": "map/wrn50/capsules/a015.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/a015.jpg",
+    "resnet18": "map/resnet18/capsules/a015.png",
+    "classical": "map/classical/capsules/a015.png"
+   },
+   "scores": {
+    "wrn50": 1.4282737970352173,
+    "resnet18": 2.2695531845092773,
+    "classical": 2.7057945728302,
+    "resnet18_int8": 2.273035764694214
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a058",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak",
+   "area": 0.00933837890625,
+   "img": "img/capsules/a058.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a058.png",
+   "mask": "mask/capsules/a058.png",
+   "maps": {
+    "wrn50": "map/wrn50/capsules/a058.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/a058.jpg",
+    "resnet18": "map/resnet18/capsules/a058.png",
+    "classical": "map/classical/capsules/a058.png"
+   },
+   "scores": {
+    "wrn50": 1.6314833164215088,
+    "resnet18": 2.639774799346924,
+    "classical": 3.13612961769104,
+    "resnet18_int8": 2.6381876468658447
+   },
+   "iou": {
+    "wrn50": 0.3651685393258427,
+    "resnet18": 0.4045608108108108,
+    "classical": 0.29036144578313255
+   }
+  },
+  {
+   "id": "a082",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak,misshape",
+   "area": 0.0153350830078125,
+   "img": "img/capsules/a082.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a082.png",
+   "mask": "mask/capsules/a082.png",
+   "maps": {
+    "wrn50": "map/wrn50/capsules/a082.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/a082.jpg",
+    "resnet18": "map/resnet18/capsules/a082.png",
+    "classical": "map/classical/capsules/a082.png"
+   },
+   "scores": {
+    "wrn50": 1.5151962041854858,
+    "resnet18": 2.5287516117095947,
+    "classical": 2.8104968070983887,
+    "resnet18_int8": 2.51782488822937
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.3791064388961892,
+    "classical": 0.06618962432915922
+   }
+  },
+  {
+   "id": "a049",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak,misshape",
+   "area": 0.0085296630859375,
+   "img": "img/capsules/a049.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a049.png",
+   "mask": "mask/capsules/a049.png",
+   "maps": {
+    "wrn50": "map/wrn50/capsules/a049.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/a049.jpg",
+    "resnet18": "map/resnet18/capsules/a049.png",
+    "classical": "map/classical/capsules/a049.png"
+   },
+   "scores": {
+    "wrn50": 1.6425354480743408,
+    "resnet18": 2.5805366039276123,
+    "classical": 2.80684494972229,
+    "resnet18_int8": 2.5843427181243896
+   },
+   "iou": {
+    "wrn50": 0.40333024976873266,
+    "resnet18": 0.42176165803108806,
+    "classical": 0.16506410256410256
+   }
+  },
+  {
+   "id": "a061",
+   "group": "acak",
+   "label": 1,
+   "defect": "bubble,discolor,scratch,leak",
+   "area": 0.0067901611328125,
+   "img": "img/capsules/a061.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a061.png",
+   "mask": "mask/capsules/a061.png",
+   "maps": {
+    "wrn50": "map/wrn50/capsules/a061.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/a061.jpg",
+    "resnet18": "map/resnet18/capsules/a061.png",
+    "classical": "map/classical/capsules/a061.png"
+   },
+   "scores": {
+    "wrn50": 1.4763829708099365,
+    "resnet18": 2.5535168647766113,
+    "classical": 2.631427526473999,
+    "resnet18_int8": 2.5599892139434814
+   },
+   "iou": {
+    "wrn50": 0.08921161825726141,
+    "resnet18": 0.42488262910798125,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n011",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n011.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n011.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/capsules/n011.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/n011.jpg",
+    "resnet18": "map/resnet18/capsules/n011.png",
+    "classical": "map/classical/capsules/n011.png"
+   },
+   "scores": {
+    "wrn50": 1.3874499797821045,
+    "resnet18": 2.3277711868286133,
+    "classical": 2.6447176933288574,
+    "resnet18_int8": 2.327090263366699
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n417",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n417.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n417.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/capsules/n417.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/n417.jpg",
+    "resnet18": "map/resnet18/capsules/n417.png",
+    "classical": "map/classical/capsules/n417.png"
+   },
+   "scores": {
+    "wrn50": 1.4115924835205078,
+    "resnet18": 2.363840341567993,
+    "classical": 2.6122398376464844,
+    "resnet18_int8": 2.370457649230957
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n514",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n514.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n514.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/capsules/n514.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/n514.jpg",
+    "resnet18": "map/resnet18/capsules/n514.png",
+    "classical": "map/classical/capsules/n514.png"
+   },
+   "scores": {
+    "wrn50": 1.3638124465942383,
+    "resnet18": 2.2988545894622803,
+    "classical": 2.645045757293701,
+    "resnet18_int8": 2.3151838779449463
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "a004",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "bubble",
+   "area": 0.000823974609375,
+   "img": "img/capsules/a004.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a004.png",
+   "mask": "mask/capsules/a004.png",
+   "maps": {
+    "wrn50": "map/wrn50/capsules/a004.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/a004.jpg",
+    "resnet18": "map/resnet18/capsules/a004.png",
+    "classical": "map/classical/capsules/a004.png"
+   },
+   "scores": {
+    "wrn50": 1.3265866041183472,
+    "resnet18": 2.2574729919433594,
+    "classical": 2.61775541305542,
+    "resnet18_int8": 2.2622339725494385
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a098",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "bubble,discolor,scratch",
+   "area": 0.0009613037109375,
+   "img": "img/capsules/a098.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/a098.png",
+   "mask": "mask/capsules/a098.png",
+   "maps": {
+    "wrn50": "map/wrn50/capsules/a098.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/a098.jpg",
+    "resnet18": "map/resnet18/capsules/a098.png",
+    "classical": "map/classical/capsules/a098.png"
+   },
+   "scores": {
+    "wrn50": 1.3317848443984985,
+    "resnet18": 2.212230682373047,
+    "classical": 2.662013530731201,
+    "resnet18_int8": 2.2247424125671387
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n024",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/capsules/n024.jpg",
+   "w": 1500,
+   "h": 1000,
+   "input": "in/capsules/n024.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/capsules/n024.png",
+    "wrn50_thumb": "map/wrn50_thumb/capsules/n024.jpg",
+    "resnet18": "map/resnet18/capsules/n024.png",
+    "classical": "map/classical/capsules/n024.png"
+   },
+   "scores": {
+    "wrn50": 1.5099111795425415,
+    "resnet18": 2.5029428005218506,
+    "classical": 2.5937275886535645,
+    "resnet18_int8": 2.506589412689209
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  }
+ ]
+}

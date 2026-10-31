@@ -1,0 +1,19 @@
+{
+  "method": "wrn50",
+  "class": "capsules",
+  "fit_images": 488,
+  "val_images": 54,
+  "test_images": 160,
+  "fit_patches": 499712,
+  "bank_size": 4998,
+  "seconds_fit": 204.2,
+  "ms_per_test_image": 269.3,
+  "threshold": 1.4671050310134888,
+  "image_auroc": 0.7476666666666667,
+  "pixel_auroc": 0.9676522079162605,
+  "pixel_auroc_hist": 0.9676471565435529,
+  "aupro": 0.6821679773653732,
+  "miou": 0.16979312773298352,
+  "test_false_reject": 0.016666666666666666,
+  "test_miss": 0.57
+}
