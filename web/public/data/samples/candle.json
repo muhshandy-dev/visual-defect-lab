@@ -1,1 +1,358 @@
-{"cls": "candle", "thresholds": {"wrn50": 0.7779251337051392, "resnet18": 1.2599053382873535, "classical": 2.2458982467651367}, "items": [{"id": "a009", "group": "acak", "label": 1, "defect": "chunk of wax missing", "area": 0.0031585693359375, "img": "img/candle/a009.jpg", "w": 1284, "h": 1168, "input": "in/candle/a009.png", "mask": "mask/candle/a009.png", "maps": {"wrn50": "map/wrn50/candle/a009.png", "wrn50_thumb": "map/wrn50_thumb/candle/a009.jpg", "resnet18": "map/resnet18/candle/a009.png", "classical": "map/classical/candle/a009.png"}, "scores": {"wrn50": 1.219582438468933, "resnet18": 2.116594076156616, "classical": 2.6303117275238037}, "iou": {"wrn50": 0.08360258481421648, "resnet18": 0.1000483325277912, "classical": 0.368705035971223}}, {"id": "a031", "group": "acak", "label": 1, "defect": "weird candle wick", "area": 0.0016021728515625, "img": "img/candle/a031.jpg", "w": 1284, "h": 1168, "input": "in/candle/a031.png", "mask": "mask/candle/a031.png", "maps": {"wrn50": "map/wrn50/candle/a031.png", "wrn50_thumb": "map/wrn50_thumb/candle/a031.jpg", "resnet18": "map/resnet18/candle/a031.png", "classical": "map/classical/candle/a031.png"}, "scores": {"wrn50": 0.8534889221191406, "resnet18": 1.3741391897201538, "classical": 2.0564310550689697}, "iou": {"wrn50": 0.13010590015128592, "resnet18": 0.1350806451612903, "classical": 0.0}}, {"id": "a004", "group": "acak", "label": 1, "defect": "chunk of wax missing", "area": 0.00335693359375, "img": "img/candle/a004.jpg", "w": 1284, "h": 1168, "input": "in/candle/a004.png", "mask": "mask/candle/a004.png", "maps": {"wrn50": "map/wrn50/candle/a004.png", "wrn50_thumb": "map/wrn50_thumb/candle/a004.jpg", "resnet18": "map/resnet18/candle/a004.png", "classical": "map/classical/candle/a004.png"}, "scores": {"wrn50": 1.1864497661590576, "resnet18": 2.022256851196289, "classical": 2.4682846069335938}, "iou": {"wrn50": 0.09306260575296109, "resnet18": 0.09034907597535935, "classical": 0.04424778761061947}}, {"id": "a076", "group": "acak", "label": 1, "defect": "foreign particals on candle", "area": 0.0005950927734375, "img": "img/candle/a076.jpg", "w": 1284, "h": 1168, "input": "in/candle/a076.png", "mask": "mask/candle/a076.png", "maps": {"wrn50": "map/wrn50/candle/a076.png", "wrn50_thumb": "map/wrn50_thumb/candle/a076.jpg", "resnet18": "map/resnet18/candle/a076.png", "classical": "map/classical/candle/a076.png"}, "scores": {"wrn50": 1.1389179229736328, "resnet18": 1.6699012517929077, "classical": 2.070131540298462}, "iou": {"wrn50": 0.013254272758981514, "resnet18": 0.015304067660088603, "classical": 0.0}}, {"id": "a036", "group": "acak", "label": 1, "defect": "weird candle wick", "area": 0.001251220703125, "img": "img/candle/a036.jpg", "w": 1284, "h": 1168, "input": "in/candle/a036.png", "mask": "mask/candle/a036.png", "maps": {"wrn50": "map/wrn50/candle/a036.png", "wrn50_thumb": "map/wrn50_thumb/candle/a036.jpg", "resnet18": "map/resnet18/candle/a036.png", "classical": "map/classical/candle/a036.png"}, "scores": {"wrn50": 0.8880247473716736, "resnet18": 1.3159258365631104, "classical": 2.3095974922180176}, "iou": {"wrn50": 0.046964490263459335, "resnet18": 0.09157509157509157, "classical": 0.0}}, {"id": "n0297", "group": "acak", "label": 0, "defect": "", "area": 0.0, "img": "img/candle/n0297.jpg", "w": 1284, "h": 1168, "input": "in/candle/n0297.png", "mask": null, "maps": {"wrn50": "map/wrn50/candle/n0297.png", "wrn50_thumb": "map/wrn50_thumb/candle/n0297.jpg", "resnet18": "map/resnet18/candle/n0297.png", "classical": "map/classical/candle/n0297.png"}, "scores": {"wrn50": 0.6855000257492065, "resnet18": 1.0545803308486938, "classical": 2.0395612716674805}, "iou": {"wrn50": null, "resnet18": null, "classical": null}}, {"id": "n0178", "group": "acak", "label": 0, "defect": "", "area": 0.0, "img": "img/candle/n0178.jpg", "w": 1284, "h": 1168, "input": "in/candle/n0178.png", "mask": null, "maps": {"wrn50": "map/wrn50/candle/n0178.png", "wrn50_thumb": "map/wrn50_thumb/candle/n0178.jpg", "resnet18": "map/resnet18/candle/n0178.png", "classical": "map/classical/candle/n0178.png"}, "scores": {"wrn50": 0.6611536741256714, "resnet18": 1.1176588535308838, "classical": 2.0475351810455322}, "iou": {"wrn50": null, "resnet18": null, "classical": null}}, {"id": "n0100", "group": "acak", "label": 0, "defect": "", "area": 0.0, "img": "img/candle/n0100.jpg", "w": 1284, "h": 1168, "input": "in/candle/n0100.png", "mask": null, "maps": {"wrn50": "map/wrn50/candle/n0100.png", "wrn50_thumb": "map/wrn50_thumb/candle/n0100.jpg", "resnet18": "map/resnet18/candle/n0100.png", "classical": "map/classical/candle/n0100.png"}, "scores": {"wrn50": 0.6894268989562988, "resnet18": 1.107324481010437, "classical": 2.0652146339416504}, "iou": {"wrn50": null, "resnet18": null, "classical": null}}, {"id": "a017", "group": "terlewat", "label": 1, "defect": "damaged corner of packaging,different colour spot", "area": 0.0018463134765625, "img": "img/candle/a017.jpg", "w": 1284, "h": 1168, "input": "in/candle/a017.png", "mask": "mask/candle/a017.png", "maps": {"wrn50": "map/wrn50/candle/a017.png", "wrn50_thumb": "map/wrn50_thumb/candle/a017.jpg", "resnet18": "map/resnet18/candle/a017.png", "classical": "map/classical/candle/a017.png"}, "scores": {"wrn50": 0.7408069968223572, "resnet18": 1.1842235326766968, "classical": 2.002609968185425}, "iou": {"wrn50": 0.0, "resnet18": 0.0, "classical": 0.0}}, {"id": "a019", "group": "terlewat", "label": 1, "defect": "damaged corner of packaging", "area": 0.0019683837890625, "img": "img/candle/a019.jpg", "w": 1284, "h": 1168, "input": "in/candle/a019.png", "mask": "mask/candle/a019.png", "maps": {"wrn50": "map/wrn50/candle/a019.png", "wrn50_thumb": "map/wrn50_thumb/candle/a019.jpg", "resnet18": "map/resnet18/candle/a019.png", "classical": "map/classical/candle/a019.png"}, "scores": {"wrn50": 0.7599318027496338, "resnet18": 1.212161898612976, "classical": 2.106583595275879}, "iou": {"wrn50": 0.0, "resnet18": 0.0, "classical": 0.0}}, {"id": "n0518", "group": "alarm-palsu", "label": 0, "defect": "", "area": 0.0, "img": "img/candle/n0518.jpg", "w": 1284, "h": 1168, "input": "in/candle/n0518.png", "mask": null, "maps": {"wrn50": "map/wrn50/candle/n0518.png", "wrn50_thumb": "map/wrn50_thumb/candle/n0518.jpg", "resnet18": "map/resnet18/candle/n0518.png", "classical": "map/classical/candle/n0518.png"}, "scores": {"wrn50": 0.9355812072753906, "resnet18": 1.3271485567092896, "classical": 2.0937228202819824}, "iou": {"wrn50": null, "resnet18": null, "classical": null}}, {"id": "n0488", "group": "alarm-palsu", "label": 0, "defect": "", "area": 0.0, "img": "img/candle/n0488.jpg", "w": 1284, "h": 1168, "input": "in/candle/n0488.png", "mask": null, "maps": {"wrn50": "map/wrn50/candle/n0488.png", "wrn50_thumb": "map/wrn50_thumb/candle/n0488.jpg", "resnet18": "map/resnet18/candle/n0488.png", "classical": "map/classical/candle/n0488.png"}, "scores": {"wrn50": 0.8824030756950378, "resnet18": 1.2988096475601196, "classical": 2.1436121463775635}, "iou": {"wrn50": null, "resnet18": null, "classical": null}}]}
+{
+ "cls": "candle",
+ "thresholds": {
+  "wrn50": 0.7779251337051392,
+  "resnet18": 1.2599053382873535,
+  "classical": 2.2458982467651367
+ },
+ "items": [
+  {
+   "id": "a009",
+   "group": "acak",
+   "label": 1,
+   "defect": "chunk of wax missing",
+   "area": 0.0031585693359375,
+   "img": "img/candle/a009.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a009.png",
+   "mask": "mask/candle/a009.png",
+   "maps": {
+    "wrn50": "map/wrn50/candle/a009.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/a009.jpg",
+    "resnet18": "map/resnet18/candle/a009.png",
+    "classical": "map/classical/candle/a009.png"
+   },
+   "scores": {
+    "wrn50": 1.219582438468933,
+    "resnet18": 2.116594076156616,
+    "classical": 2.6303117275238037,
+    "resnet18_int8": 2.117253541946411
+   },
+   "iou": {
+    "wrn50": 0.08360258481421648,
+    "resnet18": 0.1000483325277912,
+    "classical": 0.368705035971223
+   }
+  },
+  {
+   "id": "a031",
+   "group": "acak",
+   "label": 1,
+   "defect": "weird candle wick",
+   "area": 0.0016021728515625,
+   "img": "img/candle/a031.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a031.png",
+   "mask": "mask/candle/a031.png",
+   "maps": {
+    "wrn50": "map/wrn50/candle/a031.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/a031.jpg",
+    "resnet18": "map/resnet18/candle/a031.png",
+    "classical": "map/classical/candle/a031.png"
+   },
+   "scores": {
+    "wrn50": 0.8534889221191406,
+    "resnet18": 1.3741391897201538,
+    "classical": 2.0564310550689697,
+    "resnet18_int8": 1.37820565700531
+   },
+   "iou": {
+    "wrn50": 0.13010590015128592,
+    "resnet18": 0.1350806451612903,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a004",
+   "group": "acak",
+   "label": 1,
+   "defect": "chunk of wax missing",
+   "area": 0.00335693359375,
+   "img": "img/candle/a004.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a004.png",
+   "mask": "mask/candle/a004.png",
+   "maps": {
+    "wrn50": "map/wrn50/candle/a004.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/a004.jpg",
+    "resnet18": "map/resnet18/candle/a004.png",
+    "classical": "map/classical/candle/a004.png"
+   },
+   "scores": {
+    "wrn50": 1.1864497661590576,
+    "resnet18": 2.022256851196289,
+    "classical": 2.4682846069335938,
+    "resnet18_int8": 2.034217596054077
+   },
+   "iou": {
+    "wrn50": 0.09306260575296109,
+    "resnet18": 0.09034907597535935,
+    "classical": 0.04424778761061947
+   }
+  },
+  {
+   "id": "a076",
+   "group": "acak",
+   "label": 1,
+   "defect": "foreign particals on candle",
+   "area": 0.0005950927734375,
+   "img": "img/candle/a076.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a076.png",
+   "mask": "mask/candle/a076.png",
+   "maps": {
+    "wrn50": "map/wrn50/candle/a076.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/a076.jpg",
+    "resnet18": "map/resnet18/candle/a076.png",
+    "classical": "map/classical/candle/a076.png"
+   },
+   "scores": {
+    "wrn50": 1.1389179229736328,
+    "resnet18": 1.6699012517929077,
+    "classical": 2.070131540298462,
+    "resnet18_int8": 1.678787112236023
+   },
+   "iou": {
+    "wrn50": 0.013254272758981514,
+    "resnet18": 0.015304067660088603,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a036",
+   "group": "acak",
+   "label": 1,
+   "defect": "weird candle wick",
+   "area": 0.001251220703125,
+   "img": "img/candle/a036.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a036.png",
+   "mask": "mask/candle/a036.png",
+   "maps": {
+    "wrn50": "map/wrn50/candle/a036.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/a036.jpg",
+    "resnet18": "map/resnet18/candle/a036.png",
+    "classical": "map/classical/candle/a036.png"
+   },
+   "scores": {
+    "wrn50": 0.8880247473716736,
+    "resnet18": 1.3159258365631104,
+    "classical": 2.3095974922180176,
+    "resnet18_int8": 1.3212413787841797
+   },
+   "iou": {
+    "wrn50": 0.046964490263459335,
+    "resnet18": 0.09157509157509157,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0297",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0297.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0297.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/candle/n0297.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/n0297.jpg",
+    "resnet18": "map/resnet18/candle/n0297.png",
+    "classical": "map/classical/candle/n0297.png"
+   },
+   "scores": {
+    "wrn50": 0.6855000257492065,
+    "resnet18": 1.0545803308486938,
+    "classical": 2.0395612716674805,
+    "resnet18_int8": 1.069596767425537
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n0178",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0178.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0178.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/candle/n0178.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/n0178.jpg",
+    "resnet18": "map/resnet18/candle/n0178.png",
+    "classical": "map/classical/candle/n0178.png"
+   },
+   "scores": {
+    "wrn50": 0.6611536741256714,
+    "resnet18": 1.1176588535308838,
+    "classical": 2.0475351810455322,
+    "resnet18_int8": 1.1156479120254517
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n0100",
+   "group": "acak",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0100.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0100.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/candle/n0100.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/n0100.jpg",
+    "resnet18": "map/resnet18/candle/n0100.png",
+    "classical": "map/classical/candle/n0100.png"
+   },
+   "scores": {
+    "wrn50": 0.6894268989562988,
+    "resnet18": 1.107324481010437,
+    "classical": 2.0652146339416504,
+    "resnet18_int8": 1.1046271324157715
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "a017",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "damaged corner of packaging,different colour spot",
+   "area": 0.0018463134765625,
+   "img": "img/candle/a017.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a017.png",
+   "mask": "mask/candle/a017.png",
+   "maps": {
+    "wrn50": "map/wrn50/candle/a017.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/a017.jpg",
+    "resnet18": "map/resnet18/candle/a017.png",
+    "classical": "map/classical/candle/a017.png"
+   },
+   "scores": {
+    "wrn50": 0.7408069968223572,
+    "resnet18": 1.1842235326766968,
+    "classical": 2.002609968185425,
+    "resnet18_int8": 1.1716786623001099
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "a019",
+   "group": "terlewat",
+   "label": 1,
+   "defect": "damaged corner of packaging",
+   "area": 0.0019683837890625,
+   "img": "img/candle/a019.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/a019.png",
+   "mask": "mask/candle/a019.png",
+   "maps": {
+    "wrn50": "map/wrn50/candle/a019.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/a019.jpg",
+    "resnet18": "map/resnet18/candle/a019.png",
+    "classical": "map/classical/candle/a019.png"
+   },
+   "scores": {
+    "wrn50": 0.7599318027496338,
+    "resnet18": 1.212161898612976,
+    "classical": 2.106583595275879,
+    "resnet18_int8": 1.2199203968048096
+   },
+   "iou": {
+    "wrn50": 0.0,
+    "resnet18": 0.0,
+    "classical": 0.0
+   }
+  },
+  {
+   "id": "n0518",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0518.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0518.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/candle/n0518.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/n0518.jpg",
+    "resnet18": "map/resnet18/candle/n0518.png",
+    "classical": "map/classical/candle/n0518.png"
+   },
+   "scores": {
+    "wrn50": 0.9355812072753906,
+    "resnet18": 1.3271485567092896,
+    "classical": 2.0937228202819824,
+    "resnet18_int8": 1.3307307958602905
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  },
+  {
+   "id": "n0488",
+   "group": "alarm-palsu",
+   "label": 0,
+   "defect": "",
+   "area": 0.0,
+   "img": "img/candle/n0488.jpg",
+   "w": 1284,
+   "h": 1168,
+   "input": "in/candle/n0488.png",
+   "mask": null,
+   "maps": {
+    "wrn50": "map/wrn50/candle/n0488.png",
+    "wrn50_thumb": "map/wrn50_thumb/candle/n0488.jpg",
+    "resnet18": "map/resnet18/candle/n0488.png",
+    "classical": "map/classical/candle/n0488.png"
+   },
+   "scores": {
+    "wrn50": 0.8824030756950378,
+    "resnet18": 1.2988096475601196,
+    "classical": 2.1436121463775635,
+    "resnet18_int8": 1.3183115720748901
+   },
+   "iou": {
+    "wrn50": null,
+    "resnet18": null,
+    "classical": null
+   }
+  }
+ ]
+}

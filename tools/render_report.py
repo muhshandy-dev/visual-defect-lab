@@ -48,6 +48,47 @@ def pci(c: list[float]) -> str:
     return f"{p(c[0])} sampai {p(c[1])}"
 
 
+def onnx_section(parity: dict) -> list[str]:
+    bb = parity["backbone"]
+    mb = 1024 * 1024
+    out = [
+        "",
+        "## Model browser (PatchCore ResNet18, ONNX)",
+        "",
+        f"Backbone {bb['bytes'] / mb:.1f} MB (float32 {bb['fp32_bytes'] / mb:.1f} MB), varian "
+        f"kuantisasi `{bb.get('variant', 'static')}`.".replace(".", ",", 2),
+    ]
+    sel = parity.get("selection")
+    if sel:
+        out += [
+            "",
+            f"Aturan pemilihan: {sel['rule']}. Hanya foto normal validasi yang dipakai.",
+            "",
+            "| Varian | Selisih maks / ambang (validasi) | Ukuran | Lolos aturan |",
+            "|---|---|---|---|",
+        ]
+        for v, d in sel["val_max_rel_diff"].items():
+            ok = "ya" if d <= sel["fidelity_limit"] else "tidak"
+            out.append(
+                f"| {v} | {f(d)} | {sel['bytes'][v] / mb:.2f} MB | {ok} |".replace(".", ",", 1)
+            )
+    m = parity["macro"]
+    out += [
+        "",
+        f"Pada seluruh {parity['test_images_total']} foto uji: image AUROC makro PyTorch "
+        f"{f(m['image_auroc_torch'])}, ONNX {f(m['image_auroc_int8'])}; pixel AUROC makro "
+        f"PyTorch {f(m['pixel_auroc_torch'])}, ONNX {f(m['pixel_auroc_int8'])}. Keputusan lolos "
+        f"atau tolak berubah pada {parity['decision_flips_int8_total']} foto.",
+        "",
+        "| Produk | Image AUROC PyTorch | Image AUROC ONNX | Keputusan berubah |",
+        "|---|---|---|---|",
+    ]
+    for c, e in parity["classes"].items():
+        auc = f"{f(e['image_auroc_torch'])} | {f(e['image_auroc_int8'])}"
+        out.append(f"| {NAMES.get(c, c)} | {auc} | {e['decision_flips_int8']}/{e['test_images']} |")
+    return out
+
+
 def render(res: dict, parity: dict | None) -> str:
     methods = list(res["methods"])
     label = {m: res["methods"][m]["label"] for m in methods}
@@ -132,8 +173,7 @@ def render(res: dict, parity: dict | None) -> str:
             out.append(f"| {row['group']} | {row['n']} | {p(row['detected'])} | {f(row['miou'])} |")
 
     if parity:
-        out += ["", "## Model browser (ONNX int8)", "", "```", json.dumps(parity.get("macro", {}),
-                indent=1, ensure_ascii=False), "```"]  # fmt: skip
+        out += onnx_section(parity)
     return "\n".join(out) + "\n"
 
 

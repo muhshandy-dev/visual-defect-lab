@@ -1,0 +1,6 @@
+
+> visual-defect-lab-web@0.1.0 e2e
+> node tests/e2e.mjs
+
+paritas browser: 24 foto, selisih maks 1.89e-6 x ambang; waktu 204 ms (+267 ms memuat model), 171 ms, 174 ms, 176 ms, 182 ms, 177 ms, 180 ms, 172 ms, 174 ms, 170 ms, 174 ms, 174 ms, 172 ms, 170 ms, 176 ms, 176 ms, 179 ms, 176 ms, 177 ms, 176 ms, 177 ms, 177 ms, 178 ms, 176 ms
+165 pemeriksaan, 0 gagal

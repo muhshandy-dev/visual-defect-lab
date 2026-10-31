@@ -114,3 +114,31 @@ Menurut ukuran cacat (bagian luas foto):
 | kecil (< 0,2%) | 619 | 58,8% | 0,044 |
 | sedang (0,2 sampai 1%) | 388 | 94,1% | 0,137 |
 | besar (> 1%) | 193 | 99,0% | 0,318 |
+
+## Model browser (PatchCore ResNet18, ONNX)
+
+Backbone 2,7 MB (float32 10,6 MB), varian kuantisasi `weights`.
+
+Aturan pemilihan: varian terkecil dengan selisih skor maks / ambang <= 0.05 pada citra normal validasi. Hanya foto normal validasi yang dipakai.
+
+| Varian | Selisih maks / ambang (validasi) | Ukuran | Lolos aturan |
+|---|---|---|---|
+| weights | 0,023 | 2,68 MB | ya |
+| static | 0,067 | 2,73 MB | tidak |
+
+Pada seluruh 2162 foto uji: image AUROC makro PyTorch 0,923, ONNX 0,922; pixel AUROC makro PyTorch 0,980, ONNX 0,979. Keputusan lolos atau tolak berubah pada 26 foto.
+
+| Produk | Image AUROC PyTorch | Image AUROC ONNX | Keputusan berubah |
+|---|---|---|---|
+| Lilin | 0,981 | 0,979 | 4/200 |
+| Kapsul | 0,731 | 0,724 | 4/160 |
+| Mete | 0,953 | 0,956 | 1/150 |
+| Permen karet | 0,997 | 0,996 | 1/150 |
+| Fryum | 0,921 | 0,926 | 0/150 |
+| Makaroni 1 | 0,930 | 0,926 | 1/200 |
+| Makaroni 2 | 0,772 | 0,765 | 5/200 |
+| PCB 1 | 0,945 | 0,944 | 3/200 |
+| PCB 2 | 0,937 | 0,936 | 1/200 |
+| PCB 3 | 0,923 | 0,921 | 4/201 |
+| PCB 4 | 0,992 | 0,991 | 1/201 |
+| Fryum pipa | 0,996 | 0,997 | 1/150 |

@@ -81,7 +81,7 @@ export function Method({ summary }: { summary: Summary }) {
       <section className="block">
         <h2>Status pengerjaan</h2>
         <ul>
-          <li>Fitting dan evaluasi dijalankan di CPU (4 inti) pada lingkungan pengembangan, bukan di Kaggle. Notebook Kaggle tersedia di repositori tetapi belum dijalankan di Kaggle.</li>
+          <li>Fitting dan evaluasi dijalankan di CPU (4 inti): baseline klasik di lingkungan pengembangan dan diulang di runner GitHub Actions, PatchCore di runner GitHub Actions. Bukan di Kaggle; notebook Kaggle tersedia di repositori tetapi belum dijalankan di Kaggle.</li>
           <li>PatchCore tidak melatih ulang bobot jaringan; tidak ada fine-tuning.</li>
         </ul>
       </section>

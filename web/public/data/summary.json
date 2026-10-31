@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-30",
  "primary": "wrn50",
- "live_method": null,
+ "live_method": "resnet18",
  "dataset": {
   "name": "VisA",
   "version": "VisA_20220922",
@@ -4917,7 +4917,70 @@
   "pcb4",
   "pipe_fryum"
  ],
- "onnx": null,
+ "onnx": {
+  "backbone": {
+   "file": "backbone_int8.onnx",
+   "variant": "weights",
+   "bytes": 2812214,
+   "fp32_bytes": 11133361,
+   "sha256": "4a3cb5bcd71e793b314c738c34b8d2bccc42b055957d470d6f5bf0f4b1d91a2a",
+   "opset": 17,
+   "calibration_images": 96
+  },
+  "selection": {
+   "rule": "varian terkecil dengan selisih skor maks / ambang <= 0.05 pada citra normal validasi",
+   "fidelity_limit": 0.05,
+   "val_max_rel_diff": {
+    "weights": 0.022779295220971107,
+    "static": 0.06702940165996552
+   },
+   "val_max_rel_diff_per_class": {
+    "weights": {
+     "candle": 0.022779295220971107,
+     "capsules": 0.010631837882101536,
+     "cashew": 0.019449688494205475,
+     "chewinggum": 0.0170131903141737,
+     "fryum": 0.014156896620988846,
+     "macaroni1": 0.016674501821398735,
+     "macaroni2": 0.009567758068442345,
+     "pcb1": 0.013027063570916653,
+     "pcb2": 0.013501579873263836,
+     "pcb3": 0.013989130035042763,
+     "pcb4": 0.014022063463926315,
+     "pipe_fryum": 0.018984317779541016
+    },
+    "static": {
+     "candle": 0.06405634433031082,
+     "capsules": 0.013277608901262283,
+     "cashew": 0.029594464227557182,
+     "chewinggum": 0.025563249364495277,
+     "fryum": 0.017851388081908226,
+     "macaroni1": 0.045664723962545395,
+     "macaroni2": 0.02333938702940941,
+     "pcb1": 0.017386026680469513,
+     "pcb2": 0.02279083989560604,
+     "pcb3": 0.046384308487176895,
+     "pcb4": 0.02050178498029709,
+     "pipe_fryum": 0.06702940165996552
+    }
+   },
+   "bytes": {
+    "weights": 2812214,
+    "static": 2858922
+   },
+   "passed": true
+  },
+  "head_bytes_total": 38041104,
+  "head_bytes_max": 3170092,
+  "macro": {
+   "image_auroc_torch": 0.9232658140814082,
+   "image_auroc_int8": 0.9217374037403742,
+   "pixel_auroc_torch": 0.9797977655610569,
+   "pixel_auroc_int8": 0.9793350393818012
+  },
+  "decision_flips_int8_total": 26,
+  "test_images_total": 2162
+ },
  "export_max_score_diff": {
   "wrn50": 0.0,
   "resnet18": 0.0,

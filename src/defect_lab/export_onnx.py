@@ -9,8 +9,8 @@ Dua jenis berkas:
 Dua cara kuantisasi dibandingkan:
   weights  bobot konvolusi int8 per kanal (simetris), aktivasi tetap float32
   static   kuantisasi statis QDQ bobot dan aktivasi (kalibrasi dari citra normal fit)
-Varian yang dipakai website dipilih dengan aturan yang ditetapkan sebelum melihat data uji:
-kesetiaan terhadap PyTorch pada citra normal VALIDASI, yaitu selisih skor maksimum dibagi
+Varian yang dipakai website dipilih hanya dari kesetiaan terhadap PyTorch pada citra
+normal VALIDASI, yaitu selisih skor maksimum dibagi
 ambang. Varian terkecil dengan selisih <= FIDELITY_LIMIT dipilih; bila tidak ada, varian
 dengan selisih terkecil dipakai dan laporan menandainya gagal. Label uji tidak dipakai.
 
